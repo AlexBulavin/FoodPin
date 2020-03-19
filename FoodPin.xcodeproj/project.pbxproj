@@ -13,6 +13,7 @@
 		FA617E1424232CB300198145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA617E1324232CB300198145 /* Assets.xcassets */; };
 		FA617E1724232CB300198145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA617E1524232CB300198145 /* LaunchScreen.storyboard */; };
 		FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */; };
+		FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E202423386E00198145 /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FA617E1624232CB300198145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA617E1824232CB300198145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
+		FA617E202423386E00198145 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				FA617E0A24232CB100198145 /* AppDelegate.swift */,
 				FA617E0C24232CB100198145 /* SceneDelegate.swift */,
 				FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */,
+				FA617E202423386E00198145 /* RecipeTableViewCell.swift */,
 				FA617E1024232CB100198145 /* Main.storyboard */,
 				FA617E1324232CB300198145 /* Assets.xcassets */,
 				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */,
 				FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */,
 				FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */,
+				FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
