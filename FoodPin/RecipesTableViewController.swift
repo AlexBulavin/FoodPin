@@ -35,7 +35,7 @@ class RecipesTableViewController: UITableViewController {
         
         cell.heartImageView.isHidden = !self.restaurantIsVisited[indexPath.row]
         
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 0)! //Избавляемся от сепаратора между ячейками.
+       // tableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 0)! //Избавляемся от сепаратора между ячейками. Это же сделано в Storyboard через атрибут сепаратора
         
         return cell }
 
