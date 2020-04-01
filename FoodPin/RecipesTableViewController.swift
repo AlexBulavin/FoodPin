@@ -131,7 +131,8 @@ class RecipesTableViewController: UITableViewController {
             restaurantTypes.remove(at: indexPath.row)
             restaurantIsVisited.remove(at: indexPath.row)
             restaurantImages.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
+                //Также возможны .right , .left , and .top
         }
         print("Total items: \(restaurantNames.count)")
         for name in restaurantNames {//Выводм на печать наименования ресторанов и их оставшееся количество.
