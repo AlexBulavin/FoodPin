@@ -9,9 +9,9 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
-
+    
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery" , "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-
+    
     var restaurantImages = ["cafedeadend", "homei", "teakha", "cafeloisl", "petiteoyster", "forkeerestaurant", "posatelier", "bourkestreetbakery", "haighschocolate", "palominoespresso", "upstate", "traif", "grahamavenuemeats", "wafflewolf", "fiveleaves", "cafelore", "confessional", "barrafina", "donostia", "royaloak", "caskpubkitchen"]
     
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Ko ng", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
@@ -28,31 +28,31 @@ class RecipesTableViewController: UITableViewController {
         cell.thumbnailImageView?.image = UIImage(named: restaurantImages[indexPath.row])
         cell.locationLabel?.text = restaurantLocations[indexPath.row]
         cell.typeLabel?.text = restaurantTypes[indexPath.row]
-//        if restaurantIsVisited[indexPath.row] { cell.accessoryType = .checkmark
-//        } else {
-//            cell.accessoryType = .none
-//        } //Альтернативная форма оператора cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
+        //        if restaurantIsVisited[indexPath.row] { cell.accessoryType = .checkmark
+        //        } else {
+        //            cell.accessoryType = .none
+        //        } //Альтернативная форма оператора cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
         
         cell.heartImageView.isHidden = !self.restaurantIsVisited[indexPath.row]
         
-       // tableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 0)! //Избавляемся от сепаратора между ячейками. Это же сделано в Storyboard через атрибут сепаратора
+        // tableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 0)! //Избавляемся от сепаратора между ячейками. Это же сделано в Storyboard через атрибут сепаратора
         
         return cell }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int { return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return restaurantNames.count }
+        return restaurantNames.count }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath
-    : IndexPath) {
+        : IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
         
         if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
-        popoverController.sourceView = cell
-        popoverController.sourceRect = cell.bounds }
+            popoverController.sourceView = cell
+            popoverController.sourceRect = cell.bounds }
         }
         
         // Add actions to the menu
@@ -99,9 +99,9 @@ class RecipesTableViewController: UITableViewController {
             //                    cell?.accessoryType = .checkmark //UIImage(named: "heart-tick")
             //                self.restaurantIsVisited[indexPath.row] = true
         })
-    
-    optionMenu.addAction(checkInAction)
-                
+        
+        optionMenu.addAction(checkInAction)
+        
         // Display the menu
         present(optionMenu, animated: true, completion: nil)
         
@@ -111,18 +111,31 @@ class RecipesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.cellLayoutMarginsFollowReadableWidth = true //Для корректного отображения ячеек на планшетах.
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //Добавлена нативная функция удаления ячейки. Свайп влево активирует кнопку удаления.
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            restaurantNames.remove(at: indexPath.row)
+            restaurantLocations.remove(at: indexPath.row)
+            restaurantTypes.remove(at: indexPath.row)
+            restaurantIsVisited.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        print("Total items: \(restaurantNames.count)")
+        for name in restaurantNames {//Выводм на печать наименования ресторанов и их оставшееся количество.
+            print(name)
+        }
     }
 }
