@@ -123,20 +123,45 @@ class RecipesTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //Добавлена нативная функция удаления ячейки. Свайп влево активирует кнопку удаления.
-        if editingStyle == .delete {
+    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //Добавлена нативная функция удаления ячейки. Свайп влево активирует кнопку удаления.
+    //        if editingStyle == .delete {
+    //            // Delete the row from the data source
+    //            restaurantNames.remove(at: indexPath.row)
+    //            restaurantLocations.remove(at: indexPath.row)
+    //            restaurantTypes.remove(at: indexPath.row)
+    //            restaurantIsVisited.remove(at: indexPath.row)
+    //            restaurantImages.remove(at: indexPath.row)
+    //            tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
+    //                //Также возможны .right , .left , and .top
+    //        }
+    //        print("Total items: \(restaurantNames.count)")
+    //        for name in restaurantNames {//Выводм на печать наименования ресторанов и их оставшееся количество.
+    //            print(name)
+    //        }
+    //    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete")//.destructive style, indicating that the button should be in red.
+        { (action, sourceView, completionHandler) in
             // Delete the row from the data source
-            restaurantNames.remove(at: indexPath.row)
-            restaurantLocations.remove(at: indexPath.row)
-            restaurantTypes.remove(at: indexPath.row)
-            restaurantIsVisited.remove(at: indexPath.row)
-            restaurantImages.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
-                //Также возможны .right , .left , and .top
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantLocations.remove(at: indexPath.row)
+            self.restaurantTypes.remove(at: indexPath.row)
+            self.restaurantIsVisited.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
+            //Также возможны .right , .left , and .top
+            // Call completion handler to dismiss the action button
+            completionHandler(true)
         }
-        print("Total items: \(restaurantNames.count)")
-        for name in restaurantNames {//Выводм на печать наименования ресторанов и их оставшееся количество.
-            print(name)
+        let shareAction = UIContextualAction(style: .normal, title: "Поделиться") { (action, sourceView, completionHandler) in
+            let defaultText = "Рекомендую посетить: " + self.restaurantNames[indexPath.row] + " " + self.restaurantTypes[indexPath.row] + "\nАдрес " + self.restaurantLocations[indexPath.row]
+            let defaultPicture = UIImage(named: self.restaurantImages[indexPath.row])
+            let activityController = UIActivityViewController(activityItems: [ defaultPicture!, defaultText], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
         }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        return swipeConfiguration
     }
 }
