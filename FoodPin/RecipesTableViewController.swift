@@ -123,5 +123,6 @@ class RecipesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //Добавлена нативная функция удаления ячейки. Свайп влево активирует кнопку удаления.
+    }
 }
