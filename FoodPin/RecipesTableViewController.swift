@@ -49,7 +49,8 @@ class RecipesTableViewController: UITableViewController {
         : IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
-        
+        optionMenu.view.tintColor = UIColor.black //Пытаюсь изменить цвет текста сообщения на системный черный
+        optionMenu.view.backgroundColor = UIColor.yellow //Пытаюсь изменить цвет фона сообщения на системный черный
         if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
             popoverController.sourceView = cell
             popoverController.sourceRect = cell.bounds }
@@ -60,6 +61,7 @@ class RecipesTableViewController: UITableViewController {
             let alertMessage = UIAlertController(title: "Сервис временно недоступен", message: "Извините, сервис пока не доступен, пожалуйста попробуйте позже.",
                                                  preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alertMessage.view.tintColor = UIColor.red //Пытаюсь изменить цвет текста сообщения на системный красный
             self.present(alertMessage, animated: true, completion: nil)
         }
         
