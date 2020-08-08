@@ -49,8 +49,8 @@ class RecipesTableViewController: UITableViewController {
         : IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
-        optionMenu.view.tintColor = UIColor.black //Изменить цвет текста сообщения на системный черный
-        optionMenu.view.backgroundColor = UIColor(displayP3Red: 0.34765625, green: 0.17578125, blue: 0.5, alpha: 0.85)//Изменить цвет фона сообщения на 89;45;128
+        optionMenu.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) //Изменить цвет текста сообщения на фирменный 90;45;128
+        optionMenu.view.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)//Изменить цвет фона сообщения
         if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
             popoverController.sourceView = cell
             popoverController.sourceRect = cell.bounds }
@@ -61,7 +61,7 @@ class RecipesTableViewController: UITableViewController {
             let alertMessage = UIAlertController(title: "Сервис временно недоступен", message: "Извините, сервис пока не доступен, пожалуйста попробуйте позже.",
                                                  preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alertMessage.view.tintColor = UIColor(displayP3Red: 0.34765625, green: 0.17578125, blue: 0.5, alpha: 0.85)//Изменить цвет сообщения на 89;45;128
+            alertMessage.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)//Изменить цвет текста ОК
             self.present(alertMessage, animated: true, completion: nil)
         }
         
@@ -71,7 +71,7 @@ class RecipesTableViewController: UITableViewController {
         
         //Add cancel action
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        //cancelAction.view.backgroundColor = UIColor.FromRGB(0,47,53) //Изменить цвет фона сообщения на FromRGB(0,47,53)
+
         optionMenu.addAction(cancelAction)
         
         // Check-in action
@@ -176,10 +176,10 @@ class RecipesTableViewController: UITableViewController {
             completionHandler(true)
         }
         
-        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0 , blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 48.0/255.0, green: 48.0/255.0 , blue: 75.0/255.0, alpha: 1.0)
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.title = "Удалить"
-        shareAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0 , blue: 38.0/255.0, alpha: 1.0)
+        shareAction.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)
         shareAction.image = UIImage(systemName: "square.and.arrow.up")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
@@ -200,7 +200,7 @@ class RecipesTableViewController: UITableViewController {
             completionHandler(true)
         }
         checkAction.image = (checkAction.image != nil) ? UIImage(systemName: "checkmark") : UIImage(systemName: "arrow.uturn.left")
-        checkAction.backgroundColor = UIColor(red: 26.0/255.0, green: 163.0/255.0 , blue: 74.0/255.0, alpha: 1.0)
+        checkAction.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)
         //          TODO: Добваить на свайп влево действие аналогичное добавлению в избранное или удалению из него
         //    arrow.uturn.left
         //    checkmark
