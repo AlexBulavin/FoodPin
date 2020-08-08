@@ -49,8 +49,8 @@ class RecipesTableViewController: UITableViewController {
         : IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
-        optionMenu.view.tintColor = UIColor.black //Пытаюсь изменить цвет текста сообщения на системный черный
-        optionMenu.view.backgroundColor = UIColor.yellow //Пытаюсь изменить цвет фона сообщения на системный черный
+        optionMenu.view.tintColor = UIColor.black //Изменить цвет текста сообщения на системный черный
+        optionMenu.view.backgroundColor = UIColor(displayP3Red: 0.34765625, green: 0.17578125, blue: 0.5, alpha: 0.85)//Изменить цвет фона сообщения на 89;45;128
         if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
             popoverController.sourceView = cell
             popoverController.sourceRect = cell.bounds }
@@ -61,7 +61,7 @@ class RecipesTableViewController: UITableViewController {
             let alertMessage = UIAlertController(title: "Сервис временно недоступен", message: "Извините, сервис пока не доступен, пожалуйста попробуйте позже.",
                                                  preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alertMessage.view.tintColor = UIColor.red //Пытаюсь изменить цвет текста сообщения на системный красный
+            alertMessage.view.tintColor = UIColor(displayP3Red: 0.34765625, green: 0.17578125, blue: 0.5, alpha: 0.85)//Изменить цвет сообщения на 89;45;128
             self.present(alertMessage, animated: true, completion: nil)
         }
         
@@ -71,6 +71,7 @@ class RecipesTableViewController: UITableViewController {
         
         //Add cancel action
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        //cancelAction.view.backgroundColor = UIColor.FromRGB(0,47,53) //Изменить цвет фона сообщения на FromRGB(0,47,53)
         optionMenu.addAction(cancelAction)
         
         // Check-in action
