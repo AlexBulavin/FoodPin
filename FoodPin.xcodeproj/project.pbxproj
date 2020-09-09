@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */; };
 		FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E0A24232CB100198145 /* AppDelegate.swift */; };
 		FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E0C24232CB100198145 /* SceneDelegate.swift */; };
 		FA617E1224232CB100198145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA617E1024232CB100198145 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		FA617E0724232CB100198145 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA617E0A24232CB100198145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA617E0C24232CB100198145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				FA617E1324232CB300198145 /* Assets.xcassets */,
 				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
 				FA617E1824232CB300198145 /* Info.plist */,
+				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */,
 				FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */,
 				FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */,
+				FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */,
 				FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

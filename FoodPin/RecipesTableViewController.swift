@@ -45,7 +45,8 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.count }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath
+   /* Перенести action sheet на экран детализации
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath
         : IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
@@ -71,7 +72,7 @@ class RecipesTableViewController: UITableViewController {
         
         //Add cancel action
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-
+        
         optionMenu.addAction(cancelAction)
         
         // Check-in action
@@ -110,7 +111,7 @@ class RecipesTableViewController: UITableViewController {
         
         //Убрали индикацию выбора ячейки после того, как отобразился чекпоинт "избранное"
         tableView.deselectRow(at: indexPath, animated: false)
-    }
+    } */
     
     override func viewDidLoad() {
         super.viewDidLoad()
