@@ -21,10 +21,11 @@ class RecipesTableViewController: UITableViewController {
     var restaurantIsVisited = Array(repeating: false, count: 21)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRestaurantDetail" {
+        if segue.identifier == "showRecipeDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RecipeDetailViewController
                 destinationController.recipeImageName = recipeImages[indexPath.row]
+                //Сюда же нужно будет добавить более детальную информацию, например, текст описания рецепта, ингредиенты и так далее.
             }
         }
     }
