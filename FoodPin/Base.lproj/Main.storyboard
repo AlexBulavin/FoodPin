@@ -123,7 +123,7 @@
                                     <outlet property="nameLabel" destination="TVj-7I-AHi" id="hht-Mu-4Na"/>
                                     <outlet property="thumbnailImageView" destination="9SV-zB-OB2" id="yPr-1y-fvA"/>
                                     <outlet property="typeLabel" destination="Ws0-c6-g6v" id="8Pk-9S-RTq"/>
-                                    <segue destination="FRK-Bj-GqP" kind="show" id="esR-y3-ZtA"/>
+                                    <segue destination="FRK-Bj-GqP" kind="show" identifier="showRecipeDetail" id="esR-y3-ZtA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="219.64285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="chJ-NK-so3">
             <objects>
-                <viewController id="FRK-Bj-GqP" sceneMemberID="viewController">
+                <viewController id="FRK-Bj-GqP" customClass="RecipeDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gIk-NR-rIa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +160,9 @@
                         <viewLayoutGuide key="safeArea" id="bE5-f5-Ifv"/>
                     </view>
                     <navigationItem key="navigationItem" id="nN7-sF-PuV"/>
+                    <connections>
+                        <outlet property="recipeImageView" destination="3uZ-Gh-uIP" id="l7w-at-0oA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrE-SU-e7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

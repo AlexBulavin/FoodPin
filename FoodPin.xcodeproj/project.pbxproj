@@ -64,11 +64,11 @@
 				FA617E0C24232CB100198145 /* SceneDelegate.swift */,
 				FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */,
 				FA617E202423386E00198145 /* RecipeTableViewCell.swift */,
+				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
 				FA617E1024232CB100198145 /* Main.storyboard */,
 				FA617E1324232CB300198145 /* Assets.xcassets */,
 				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
 				FA617E1824232CB300198145 /* Info.plist */,
-				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";

@@ -10,12 +10,18 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+
+    @IBOutlet var recipeImageView: UIImageView!
+
+    var recipeImageName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        recipeImageView.image = UIImage(named: recipeImageName)
+        
     }
-    
+
 
     /*
     // MARK: - Navigation
