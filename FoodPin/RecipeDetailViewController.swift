@@ -19,6 +19,7 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         
         recipeImageView.image = UIImage(named: recipeImageName)
+        navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         
     }
 
