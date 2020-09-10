@@ -12,13 +12,23 @@ class RecipeDetailViewController: UIViewController {
 
 
     @IBOutlet var recipeImageView: UIImageView!
-
+ 
+    @IBOutlet var recipeNameLabel: UILabel!
+    @IBOutlet var recipeDescriptionLabel: UILabel!
+    @IBOutlet var ingredientsLabel: UILabel!
+    
     var recipeImageName = ""
+    var recipeName = ""
+    var recipeDescription = ""
+    var ingredients = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recipeImageView.image = UIImage(named: recipeImageName)
+        recipeNameLabel.text = recipeName
+        recipeDescriptionLabel.text = recipeDescription
+        ingredientsLabel.text = ingredients
         
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         

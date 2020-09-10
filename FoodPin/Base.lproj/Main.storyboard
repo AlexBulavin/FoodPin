@@ -162,15 +162,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="recipeDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
-                                        <rect key="frame" x="20" y="74" width="374" height="242"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="recipeDescription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
+                                        <rect key="frame" x="20" y="74" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
-                                        <rect key="frame" x="20" y="343" width="374" height="159"/>
+                                        <rect key="frame" x="20" y="126" width="374" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -192,7 +192,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="nN7-sF-PuV"/>
                     <connections>
+                        <outlet property="ingredientsLabel" destination="g8h-6f-6Wp" id="9yl-vK-fQG"/>
+                        <outlet property="recipeDescriptionLabel" destination="0pZ-6d-95a" id="x3y-fP-CXm"/>
                         <outlet property="recipeImageView" destination="3uZ-Gh-uIP" id="l7w-at-0oA"/>
+                        <outlet property="recipeNameLabel" destination="Uar-Em-9I9" id="aGv-7R-dXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrE-SU-e7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
