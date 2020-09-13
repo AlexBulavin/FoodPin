@@ -47,7 +47,6 @@ class RecipesTableViewController: UITableViewController {
        
         
         cell.heartImageView.isHidden = !self.recipeIsLiked[indexPath.row]
-        
                 
         return cell }
     

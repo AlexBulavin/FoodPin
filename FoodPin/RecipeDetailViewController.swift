@@ -23,7 +23,7 @@ class RecipeDetailViewController: UIViewController {
     var recipeName = ""
     var recipeDescription = ""
     var ingredients = ""
-    var recipeIsLiked = false
+    var recipeIsLiked = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +32,13 @@ class RecipeDetailViewController: UIViewController {
         recipeNameLabel.text = recipeName
         recipeDescriptionLabel.text = recipeDescription
         ingredientsLabel.text = ingredients
-        recipeFaviritesIndicator.image = UIImage(named: "heart-tick")
+        recipeFaviritesIndicator.isHidden = !recipeIsLiked //isHidden противоположно по значению recipeIsLiked. То есть если isHidden = true, то имидж не должен отображаться, а если false, то должен. Но в переменной recipeIsLiked true означает Liked и имидж нужно показать, а false означает не Liked и нужно скрыть.
         
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
     }
     
+    //Функция нажатия на экран (в любом месте). Подымает ActionSheet
     @IBAction func clickOnScreen(_ sender: UIButton) {
-
-
-     //Нужно создать функцию нажатия на экран (в любом месте)
     
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
         optionMenu.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) //Изменить цвет текста сообщения на фирменный 90;45;128
