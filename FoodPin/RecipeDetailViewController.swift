@@ -16,11 +16,14 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet var recipeNameLabel: UILabel!
     @IBOutlet var recipeDescriptionLabel: UILabel!
     @IBOutlet var ingredientsLabel: UILabel!
+    @IBOutlet var recipeFaviritesIndicator: UIImageView!
+    
     
     var recipeImageName = ""
     var recipeName = ""
     var recipeDescription = ""
     var ingredients = ""
+    var recipeIsLiked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,138 +32,55 @@ class RecipeDetailViewController: UIViewController {
         recipeNameLabel.text = recipeName
         recipeDescriptionLabel.text = recipeDescription
         ingredientsLabel.text = ingredients
+        recipeFaviritesIndicator.image = UIImage(named: "heart-tick")
         
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
-        
-    //}
+    }
+    
+    @IBAction func clickOnScreen(_ sender: UIButton) {
+
+
      //Нужно создать функцию нажатия на экран (в любом месте)
     
-            /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-            
-            {*/
-                
-                // Create an option menu as an action sheet
-                let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-                
-                // For iPad
-              /*  if let popoverController = optionMenu.popoverPresentationController {
-                    if let cell = tableView.cellForRow(at: indexPath) {
-                        popoverController.sourceView = cell
-                        popoverController.sourceRect = cell.bounds
-                    }
-                }*/
-                
-                // Add actions to the menu
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                optionMenu.addAction(cancelAction)
-                
-                // Add Call action
-                let callActionHandler = { (action:UIAlertAction!) -> Void in
-                    let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
-                    alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alertMessage, animated: true, completion: nil)
-                }
-     
-                let callAction = UIAlertAction(title: "Call " + "123-000", style: .default, handler: callActionHandler)
-                optionMenu.addAction(callAction)
-                
-              //  let checkInTitle = self.restaurantIsVisited[indexPath.row] ? "Undo Check in" : "Check in"
-                let checkInAction = UIAlertAction(title: "checkInTitle", style: .default, handler: {
-                    (action:UIAlertAction!) -> Void in
-                    
-                   // let cell = tableView.cellForRow(at: indexPath) as? RestaurantTableViewCell
-                    
-                    // MARK: -Solution to exercise 1
-                    /* cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark */
-                    
-                    // MARK: -Solution to exercise 2
-                    // We use the isHidden property to control whether the image view is displayed or not
-     //               cell?.heartTick.isHidden = self.restaurantIsVisited[indexPath.row]
-       //             self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-                })
-                optionMenu.addAction(checkInAction)
-                
-                // Display the menu
-                present(optionMenu, animated: true, completion: nil)
-     
-}
-    
-    
-    /*// Перенести action sheet на экран детализации
-//     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath
-//        : IndexPath) {
-        // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
         optionMenu.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) //Изменить цвет текста сообщения на фирменный 90;45;128
         optionMenu.view.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 0.85)//Изменить цвет фона сообщения
-//        if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
-//            popoverController.sourceView = cell
-//            popoverController.sourceRect = cell.bounds }
-//        }
+
         
         // Add actions to the menu
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Сервис временно недоступен", message: "Извините, сервис пока не доступен, пожалуйста попробуйте позже.",
-                                                 preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alertMessage.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 0.85)//Изменить цвет текста ОК
-            self.present(alertMessage, animated: true, completion: nil)
-        }
+         let callActionHandler = { (action:UIAlertAction!) -> Void in
+             let alertMessage = UIAlertController(title: "Сервис временно недоступен", message: "Извините, сервис пока не доступен, пожалуйста попробуйте позже.",
+                                                  preferredStyle: .alert)
+             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+             alertMessage.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 0.85)//Изменить цвет текста ОК
+             self.present(alertMessage, animated: true, completion: nil)
+         }
+         
+         // Add Call action
+         let callAction = UIAlertAction(title: "Позвонить " + "123-000- (indexPath.row)" , style: .default, handler: callActionHandler) //вместо \(indexPath.row) нужно передать адекватный ID рецепта
+         optionMenu.addAction(callAction)
         
-        // Add Call action
-        let callAction = UIAlertAction(title: "Позвонить " + "123-000-\(indexPath.row)" , style: .default, handler: callActionHandler)
-        optionMenu.addAction(callAction)
-        
-        //Add cancel action
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        
-        optionMenu.addAction(cancelAction)
-        
-        // Check-in action
-        let checkInTitle = self.restaurantIsVisited[indexPath.row] ? "Удалить из избранноого" : "Добавить в избранное"
+        // Добавить/убрать в избранное
+        let checkInTitle = self.recipeIsLiked ? "Удалить из избранноого" : "Добавить в избранное"
         let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
             (action:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell
-            
-            
-            // Solution to exercise 1
-            //            cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark
-            
-            // Solution to exercise 2
-            // We use the isHidden property to control whether the image view is displayed or not
-            cell?.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row]
-            
-            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-            //
-            //        let checkInAction = if restaurantIsVisited[indexPath.row] { UIAlertAction(title: "Удалить из избранноого", style: .default, handler: {
-            //            (action:UIAlertAction!) -> Void in
-            //            let cell = tableView.cellForRow(at: indexPath)
-            //            cell?.accessoryType = .none
-            //            self.restaurantIsVisited[indexPath.row] = false
-            //            })} else {
-            //                UIAlertAction(title: "Добавить в избранное", style: .default, handler: {
-            //                (action:UIAlertAction!) -> Void in
-            //                let cell = tableView.cellForRow(at: indexPath)
-            //                    cell?.accessoryType = .checkmark //UIImage(named: "heart-tick")
-            //                self.restaurantIsVisited[indexPath.row] = true
+
+           self.recipeFaviritesIndicator.isHidden = self.recipeIsLiked
+            self.recipeIsLiked = self.recipeIsLiked ? false : true
+
         })
         
         optionMenu.addAction(checkInAction)
         
-        // Display the menu
-        present(optionMenu, animated: true, completion: nil)
-        
-        //Убрали индикацию выбора ячейки после того, как отобразился чекпоинт "избранное"
-       // tableView.deselectRow(at: indexPath, animated: false)
-    //}*/
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+         //Add cancel action
+         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+         
+         optionMenu.addAction(cancelAction)
+         
+         
+         // Display the menu
+         present(optionMenu, animated: true, completion: nil)
+   
     }
-    */
 
 }

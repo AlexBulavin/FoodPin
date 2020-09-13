@@ -20,7 +20,7 @@ class RecipesTableViewController: UITableViewController {
     var recipeTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", " British", "Thai"]
     var recipeIngredients = ["Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу","Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек,     Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", "Куриное филе 500 г, Плавленый сыр 200 г, Картофель 400 г, Лук 150 г,        Морковь 180 г, Сливочное масло по вкусу, Соль по вкусу, Молотый черный перец по вкусу, Зелень по вкусу, Лавровый лист 3 штуки, Гренки по вкусу, Черный перец горошком 2 штуки", "Спагетти 250 г, Сливочное масло 20 г, Чеснок 2 зубчика, Красный лук 1 головка, Бекон 50 г, Сливки 20%-ные 200 мл, Тертый сыр пармезан 50 г, Куриное яйцо 4 штуки, Соль по вкусу, Молотый черный перец по вкусу"]
     
-    var restaurantIsVisited = Array(repeating: false, count: 21)
+    var recipeIsLiked = Array(repeating: false, count: 21)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipeDetail" {
@@ -30,6 +30,7 @@ class RecipesTableViewController: UITableViewController {
                 destinationController.recipeName = recipeNames[indexPath.row]
                 destinationController.recipeDescription = recipeDescription[indexPath.row]
                 destinationController.ingredients = recipeIngredients[indexPath.row]
+                destinationController.recipeIsLiked = recipeIsLiked[indexPath.row]
             }
         }
     }
@@ -43,15 +44,11 @@ class RecipesTableViewController: UITableViewController {
         cell.thumbnailImageView?.image = UIImage(named: recipeImages[indexPath.row])
         cell.locationLabel?.text = recipeAuthorLocations[indexPath.row]
         cell.typeLabel?.text = recipeTypes[indexPath.row]
-        //        if restaurantIsVisited[indexPath.row] { cell.accessoryType = .checkmark
-        //        } else {
-        //            cell.accessoryType = .none
-        //        } //Альтернативная форма оператора cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
+       
         
-        cell.heartImageView.isHidden = !self.restaurantIsVisited[indexPath.row]
+        cell.heartImageView.isHidden = !self.recipeIsLiked[indexPath.row]
         
-        // tableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 0)! //Избавляемся от сепаратора между ячейками. Это же сделано в Storyboard через атрибут сепаратора
-        
+                
         return cell }
     
     override func numberOfSections(in tableView: UITableView) -> Int { return 1
@@ -91,32 +88,32 @@ class RecipesTableViewController: UITableViewController {
         optionMenu.addAction(cancelAction)
         
         // Check-in action
-        let checkInTitle = self.restaurantIsVisited[indexPath.row] ? "Удалить из избранноого" : "Добавить в избранное"
+        let checkInTitle = self.recipeIsLiked[indexPath.row] ? "Удалить из избранноого" : "Добавить в избранное"
         let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
             (action:UIAlertAction!) -> Void in
             let cell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell
             
             
             // Solution to exercise 1
-            //            cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark
+            //            cell?.accessoryType = self.recipeIsLiked[indexPath.row] ? .none : .checkmark
             
             // Solution to exercise 2
             // We use the isHidden property to control whether the image view is displayed or not
-            cell?.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row]
+            cell?.heartImageView.isHidden = self.recipeIsLiked[indexPath.row]
             
-            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
+            self.recipeIsLiked[indexPath.row] = self.recipeIsLiked[indexPath.row] ? false : true
             //
-            //        let checkInAction = if restaurantIsVisited[indexPath.row] { UIAlertAction(title: "Удалить из избранноого", style: .default, handler: {
+            //        let checkInAction = if recipeIsLiked[indexPath.row] { UIAlertAction(title: "Удалить из избранноого", style: .default, handler: {
             //            (action:UIAlertAction!) -> Void in
             //            let cell = tableView.cellForRow(at: indexPath)
             //            cell?.accessoryType = .none
-            //            self.restaurantIsVisited[indexPath.row] = false
+            //            self.recipeIsLiked[indexPath.row] = false
             //            })} else {
             //                UIAlertAction(title: "Добавить в избранное", style: .default, handler: {
             //                (action:UIAlertAction!) -> Void in
             //                let cell = tableView.cellForRow(at: indexPath)
             //                    cell?.accessoryType = .checkmark //UIImage(named: "heart-tick")
-            //                self.restaurantIsVisited[indexPath.row] = true
+            //                self.recipeIsLiked[indexPath.row] = true
         })
         
         optionMenu.addAction(checkInAction)
@@ -134,31 +131,8 @@ class RecipesTableViewController: UITableViewController {
         tableView.cellLayoutMarginsFollowReadableWidth = true //Для корректного отображения ячеек на планшетах.
         navigationController?.navigationBar.prefersLargeTitles = true //Чтобы отображать заголовок в NavigationBar крупно. По умолчанию он стоит мелкий.
     }
-    /*
+
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //Добавлена нативная функция удаления ячейки. Свайп влево активирует кнопку удаления.
-    //        if editingStyle == .delete {
-    //            // Delete the row from the data source
-    //            restaurantNames.remove(at: indexPath.row)
-    //            restaurantLocations.remove(at: indexPath.row)
-    //            restaurantTypes.remove(at: indexPath.row)
-    //            restaurantIsVisited.remove(at: indexPath.row)
-    //            restaurantImages.remove(at: indexPath.row)
-    //            tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
-    //                //Также возможны .right , .left , and .top
-    //        }
-    //        print("Total items: \(restaurantNames.count)")
-    //        for name in restaurantNames {//Выводм на печать наименования ресторанов и их оставшееся количество.
-    //            print(name)
-    //        }
-    //    }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete")//.destructive style, indicating that the button should be in red.
@@ -167,7 +141,7 @@ class RecipesTableViewController: UITableViewController {
             self.recipeNames.remove(at: indexPath.row)
             self.recipeAuthorLocations.remove(at: indexPath.row)
             self.recipeTypes.remove(at: indexPath.row)
-            self.restaurantIsVisited.remove(at: indexPath.row)
+            self.recipeIsLiked.remove(at: indexPath.row)
             self.recipeImages.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
             //Также возможны .right , .left , and .top
@@ -210,9 +184,9 @@ class RecipesTableViewController: UITableViewController {
            
             let cell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell
             
-            cell?.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row]
+            cell?.heartImageView.isHidden = self.recipeIsLiked[indexPath.row]
             
-            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
+            self.recipeIsLiked[indexPath.row] = self.recipeIsLiked[indexPath.row] ? false : true
             
             completionHandler(true)
         }
