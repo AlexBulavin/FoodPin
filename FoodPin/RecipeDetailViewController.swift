@@ -17,6 +17,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet var recipeDescriptionLabel: UILabel!
     @IBOutlet var ingredientsLabel: UILabel!
     @IBOutlet var recipeFaviritesIndicator: UIImageView!
+    @IBOutlet var backButton: UINavigationItem!
     
     
     var recipeImageName = ""
@@ -24,6 +25,8 @@ class RecipeDetailViewController: UIViewController {
     var recipeDescription = ""
     var ingredients = ""
     var recipeIsLiked = true
+    var indexPathRowDetail = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +66,10 @@ class RecipeDetailViewController: UIViewController {
         let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
             (action:UIAlertAction!) -> Void in
 
-           self.recipeFaviritesIndicator.isHidden = self.recipeIsLiked
-            self.recipeIsLiked = self.recipeIsLiked ? false : true
+            self.recipeFaviritesIndicator.isHidden = self.recipeIsLiked
+            self.recipeIsLiked = self.recipeIsLiked ? false : true 
+//            let parentVC = (self.navigationController?.parent)! as! RecipesTableViewController
+//            parentVC.recipeIsLiked[self.indexPathRowDetail] = !self.recipeIsLiked
 
         })
         

@@ -31,6 +31,7 @@ class RecipesTableViewController: UITableViewController {
                 destinationController.recipeDescription = recipeDescription[indexPath.row]
                 destinationController.ingredients = recipeIngredients[indexPath.row]
                 destinationController.recipeIsLiked = recipeIsLiked[indexPath.row]
+                destinationController.indexPathRowDetail = indexPath.row
             }
         }
     }
@@ -199,3 +200,5 @@ class RecipesTableViewController: UITableViewController {
         
     }
 }
+
+
