@@ -73,8 +73,7 @@ class RecipeDetailViewController: UIViewController {
         let shareRecipeAction = UIAlertAction(title: "Поделиться", style: .default, handler: {
             (action:UIAlertAction!) -> Void in
 
-                    let defaultText = "Рекомендую попробовать: " + self.recipe.recipeNames + "Кухня: " + self.recipe.recipeType + "Автор рецепта " + self.recipe.recipeAuthorLocations +
-                        " https://apps.apple.com/ru/app/ready-for-sky/id927991375" + self.recipe.recipeDescription + " " + self.recipe.recipeIngredients
+            let defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeNames + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeDescription + "\n\n" + "Состав блюда:" + "\n" + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
                     
                     let activityController: UIActivityViewController
                     
@@ -92,7 +91,6 @@ class RecipeDetailViewController: UIViewController {
          let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
          
          optionMenu.addAction(cancelAction)
-         
          
          // Display the menu
          present(optionMenu, animated: true, completion: nil)

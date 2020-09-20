@@ -62,18 +62,50 @@
 		FA617E0924232CB100198145 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				FABAF28B2517C81200F35579 /* Storyboard */,
+				FABAF28A2517C79D00F35579 /* Model */,
+				FABAF2892517C78B00F35579 /* View */,
+				FABAF2882517C76300F35579 /* Controller */,
+				FA617E1824232CB300198145 /* Info.plist */,
+				FA617E1324232CB300198145 /* Assets.xcassets */,
 				FA617E0A24232CB100198145 /* AppDelegate.swift */,
 				FA617E0C24232CB100198145 /* SceneDelegate.swift */,
-				FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */,
-				FA617E202423386E00198145 /* RecipeTableViewCell.swift */,
-				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
-				FABAF2862517A64600F35579 /* Recipes.swift */,
-				FA617E1024232CB100198145 /* Main.storyboard */,
-				FA617E1324232CB300198145 /* Assets.xcassets */,
-				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
-				FA617E1824232CB300198145 /* Info.plist */,
 			);
 			path = FoodPin;
+			sourceTree = "<group>";
+		};
+		FABAF2882517C76300F35579 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */,
+				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FABAF2892517C78B00F35579 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA617E202423386E00198145 /* RecipeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FABAF28A2517C79D00F35579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABAF2862517A64600F35579 /* Recipes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FABAF28B2517C81200F35579 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA617E1024232CB100198145 /* Main.storyboard */,
+				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
