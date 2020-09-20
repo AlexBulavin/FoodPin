@@ -104,8 +104,7 @@ class RecipesTableViewController: UITableViewController {
             completionHandler(true)
         }
         let shareAction = UIContextualAction(style: .normal, title: "Поделиться") { (action, sourceView, completionHandler) in
-            let defaultText = "Рекомендую попробовать: " + self.recipes[indexPath.row].recipeNames + "Кухня: " + self.recipes[indexPath.row].recipeType + "Автор " + self.recipes[indexPath.row].recipeAuthorLocations +
-            "https://apps.apple.com/ru/app/ready-for-sky/id927991375"
+            let defaultText = "Рекомендую попробовать:" + "\n" + self.recipes[indexPath.row].recipeNames + "\n" + "Кухня: " + self.recipes[indexPath.row].recipeType + "\n" + "Автор рецепта: " + self.recipes[indexPath.row].recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipes[indexPath.row].recipeDescription + "\n\n" + "Состав блюда:" + "\n" + self.recipes[indexPath.row].recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
             
             let activityController: UIActivityViewController
             
