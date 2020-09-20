@@ -16,6 +16,7 @@
 		FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */; };
 		FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E202423386E00198145 /* RecipeTableViewCell.swift */; };
 		FABAF2872517A64600F35579 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF2862517A64600F35579 /* Recipes.swift */; };
+		FABAF28F2517DF9100F35579 /* Rubik in Resources */ = {isa = PBXBuildFile; fileRef = FABAF28E2517DF9100F35579 /* Rubik */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		FA617E202423386E00198145 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		FABAF2862517A64600F35579 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		FABAF28E2517DF9100F35579 /* Rubik */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Rubik; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				FA617E1324232CB300198145 /* Assets.xcassets */,
 				FA617E0A24232CB100198145 /* AppDelegate.swift */,
 				FA617E0C24232CB100198145 /* SceneDelegate.swift */,
+				FABAF28C2517DF3800F35579 /* Resources */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -106,6 +109,22 @@
 				FA617E1524232CB300198145 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FABAF28C2517DF3800F35579 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FABAF28D2517DF4C00F35579 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FABAF28D2517DF4C00F35579 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FABAF28E2517DF9100F35579 /* Rubik */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +187,7 @@
 			files = (
 				FA617E1724232CB300198145 /* LaunchScreen.storyboard in Resources */,
 				FA617E1424232CB300198145 /* Assets.xcassets in Resources */,
+				FABAF28F2517DF9100F35579 /* Rubik in Resources */,
 				FA617E1224232CB100198145 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
