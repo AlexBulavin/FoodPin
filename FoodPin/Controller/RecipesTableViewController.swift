@@ -9,6 +9,7 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
+    
     var recipes:[Recipes] = [
     Recipes(name: "Сырники из творога", image: "cafedeadend", description: "Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой — сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут. 1. Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков. Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.", recipeAuthorLocations: "Hong Kong", recipeType: "Чешская", ingredients: "Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек, Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", isLiked: false),
         
@@ -51,8 +52,7 @@ class RecipesTableViewController: UITableViewController {
     Recipes(name: "CASK Pub and Kitchen", image: "caskpubkitchen", description: "Рецепт 20 1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. 2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.", recipeAuthorLocations: "Где-то на белом свете", recipeType: "Греческая", ingredients: "Творог 500 г, Куриное яйцо 2 штуки, Пшеничная мука 6 столовых ложек, Сахар 2 столовые ложки, Подсолнечное масло 5 столовых ложек", isLiked: false),
     ]
    
-    var recipeIsLiked = Array(repeating: false, count: 21)
-    
+    // MARK: - Готовим segue и перебрасываем в него данные
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipeDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -82,14 +82,20 @@ class RecipesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count }
-        
+    
+    // MARK: - View controller life cycle»
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.cellLayoutMarginsFollowReadableWidth = true //Для корректного отображения ячеек на планшетах.
         navigationController?.navigationBar.prefersLargeTitles = true //Чтобы отображать заголовок в NavigationBar крупно. По умолчанию он стоит мелкий.
     }
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
      // MARK: - Navigation
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
