@@ -253,64 +253,65 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="81" id="uXO-IF-bO7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="81" id="uXO-IF-bO7" customClass="RecipeDetailDescription" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="396" width="414" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uXO-IF-bO7" id="r1R-4O-I9s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Способ приготовления." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Yn-Bez">
-                                                    <rect key="frame" x="0.0" y="0.0" width="194" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeDescription" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-1f-o9z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="193.5" height="81"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Способ приготовления." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Yn-Bez">
+                                                            <rect key="frame" x="0.0" y="0.0" width="193.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeDescription" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
+                                                            <rect key="frame" x="0.0" y="60.5" width="134.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="0pZ-6d-95a" firstAttribute="leading" secondItem="r1R-4O-I9s" secondAttribute="leading" id="26F-Bf-ohJ"/>
-                                                <constraint firstItem="05l-Yn-Bez" firstAttribute="leading" secondItem="r1R-4O-I9s" secondAttribute="leading" id="6iv-Fx-npO"/>
-                                                <constraint firstAttribute="trailing" secondItem="0pZ-6d-95a" secondAttribute="trailing" id="bLc-cS-nDh"/>
-                                                <constraint firstAttribute="bottom" secondItem="0pZ-6d-95a" secondAttribute="bottom" id="bii-7b-6tn"/>
-                                                <constraint firstItem="0pZ-6d-95a" firstAttribute="top" secondItem="r1R-4O-I9s" secondAttribute="top" id="hu4-xJ-Nq8"/>
-                                                <constraint firstItem="05l-Yn-Bez" firstAttribute="top" secondItem="r1R-4O-I9s" secondAttribute="top" id="jmh-Sh-4c9"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeDescriptionLabel" destination="0pZ-6d-95a" id="Ls1-9N-X9H"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FwY-70-xzH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FwY-70-xzH" customClass="RecipeIngredients" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="477" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FwY-70-xzH" id="uQC-be-PXv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
-                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
-                                                    <rect key="frame" x="0.0" y="54.5" width="414" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-hE-xNU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="75"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
+                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
+                                                            <rect key="frame" x="0.0" y="54.5" width="85" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="344-75-r82" firstAttribute="top" secondItem="uQC-be-PXv" secondAttribute="top" id="8yR-jv-xTB"/>
-                                                <constraint firstAttribute="bottom" secondItem="g8h-6f-6Wp" secondAttribute="bottom" id="U7V-pW-zE3"/>
-                                                <constraint firstAttribute="trailing" secondItem="g8h-6f-6Wp" secondAttribute="trailing" id="YWi-y2-ulu"/>
-                                                <constraint firstItem="g8h-6f-6Wp" firstAttribute="leading" secondItem="uQC-be-PXv" secondAttribute="leading" id="b7d-n7-dah"/>
-                                                <constraint firstItem="344-75-r82" firstAttribute="leading" secondItem="uQC-be-PXv" secondAttribute="leading" id="ndn-e0-3hd"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeIngredientsLabel" destination="g8h-6f-6Wp" id="Xx6-2T-OzF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
