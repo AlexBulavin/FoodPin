@@ -18,7 +18,8 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet var ingredientsLabel: UILabel!
     @IBOutlet var recipeFaviritesIndicator: UIImageView!
     @IBOutlet var backButton: UINavigationItem!
-    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: RecipeDetailHeaderView!
     
     var recipe = Recipes()
     
@@ -32,6 +33,10 @@ class RecipeDetailViewController: UIViewController {
         recipeFaviritesIndicator.isHidden = !recipe.recipeIsLiked //isHidden противоположно по значению recipeIsLiked. То есть если isHidden = true, то имидж не должен отображаться, а если false, то должен. Но в переменной recipeIsLiked true означает Liked и имидж нужно показать, а false означает не Liked и нужно скрыть.
         
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
+        headerView.recipeName.text = recipe.recipeNames
+        headerView.recipeImageView.image = UIImage(named: recipe.recipeImages)
+        headerView.heartImageView.isHidden = !(recipe.recipeIsLiked) ? false : true
+        
     }
     
     //Функция нажатия на экран (в любом месте). Подымает ActionSheet
