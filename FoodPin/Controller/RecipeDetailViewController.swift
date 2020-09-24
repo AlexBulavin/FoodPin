@@ -36,21 +36,18 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
 
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredients.self), for: indexPath) as! RecipeIngredients
-                cell.iconImageView.image = UIImage(named: "phone")
-                cell.shortTextLabel.text = restaurant.phone
-                cell.selectionStyle = .none
-
+                cell.recipeImageView.image = UIImage(named: recipes[indexPath.row].recipeImages)
+                cell.recipeNameLabel.text = recipes[indexPath.row].recipeNames
+                cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredients.self), for: indexPath) as! RecipeIngredients
-                cell.iconImageView.image = UIImage(named: "map")
-                cell.shortTextLabel.text = restaurant.location
-                cell.selectionStyle = .none
+                cell.recipeDescriptionLabel.text = recipes[indexPath.row].recipeDescription
 
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredients.self), for: indexPath) as! RecipeIngredients
-                    cell.descriptionLabel.text = restaurant.description
+                    cell.ingredientsLabel.text = recipes[indexPath.row].ingredients
                     cell.selectionStyle = .none
 
                             return cell
