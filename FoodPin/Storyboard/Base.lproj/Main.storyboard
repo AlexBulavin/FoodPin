@@ -321,10 +321,6 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="Gk0-3p-1dj" id="f6r-tF-Zzu"/>
-                        <outlet property="ingredientsLabel" destination="g8h-6f-6Wp" id="9yl-vK-fQG"/>
-                        <outlet property="recipeDescriptionLabel" destination="0pZ-6d-95a" id="x3y-fP-CXm"/>
-                        <outlet property="recipeFaviritesIndicator" destination="9Dd-9K-0rm" id="Zvy-Z9-Lgr"/>
-                        <outlet property="recipeNameLabel" destination="Uar-Em-9I9" id="aGv-7R-dXg"/>
                         <outlet property="tableView" destination="65e-bU-1ug" id="fkq-ea-h8i"/>
                     </connections>
                 </viewController>

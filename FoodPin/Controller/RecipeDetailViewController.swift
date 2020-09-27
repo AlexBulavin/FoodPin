@@ -70,7 +70,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         headerView.recipeName.text = recipe.recipeNames
         headerView.recipeImageView.image = UIImage(named: recipe.recipeImages)
-        headerView.heartImageView.isHidden = !(recipe.recipeIsLiked) ? false : true
+        headerView.heartImageView.isHidden = (recipe.recipeIsLiked) ? false : true
         
     }
     
