@@ -12,7 +12,7 @@ class RecipeIngredientsCell: UITableViewCell {
 
     @IBOutlet var recipeIngredientsLabel: UILabel! {
         didSet {
-            recipeIngredientsLabel.numberOfLines = 0
+            recipeIngredientsLabel.numberOfLines = 8
         }
     }
         

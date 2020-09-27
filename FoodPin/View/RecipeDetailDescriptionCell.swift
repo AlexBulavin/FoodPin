@@ -12,7 +12,7 @@ class RecipeDetailDescriptionCell: UITableViewCell {
 
     @IBOutlet var recipeDescriptionLabel: UILabel! {
         didSet {
-            recipeDescriptionLabel.numberOfLines = 0
+            recipeDescriptionLabel.numberOfLines = 50
         }
     }
     

@@ -10,11 +10,12 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var recipe = Recipes()
-    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RecipeDetailHeaderView!
     
+    var recipe = Recipes()
+   
+    // MARK: - Detail View controller life cycle
     override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -46,12 +47,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
 
-
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailDescriptionCell.self), for: indexPath) as! RecipeDetailDescriptionCell
                 cell.recipeDescriptionLabel.text = recipe.recipeDescription
                 cell.selectionStyle = .none
                 return cell
+                
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientsCell.self), for: indexPath) as! RecipeIngredientsCell
                     cell.recipeIngredientsLabel.text = recipe.recipeIngredients
