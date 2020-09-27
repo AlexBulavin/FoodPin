@@ -12,7 +12,8 @@ class RecipeIngredientsCell: UITableViewCell {
 
     @IBOutlet var recipeIngredientsLabel: UILabel! {
         didSet {
-            recipeIngredientsLabel.numberOfLines = 8
+            recipeIngredientsLabel.numberOfLines = 50
+        
         }
     }
         

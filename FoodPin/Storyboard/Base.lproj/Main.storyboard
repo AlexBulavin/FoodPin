@@ -260,7 +260,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-1f-o9z">
-                                                    <rect key="frame" x="23" y="0.0" width="368" height="68"/>
+                                                    <rect key="frame" x="22" y="3" width="369" height="65"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Способ приготовления." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Yn-Bez">
                                                             <rect key="frame" x="0.0" y="0.0" width="193.5" height="20.5"/>
@@ -269,19 +269,22 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="recipeDescription" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
-                                                            <rect key="frame" x="0.0" y="60.5" width="134.5" height="7.5"/>
+                                                            <rect key="frame" x="0.0" y="60.5" width="134.5" height="4.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0pZ-6d-95a" firstAttribute="top" secondItem="05l-Yn-Bez" secondAttribute="bottom" constant="3" id="LJc-gQ-Y9x"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="CgH-1f-o9z" secondAttribute="bottom" constant="2" id="4RM-zJ-uiY"/>
-                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="leading" secondItem="r1R-4O-I9s" secondAttribute="leadingMargin" constant="3" id="aT4-D0-nwc"/>
-                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="top" secondItem="r1R-4O-I9s" secondAttribute="top" id="od3-cr-Fxh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CgH-1f-o9z" secondAttribute="trailing" constant="3" id="qt4-BS-pnu"/>
+                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="leading" secondItem="r1R-4O-I9s" secondAttribute="leadingMargin" constant="2" id="aT4-D0-nwc"/>
+                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="top" secondItem="r1R-4O-I9s" secondAttribute="top" constant="3" id="od3-cr-Fxh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CgH-1f-o9z" secondAttribute="trailingMargin" constant="3" id="qt4-BS-pnu" userLabel="trailingMargin = Stack View.trailingMargin"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -295,30 +298,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-hE-xNU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="75"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-hE-xNU">
+                                                    <rect key="frame" x="22" y="0.0" width="372" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
                                                             <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
-                                                            <rect key="frame" x="0.0" y="54.5" width="114" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
+                                                            <rect key="frame" x="0.0" y="54.5" width="85" height="18.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="g8h-6f-6Wp" secondAttribute="bottom" constant="4" id="QCa-0f-sAU"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="g8h-6f-6Wp" secondAttribute="trailing" constant="3" id="b7W-Kc-upc"/>
-                                                        <constraint firstItem="g8h-6f-6Wp" firstAttribute="top" secondItem="jBf-hE-xNU" secondAttribute="topMargin" id="ccU-Ld-IAQ"/>
-                                                        <constraint firstItem="g8h-6f-6Wp" firstAttribute="leading" secondItem="jBf-hE-xNU" secondAttribute="leadingMargin" constant="3" id="ieg-Ly-7MD"/>
+                                                        <constraint firstItem="g8h-6f-6Wp" firstAttribute="top" secondItem="344-75-r82" secondAttribute="bottom" constant="3" id="MbX-Rb-9Rp"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jBf-hE-xNU" secondAttribute="trailingMargin" id="1vL-M3-nXm"/>
+                                                <constraint firstAttribute="bottom" secondItem="jBf-hE-xNU" secondAttribute="bottom" constant="2" id="IoC-QC-NlU"/>
+                                                <constraint firstItem="jBf-hE-xNU" firstAttribute="leading" secondItem="uQC-be-PXv" secondAttribute="leadingMargin" constant="2" id="JNK-c1-HAz"/>
+                                                <constraint firstItem="jBf-hE-xNU" firstAttribute="top" secondItem="uQC-be-PXv" secondAttribute="top" id="V1Y-Ms-qLN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="recipeIngredientsLabel" destination="g8h-6f-6Wp" id="Xx6-2T-OzF"/>
