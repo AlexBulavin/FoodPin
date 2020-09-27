@@ -45,6 +45,14 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         navigationController?.hidesBarsOnSwipe = false
         
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     // MARK: - UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
