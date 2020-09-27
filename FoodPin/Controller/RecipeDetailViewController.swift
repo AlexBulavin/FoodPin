@@ -61,7 +61,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                             return cell
 
                         default:
-                            fatalError("Failed to instantiate the table view cell for detail view controller")
+                            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return 2 } То есть имеем 2 ячейки - одна для описания рецепта, вторая для перечисления ингредиентов.")
                         }
                     }
     
