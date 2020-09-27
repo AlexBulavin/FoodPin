@@ -9,44 +9,51 @@
 import UIKit
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-
-//    @IBOutlet var recipeImageView: UIImageView!
-//
-//    @IBOutlet var recipeNameLabel: UILabel!
-//    @IBOutlet var recipeDescriptionLabel: UILabel!
-//    @IBOutlet var ingredientsLabel: UILabel!
-//    @IBOutlet var recipeFaviritesIndicator: UIImageView!
-//    @IBOutlet var backButton: UINavigationItem!
+    
+    var recipe = Recipes()
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RecipeDetailHeaderView!
     
-    var recipe = Recipes()
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            
+            navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
+        // Configure header view
+            headerView.recipeName.text = recipe.recipeNames
+            headerView.recipeImageView.image = UIImage(named: recipe.recipeImages)
+            headerView.heartImageView.isHidden = (recipe.recipeIsLiked) ? false : true
+        
+        // Set the table view's delegate and data source
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Configure the table view's style
+        tableView.separatorStyle = .none
+            
+        }
+    // MARK: - UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
 
-//            case 0:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredients.self), for: indexPath) as! RecipeIngredients
-//                cell.recipeImageView.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//                cell.recipeNameLabel.text = recipes[indexPath.row].recipeNames
-//                cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
-//                return cell
+
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailDescriptionCell.self), for: indexPath) as! RecipeDetailDescriptionCell
                 cell.recipeDescriptionLabel.text = recipe.recipeDescription
                 cell.selectionStyle = .none
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredients.self), for: indexPath) as! RecipeIngredients
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientsCell.self), for: indexPath) as! RecipeIngredientsCell
                     cell.recipeIngredientsLabel.text = recipe.recipeIngredients
                     cell.selectionStyle = .none
 
@@ -58,21 +65,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        recipeImageView.image = UIImage(named: recipe.recipeImages)
-//        recipeNameLabel.text = recipe.recipeNames
-//        recipeDescriptionLabel.text = recipe.recipeDescription
-//        ingredientsLabel.text = recipe.recipeIngredients
-//        recipeFaviritesIndicator.isHidden = !recipe.recipeIsLiked //isHidden противоположно по значению recipeIsLiked. То есть если isHidden = true, то имидж не должен отображаться, а если false, то должен. Но в переменной recipeIsLiked true означает Liked и имидж нужно показать, а false означает не Liked и нужно скрыть.
-        
-        navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
-        headerView.recipeName.text = recipe.recipeNames
-        headerView.recipeImageView.image = UIImage(named: recipe.recipeImages)
-        headerView.heartImageView.isHidden = (recipe.recipeIsLiked) ? false : true
-        
-    }
+
     
     //Функция нажатия на экран (в любом месте). Подымает ActionSheet
 //    @IBAction func clickOnScreen(_ sender: UIButton) {

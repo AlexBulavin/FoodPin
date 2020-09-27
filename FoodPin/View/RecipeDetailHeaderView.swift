@@ -20,7 +20,7 @@ class RecipeDetailHeaderView: UIView {
     @IBOutlet var recipeImageView: UIImageView!
     @IBOutlet var recipeName: UILabel! {
         didSet {
-            recipeName.numberOfLines = 3
+            recipeName.numberOfLines = 0
         }
     }
     @IBOutlet var heartImageView: UIImageView! {

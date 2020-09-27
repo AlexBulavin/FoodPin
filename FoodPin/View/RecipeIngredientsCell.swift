@@ -1,5 +1,5 @@
 //
-//  RecipeIngredients.swift
+//  RecipeIngredientsCell.swift
 //  FoodPin
 //
 //  Created by Alex on 24.09.2020.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RecipeIngredients: UITableViewCell {
+class RecipeIngredientsCell: UITableViewCell {
 
     @IBOutlet var recipeIngredientsLabel: UILabel! {
         didSet {
-            recipeIngredientsLabel.numberOfLines = 8
+            recipeIngredientsLabel.numberOfLines = 0
         }
     }
         
