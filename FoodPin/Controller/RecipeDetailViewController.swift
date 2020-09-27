@@ -32,7 +32,18 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         // Configure the table view's style
         tableView.separatorStyle = .none
+        
+        //«customize navigation bar
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+
+        tableView.contentInsetAdjustmentBehavior = .never //В этой строке говорим iOS, чтобы navigation bar не ограничивала content area при свайпе снизу вверх.
             
+        //Запрещаем скрытие navigation Bar
+        navigationController?.hidesBarsOnSwipe = false
+        
         }
     // MARK: - UITableViewDataSource methods
     
