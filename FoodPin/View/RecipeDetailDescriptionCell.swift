@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeDetailDescription: UITableViewCell {
+class RecipeDetailDescriptionCell: UITableViewCell {
 
     @IBOutlet var recipeDescriptionLabel: UILabel! {
         didSet {
