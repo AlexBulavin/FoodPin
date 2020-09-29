@@ -96,7 +96,7 @@ class RecipesTableViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
-            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont ]
+            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 90.0, green: 45.0, blue: 128.0, alpha: 1.0), NSAttributedString.Key.font: customFont ]
         }
         
         navigationController?.hidesBarsOnSwipe = true
@@ -146,10 +146,10 @@ class RecipesTableViewController: UITableViewController {
             completionHandler(true)
         }
         
-        deleteAction.backgroundColor = UIColor(red: 48.0/255.0, green: 48.0/255.0 , blue: 75.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 48.0, green: 48.0, blue: 75.0, alpha: 1.0)
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.title = "Удалить"
-        shareAction.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)
+        shareAction.backgroundColor = UIColor(red: 90.0, green: 45.0, blue: 128.0, alpha: 1.0)
         shareAction.image = UIImage(systemName: "square.and.arrow.up")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
@@ -170,7 +170,7 @@ class RecipesTableViewController: UITableViewController {
             completionHandler(true)
         }
         checkAction.image = (checkAction.image != nil) ? UIImage(systemName: "checkmark") : UIImage(systemName: "arrow.uturn.left")
-        checkAction.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0)
+        checkAction.backgroundColor = UIColor(red: 90.0, green: 45.0, blue: 128.0, alpha: 1.0) //После добавления файла UIColor+Ext в Extension группе можно упростить код и вместо UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) использовать эту запись
 
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkAction])
         return swipeConfiguration
