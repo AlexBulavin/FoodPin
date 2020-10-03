@@ -87,16 +87,19 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                         }
                     }
     
-    
-
-    
-    //Функция нажатия на экран (в любом месте). Подымает ActionSheet
+    //Функция нажатия на экран (только на ячейках). Подымает ActionSheet
 //    @IBAction func clickOnScreen(_ sender: UIButton) {
  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
         optionMenu.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) //Изменить цвет текста сообщения на фирменный 90;45;128
         optionMenu.view.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 0.85)//Изменить цвет фона сообщения
-
+    
+    if let popoverController = optionMenu.popoverPresentationController {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            popoverController.sourceView = cell
+            popoverController.sourceRect = cell.bounds
+        }
+    }
 
         // Add actions to the menu
          let callActionHandler = { (action:UIAlertAction!) -> Void in

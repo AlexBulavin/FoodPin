@@ -94,16 +94,15 @@ class RecipesTableViewController: UITableViewController {
         //Customizing the Navigation Bar. Customizing the background of the navigation bar and make it transparent.
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        print("Точка setBackgroundImage(UIImage() пройдена")
+        //print("Точка setBackgroundImage(UIImage() пройдена")
         navigationController?.navigationBar.shadowImage = UIImage()
-        print("Точка navigationController?.navigationBar.shadowImage = UIImage() пройдена")
+        //print("Точка navigationController?.navigationBar.shadowImage = UIImage() пройдена")
         //if self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "Rubik-VariableFont_wght", size: 20)!]
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 90.0 / 255.0, green: 45.0 / 255.0, blue: 128.0 / 255.0, alpha: 1.0), NSAttributedString.Key.font: customFont ]
-            print("Точка настройки шрифта и цвета пройдена")
+            //print("Точка настройки шрифта и цвета пройдена")
             
-            //"Resources/Fonts/Rubik/static/Rubik-Medium.ttf"
         }
         
         navigationController?.hidesBarsOnSwipe = true
