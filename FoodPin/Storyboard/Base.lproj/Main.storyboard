@@ -329,7 +329,7 @@
                                             <outlet property="recipeIngredientsLabel" destination="g8h-6f-6Wp" id="Xx6-2T-OzF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddressCell" rowHeight="75" id="z6E-2R-XPN" customClass="RecipeIngredientsCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailSeparatorCell" rowHeight="75" id="z6E-2R-XPN" customClass="RecipeDetailSeparatorCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="552" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6E-2R-XPN" id="6T5-nQ-Ygo">
@@ -362,8 +362,11 @@
                                                 <constraint firstItem="ZDj-H8-wPg" firstAttribute="leading" secondItem="6T5-nQ-Ygo" secondAttribute="leading" constant="18" id="d6Q-JC-xtj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="AddressLabel" destination="hbs-Yi-BbO" id="Eh4-ZR-Fjk"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeIngredientsCell" rowHeight="215" id="OeD-pc-upZ" userLabel="MapCell" customClass="RecipeIngredientsCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailMapCell" rowHeight="215" id="OeD-pc-upZ" userLabel="MapCell" customClass="RecipeDetailMapCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="627" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OeD-pc-upZ" id="Jld-ri-hf9">
@@ -384,6 +387,9 @@
                                                 <constraint firstItem="a7v-Jk-oCE" firstAttribute="leading" secondItem="Jld-ri-hf9" secondAttribute="leading" id="edA-E6-E8k"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mapView" destination="a7v-Jk-oCE" id="Eqx-Iw-lwu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

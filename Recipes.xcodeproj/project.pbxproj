@@ -10,6 +10,8 @@
 		FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */; };
 		FA5CBEDB252300FA0035E9D1 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBEDA252300FA0035E9D1 /* UIColor+Ext.swift */; };
 		FA5CF8DC25290BC4009CFE2F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5CF8DB25290BC4009CFE2F /* MapKit.framework */; };
+		FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF8DD2529147A009CFE2F /* RecipeDetailSeparatorCell.swift */; };
+		FA5CF8E0252915CA009CFE2F /* RecipeDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF8DF252915CA009CFE2F /* RecipeDetailMapCell.swift */; };
 		FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E0A24232CB100198145 /* AppDelegate.swift */; };
 		FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA617E0C24232CB100198145 /* SceneDelegate.swift */; };
 		FA617E1224232CB100198145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA617E1024232CB100198145 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		FA5CBEDA252300FA0035E9D1 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		FA5CF8DB25290BC4009CFE2F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FA5CF8DD2529147A009CFE2F /* RecipeDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailSeparatorCell.swift; sourceTree = "<group>"; };
+		FA5CF8DF252915CA009CFE2F /* RecipeDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailMapCell.swift; sourceTree = "<group>"; };
 		FA617E0724232CB100198145 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA617E0A24232CB100198145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA617E0C24232CB100198145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */,
 				FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */,
 				FABAF294251C687800F35579 /* RecipeIngredientsCell.swift */,
+				FA5CF8DD2529147A009CFE2F /* RecipeDetailSeparatorCell.swift */,
+				FA5CF8DF252915CA009CFE2F /* RecipeDetailMapCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,9 +331,11 @@
 				FABAF291251C5A9F00F35579 /* RecipeDetailHeaderView.swift in Sources */,
 				FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */,
 				FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */,
+				FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */,
 				FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */,
 				FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */,
 				FA5CBEDB252300FA0035E9D1 /* UIColor+Ext.swift in Sources */,
+				FA5CF8E0252915CA009CFE2F /* RecipeDetailMapCell.swift in Sources */,
 				FABAF295251C687800F35579 /* RecipeIngredientsCell.swift in Sources */,
 				FABAF293251C66D800F35579 /* RecipeDetailDescriptionCell.swift in Sources */,
 			);

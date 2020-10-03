@@ -65,7 +65,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,9 +81,20 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientsCell.self), for: indexPath) as! RecipeIngredientsCell
                     cell.recipeIngredientsLabel.text = recipe.recipeIngredients
                     cell.selectionStyle = .none
-
-                            return cell
-
+                return cell
+                
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailSeparatorCell.self), for: indexPath) as! RecipeDetailSeparatorCell
+                    cell.AddressLabel.text = "Адрес"
+                    cell.selectionStyle = .none
+                return cell
+                
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailMapCell.self), for: indexPath) as! RecipeDetailMapCell
+                    cell.selectionStyle = .none
+                
+                return cell
+                
                         default:
                             fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return 2 } То есть имеем 2 ячейки - одна для описания рецепта, вторая для перечисления ингредиентов.")
                         }
@@ -92,6 +103,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     //Функция нажатия на экран (только на ячейках). Подымает ActionSheet
 //    @IBAction func clickOnScreen(_ sender: UIButton) {
  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+
+    case 0...1:
         let optionMenu = UIAlertController(title: nil, message: "Что Вы хотите сделать?", preferredStyle: .actionSheet) //.alert) это опциональное оформление сообщения. Алерт или actionSheet
         optionMenu.view.tintColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 1.0) //Изменить цвет текста сообщения на фирменный 90;45;128
         optionMenu.view.backgroundColor = UIColor(red: 90.0/255.0, green: 45.0/255.0 , blue: 128.0/255.0, alpha: 0.85)//Изменить цвет фона сообщения
@@ -156,6 +170,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
          // Display the menu
          present(optionMenu, animated: true, completion: nil)
 
+            return
+            
+                    default:
+                        fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return 2 } То есть имеем 2 ячейки - одна для описания рецепта, вторая для перечисления ингредиентов.")
+                    }
+       
     }
 
 }
