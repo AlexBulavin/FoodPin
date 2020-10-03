@@ -43,6 +43,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             
         //Запрещаем скрытие navigation Bar
         navigationController?.hidesBarsOnSwipe = false
+        UIApplication.shared.statusBarStyle = .lightContent
         
         }
     
@@ -51,10 +52,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
 
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
+//        var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent
+//          }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent
-    }
+  
     
     // MARK: - UITableViewDataSource methods
     

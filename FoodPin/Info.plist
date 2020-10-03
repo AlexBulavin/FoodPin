@@ -65,6 +65,6 @@
 		<string>Rubik-Medium.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

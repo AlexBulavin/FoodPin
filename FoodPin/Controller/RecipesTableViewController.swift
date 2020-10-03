@@ -112,6 +112,8 @@ class RecipesTableViewController: UITableViewController {
         super.viewWillAppear(animated)
 
         navigationController?.hidesBarsOnSwipe = true
+        
+        UIApplication.shared.statusBarStyle = .darkContent
     }
     
     override func didReceiveMemoryWarning() {
