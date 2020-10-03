@@ -53,6 +53,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent
+    }
+    
     // MARK: - UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
