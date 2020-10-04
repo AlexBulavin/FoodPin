@@ -91,7 +91,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailMapCell.self), for: indexPath) as! RecipeDetailMapCell
+                    cell.configure(location: recipe.recipeAuthorLocations)
                     cell.selectionStyle = .none
+                print("Локация", recipe.recipeAuthorLocations)
                 
                 return cell
                 
@@ -179,14 +181,15 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
          present(optionMenu, animated: true, completion: nil)
 
             return
-        case 2...3: // Если нажали на ячейки 2 или 3 не подымаем UIAlertAction
+        case 2...3: // Если нажали на ячейки 2 или 3 не подымаем UIAlertAction, а переходим на экран с полной картой и отображением ресторана, представившего этот рецепт.
             // MARK: - Готовим segue и перебрасываем в него данные
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 if segue.identifier == "showMap" {
-                    if let indexPath = tableView.indexPathForSelectedRow {
-                        let destinationController = segue.destination as! RecipeDetailMapCell
+                    //if let indexPath = tableView.indexPathForSelectedRow {
+                        let destinationController = segue.destination as! MapViewController
+                    destinationController.recipe = recipe
 
-                    }
+                    //}
                 }
             }
             return
