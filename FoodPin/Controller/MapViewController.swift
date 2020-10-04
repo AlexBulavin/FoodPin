@@ -47,5 +47,11 @@ class MapViewController: UIViewController {
 })
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        navigationController?.hidesBarsOnSwipe = true
+        
+        UIApplication.shared.statusBarStyle = .darkContent
+    }
 }

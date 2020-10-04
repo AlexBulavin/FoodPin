@@ -373,7 +373,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7v-Jk-oCE">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7v-Jk-oCE">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="215" id="tLn-RV-XKI"/>
@@ -381,10 +381,10 @@
                                                 </mapView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="a7v-Jk-oCE" secondAttribute="bottom" id="2Ch-DB-QrO"/>
+                                                <constraint firstItem="a7v-Jk-oCE" firstAttribute="bottom" secondItem="Jld-ri-hf9" secondAttribute="bottom" id="2Ch-DB-QrO"/>
                                                 <constraint firstItem="a7v-Jk-oCE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jld-ri-hf9" secondAttribute="top" id="GqO-b7-zdK"/>
-                                                <constraint firstAttribute="trailing" secondItem="a7v-Jk-oCE" secondAttribute="trailing" id="X9O-UU-rib"/>
-                                                <constraint firstItem="a7v-Jk-oCE" firstAttribute="leading" secondItem="Jld-ri-hf9" secondAttribute="leading" id="edA-E6-E8k"/>
+                                                <constraint firstItem="a7v-Jk-oCE" firstAttribute="trailing" secondItem="Jld-ri-hf9" secondAttribute="trailing" id="X9O-UU-rib"/>
+                                                <constraint firstAttribute="leading" secondItem="a7v-Jk-oCE" secondAttribute="leading" id="edA-E6-E8k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -435,9 +435,7 @@
                             <constraint firstItem="NFH-0g-Pzk" firstAttribute="leading" secondItem="aIY-l0-pRJ" secondAttribute="leading" id="uTs-Ak-CNZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XMg-TL-Pas">
-                        <barButtonItem key="backBarButtonItem" title="Recipe book" image="back" id="Ljy-6T-LP2"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="XMg-TL-Pas"/>
                     <connections>
                         <outlet property="mapView" destination="NFH-0g-Pzk" id="TPu-GW-mBl"/>
                     </connections>
@@ -466,7 +464,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="29" height="17"/>
         <image name="caskpubkitchen" width="480" height="480"/>
         <image name="donostia" width="480" height="480"/>
         <image name="heart-tick" width="22" height="21"/>

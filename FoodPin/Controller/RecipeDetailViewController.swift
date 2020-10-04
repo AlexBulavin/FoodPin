@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -90,9 +91,10 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 return cell
                 
             case 3:
+                                
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailMapCell.self), for: indexPath) as! RecipeDetailMapCell
-                    cell.configure(location: recipe.recipeAuthorLocations)//Control point 94
-                print("RecipeDetailViewController Control point 94", recipe.recipeAuthorLocations)
+                cell.configure(location: recipe.recipeAuthorLocations)//Control point 94
+                
                     cell.selectionStyle = .none
                 
                 return cell

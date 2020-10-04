@@ -16,8 +16,9 @@ class Recipes {
     var recipeType: String
     var recipeIngredients: String
     var recipeIsLiked: Bool
+    var recipeRating: String
 
-    init(name: String, image: String, description: String, recipeAuthorLocations: String, recipeType: String, ingredients: String, isLiked: Bool) {
+    init(name: String, image: String, description: String, recipeAuthorLocations: String, recipeType: String, ingredients: String, isLiked: Bool, recipeRating: String) {
         self.recipeNames = name
         self.recipeDescription = description
         self.recipeType = recipeType
@@ -25,9 +26,10 @@ class Recipes {
         self.recipeImages = image
         self.recipeIngredients = ingredients
         self.recipeIsLiked = isLiked
+        self.recipeRating = recipeRating
     }
 
     convenience init() {
-        self.init(name: "", image: "", description: "", recipeAuthorLocations: "", recipeType: "", ingredients: "", isLiked: false)
+        self.init(name: "", image: "", description: "", recipeAuthorLocations: "", recipeType: "", ingredients: "", isLiked: false, recipeRating: "*")
     }
 }
