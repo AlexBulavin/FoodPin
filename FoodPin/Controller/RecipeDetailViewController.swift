@@ -100,8 +100,20 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                         }
                     }
     
-    //Функция нажатия на экран (только на ячейках). Подымает ActionSheet
-//    @IBAction func clickOnScreen(_ sender: UIButton) {
+    // MARK: - Готовим segue и перебрасываем в него данные
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RecipeDetailMapCell
+
+            }
+        }
+    }
+    
+    
+    // MARK: - Функция нажатия на экран (только на ячейках с описанием рецепта и ингредиентами). Подымает ActionSheet
+    
+//    @IBAction func clickOnScreen(_ sender: UIButton) { возможно задействуем эту кнопку позже при клике на header
  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.row {
 
@@ -173,9 +185,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             return
             
                     default:
-                        fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return 2 } То есть имеем 2 ячейки - одна для описания рецепта, вторая для перечисления ингредиентов.")
+                        fatalError("Нажатие на ячейку с Map")
                     }
-       
     }
-
 }
