@@ -21,7 +21,7 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
-        print("Print from MapViewController value of recipe.recipeAuthorLocations", recipe.recipeAuthorLocations)
+        print("MapViewController Control point 24", recipe.recipeAuthorLocations) //Какая-то проблема с передачей данных из recipe.recipeAuthorLocations они не приходят
         geoCoder.geocodeAddressString(recipe.recipeAuthorLocations, completionHandler: { placemarks, error in
         if let error = error { print(error)
         return

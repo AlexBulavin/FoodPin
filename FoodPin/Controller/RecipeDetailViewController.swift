@@ -93,7 +93,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailMapCell.self), for: indexPath) as! RecipeDetailMapCell
                     cell.configure(location: recipe.recipeAuthorLocations)
                     cell.selectionStyle = .none
-                print("Локация из RecipeDetailViewController func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {", recipe.recipeAuthorLocations)
+                print("RecipeDetailViewController Control point 96", recipe.recipeAuthorLocations) //Control point 96
                 
                 return cell
                 
@@ -183,18 +183,20 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             return
         case 2...3: // Если нажали на ячейки 2 или 3 не подымаем UIAlertAction, а переходим на экран с полной картой и отображением ресторана, представившего этот рецепт.
             // MARK: - Готовим segue и перебрасываем в него данные
-            print("Print from RecipeDetailViewController func prepare(for segue: UIStoryboardSegue, sender: Any?) { if segue.identifier == 'showMap {", recipe.recipeAuthorLocations)
+            print("RecipeDetailViewController Control point 186", recipe.recipeAuthorLocations) //Control point 186
             
-            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                if segue.identifier == "showMap" {
-                        let destinationController = segue.destination as! MapViewController
-                    destinationController.recipe = recipe
-                    
-                }
-            }
+
             return
                     default:
                         fatalError("Ошибка при нажатии на ячейку с Map")
                     }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    if segue.identifier == "showMap" {
+                            let destinationController = segue.destination as! MapViewController
+                        destinationController.recipe = recipe //Control point 191
+                        print("RecipeDetailViewController Control point 198", recipe.recipeAuthorLocations)
+    
+                    }
+                }
 }
