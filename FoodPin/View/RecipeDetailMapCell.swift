@@ -28,7 +28,7 @@ class RecipeDetailMapCell: UITableViewCell {
     func configure(location: String) {
         // Get location
         let geoCoder = CLGeocoder()
-        print(location)
+        print("RecipeDetailMapCell control point 31", location) //Control point 31
         geoCoder.geocodeAddressString(location, completionHandler: { placemarks, error in
             if let error = error { print(error.localizedDescription)
                 return

@@ -192,7 +192,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
             let destinationController = segue.destination as! MapViewController
-            destinationController.recipe = recipe //Control point 197
+            destinationController.recipe = recipe
             
         }
     }
