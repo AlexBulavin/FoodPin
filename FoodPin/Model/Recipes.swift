@@ -17,7 +17,7 @@ class Recipes {
     var recipeIngredients: String
     var recipeIsLiked: Bool
     var recipeRating: String
-
+    
     init(name: String, image: String, description: String, recipeAuthorLocations: String, recipeType: String, ingredients: String, isLiked: Bool, recipeRating: String) {
         self.recipeNames = name
         self.recipeDescription = description
@@ -28,7 +28,7 @@ class Recipes {
         self.recipeIsLiked = isLiked
         self.recipeRating = recipeRating
     }
-
+    
     convenience init() {
         self.init(name: "", image: "", description: "", recipeAuthorLocations: "", recipeType: "", ingredients: "", isLiked: false, recipeRating: "*")
     }

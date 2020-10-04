@@ -9,7 +9,7 @@
 import UIKit
 
 class RecipeDetailDescriptionCell: UITableViewCell {
-
+    
     @IBOutlet var recipeDescriptionLabel: UILabel! {
         didSet {
             recipeDescriptionLabel.numberOfLines = 50
@@ -20,11 +20,11 @@ class RecipeDetailDescriptionCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
