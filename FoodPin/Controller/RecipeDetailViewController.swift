@@ -100,16 +100,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                         }
                     }
     
-    // MARK: - Готовим segue и перебрасываем в него данные
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMap" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destination as! RecipeDetailMapCell
 
-            }
-        }
-    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     // MARK: - Функция нажатия на экран (только на ячейках с описанием рецепта и ингредиентами). Подымает ActionSheet
     
@@ -183,9 +179,19 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
          present(optionMenu, animated: true, completion: nil)
 
             return
-            
+        case 2...3: // Если нажали на ячейки 2 или 3 не подымаем UIAlertAction
+            // MARK: - Готовим segue и перебрасываем в него данные
+            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "showMap" {
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        let destinationController = segue.destination as! RecipeDetailMapCell
+
+                    }
+                }
+            }
+            return
                     default:
-                        fatalError("Нажатие на ячейку с Map")
+                        fatalError("Ошибка при нажатии на ячейку с Map")
                     }
     }
 }
