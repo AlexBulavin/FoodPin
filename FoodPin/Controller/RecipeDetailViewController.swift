@@ -194,6 +194,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             let destinationController = segue.destination as! MapViewController
             destinationController.recipe = recipe
             
+            let backItem = UIBarButtonItem()
+                backItem.title = "Recipe book"
+                navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+            
+            
         }
     }
 }

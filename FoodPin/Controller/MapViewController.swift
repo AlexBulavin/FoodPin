@@ -56,31 +56,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.hidesBarsOnSwipe = true
+
         
         UIApplication.shared.statusBarStyle = .darkContent
         
-//        let navStyles = UINavigationBar.appearance()
-//        // This will set the color of the text for the back buttons.
-//        navStyles.tintColor = .black
-//        // This will set the background color for navBar
-//        //navStyles.barTintColor = .black
+
         self.navigationController!.navigationBar.tintColor = UIColor.black;
         
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.hidesBarsOnSwipe = true
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-//        let navStyles = UINavigationBar.appearance()
-//        // This will set the color of the text for the back buttons.
-//        navStyles.tintColor = .black
-//        // This will set the background color for navBar
-//        //navStyles.barTintColor = .black
         self.navigationController!.navigationBar.tintColor = UIColor.white;
+
         
     }
     
