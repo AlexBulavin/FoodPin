@@ -63,26 +63,89 @@ class RecipesTableViewController: UITableViewController {
             }
         }
     }
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "datacell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeTableViewCell
-        // Configure the cell...
-        cell.nameLabel?.text = recipes[indexPath.row].recipeNames
-        cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-        cell.locationLabel?.text = recipes[indexPath.row].recipeRating
-        cell.typeLabel?.text = recipes[indexPath.row].recipeType
-        
-        
-        cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
-        
-        return cell }
     
-    override func numberOfSections(in tableView: UITableView) -> Int { return 1
+    // MARK: - UITableViewDataSource methods
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count }
+        return recipes.count + 1 }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceTableViewCell.self), for: indexPath) as! DeviceTableViewCell
+            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+            cell.DeviceType?.text = recipes[indexPath.row].recipeType
+            //cell.recipeDescriptionLabel.text = recipe.recipeDescription
+            cell.selectionStyle = .none
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
+            // Configure the cell...
+            cell.nameLabel?.text = recipes[indexPath.row].recipeNames
+            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+            cell.locationLabel?.text = recipes[indexPath.row].recipeRating
+            cell.typeLabel?.text = recipes[indexPath.row].recipeType
+            cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
+            
+            cell.selectionStyle = .none
+            return cell
+            
+//        case 2:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailSeparatorCell.self), for: indexPath) as! RecipeDetailSeparatorCell
+//            cell.AddressLabel.text = "Адрес: " + recipe.recipeAuthorLocations
+//            cell.selectionStyle = .none
+//            return cell
+//
+//        case 3:
+//
+//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailMapCell.self), for: indexPath) as! RecipeDetailMapCell
+//            cell.configure(location: recipe.recipeAuthorLocations)
+//
+//            cell.selectionStyle = .none
+//
+//            return cell
+            
+        default:
+            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return 2 } То есть имеем 2 ячейки - одна для описания рецепта, вторая для перечисления ингредиентов.")
+        }
+    }
+    
+    
+    // MARK: - Table view data source
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cellIdentifier1 = "datacell1"
+//        let cell1 = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1, for: indexPath) as! DeviceTableViewCell
+//        // Configure the cell...
+////        cell1.nameLabel?.text = recipes[indexPath.row].recipeNames
+//        cell1.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+//        cell1.DeviceType?.text = recipes[indexPath.row].recipeType
+//
+//
+//        return cell1 }
+        
+//        let cellIdentifier = "datacell"
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeTableViewCell
+//        // Configure the cell...
+//        cell.nameLabel?.text = recipes[indexPath.row].recipeNames
+//        cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+//        cell.locationLabel?.text = recipes[indexPath.row].recipeRating
+//        cell.typeLabel?.text = recipes[indexPath.row].recipeType
+//
+//
+//        cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
+//
+//        return cell }
+    
+
+    
+
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
