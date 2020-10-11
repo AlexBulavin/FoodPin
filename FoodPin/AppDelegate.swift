@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let backButtonImage = UIImage(systemName: "arrow.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)) //Приведён код для учебника iOS 13. Для версии учебника iOS 12 это будет UIImage(named: "back")
         UINavigationBar.appearance().backIndicatorImage = backButtonImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
-        
-        //UIApplication.shared.statusBarStyle = .lightContent
+        //UINavigationBar.appearance().barStyle = .blackOpaque
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }
