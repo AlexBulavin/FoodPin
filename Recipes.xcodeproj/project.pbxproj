@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */; };
-		FA51CE642533668000532B82 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51CE632533668000532B82 /* DeviceTableViewCell.swift */; };
+		FA51CE642533668000532B82 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51CE632533668000532B82 /* DeviceCollectionViewCell.swift */; };
+		FA526EA725337D25008FE633 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA526EA625337D25008FE633 /* Device.swift */; };
 		FA5CBEDB252300FA0035E9D1 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CBEDA252300FA0035E9D1 /* UIColor+Ext.swift */; };
 		FA5CF8DC25290BC4009CFE2F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5CF8DB25290BC4009CFE2F /* MapKit.framework */; };
 		FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5CF8DD2529147A009CFE2F /* RecipeDetailSeparatorCell.swift */; };
@@ -48,7 +49,8 @@
 
 /* Begin PBXFileReference section */
 		FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
-		FA51CE632533668000532B82 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		FA51CE632533668000532B82 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA526EA625337D25008FE633 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		FA5CBEDA252300FA0035E9D1 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		FA5CF8DB25290BC4009CFE2F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FA5CF8DD2529147A009CFE2F /* RecipeDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailSeparatorCell.swift; sourceTree = "<group>"; };
@@ -198,7 +200,7 @@
 		FABAF2892517C78B00F35579 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA51CE632533668000532B82 /* DeviceTableViewCell.swift */,
+				FA51CE632533668000532B82 /* DeviceCollectionViewCell.swift */,
 				FA617E202423386E00198145 /* RecipeTableViewCell.swift */,
 				FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */,
 				FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */,
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				FABAF2862517A64600F35579 /* Recipes.swift */,
+				FA526EA625337D25008FE633 /* Device.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,10 +341,11 @@
 				FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */,
 				FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */,
 				FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */,
+				FA526EA725337D25008FE633 /* Device.swift in Sources */,
 				FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */,
 				FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */,
 				FA5CBEDB252300FA0035E9D1 /* UIColor+Ext.swift in Sources */,
-				FA51CE642533668000532B82 /* DeviceTableViewCell.swift in Sources */,
+				FA51CE642533668000532B82 /* DeviceCollectionViewCell.swift in Sources */,
 				FA5CF8E0252915CA009CFE2F /* RecipeDetailMapCell.swift in Sources */,
 				FABAF295251C687800F35579 /* RecipeIngredientsCell.swift in Sources */,
 				FABAF293251C66D800F35579 /* RecipeDetailDescriptionCell.swift in Sources */,
