@@ -115,6 +115,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHZ-OX-TER" userLabel="DeviceClickButton">
+                                                                <rect key="frame" x="8" y="10" width="141" height="126"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <connections>
+                                                                    <action selector="deviceButtonTappedWithSender:" destination="TVL-f6-mGp" eventType="touchUpInside" id="ZmA-7z-bfa"/>
+                                                                </connections>
+                                                            </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="19l-fz-wx3">
                                                                 <rect key="frame" x="19" y="10" width="110" height="126"/>
                                                                 <subviews>
@@ -150,6 +157,9 @@
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="157" height="155"/>
+                                                    <connections>
+                                                        <outlet property="deviceClickButton" destination="HHZ-OX-TER" id="Pdv-WT-7vV"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B4X-te-cID">
                                                     <rect key="frame" x="167" y="-13" width="157" height="155"/>

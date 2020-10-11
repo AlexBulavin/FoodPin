@@ -52,7 +52,18 @@ class RecipesTableViewController: UITableViewController {
         Recipes(name: "CASK Pub and Kitchen", image: "caskpubkitchen", description: "Рецепт 20 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.", recipeAuthorLocations: "Екатеринбург, Россия", recipeType: "Греческая", ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★★★⭐︎⭐︎"),
     ]
     
-    private var deviceSelected = [Device]()
+    private var deviceSelected: [Device] = [
+        Device(deviceType: "deviceType1", deviceUserName: "deviceUserName1", deviceImage: "deviceImage1", isSelected: false),
+        Device(deviceType: "deviceType2", deviceUserName: "deviceUserName2", deviceImage: "deviceImage2", isSelected: false),
+        Device(deviceType: "deviceType3", deviceUserName: "deviceUserName3", deviceImage: "deviceImage3", isSelected: false),
+        Device(deviceType: "deviceType4", deviceUserName: "deviceUserName4", deviceImage: "deviceImage4", isSelected: false),
+        Device(deviceType: "deviceType5", deviceUserName: "deviceUserName5", deviceImage: "deviceImage5", isSelected: false),
+        Device(deviceType: "deviceType6", deviceUserName: "deviceUserName6", deviceImage: "deviceImage6", isSelected: false),
+        Device(deviceType: "deviceType7", deviceUserName: "deviceUserName7", deviceImage: "deviceImage7", isSelected: false),
+        Device(deviceType: "deviceType8", deviceUserName: "deviceUserName8", deviceImage: "deviceImage8", isSelected: false),
+        Device(deviceType: "deviceType9", deviceUserName: "deviceUserName9", deviceImage: "deviceImage9", isSelected: false),
+    ]
+        
     
     // MARK: - Готовим segue и перебрасываем в него данные
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,6 +162,9 @@ class RecipesTableViewController: UITableViewController {
         }
         
         navigationController?.hidesBarsOnSwipe = true
+        
+        collectionView.backgroundColor = UIColor.clear
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -246,20 +260,21 @@ extension RecipesTableViewController: UICollectionViewDelegate, UICollectionView
         
         // Configure the cell
        
-        cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-        cell.DeviceType?.text = recipes[indexPath.row].recipeType
-        
-        //cell.delegate = self
+        cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
+        cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
+        cell.isTaped = deviceSelected[indexPath.row].isSelected
+        cell.delegate = self
         
         return cell
     }
 }
 
 extension RecipesTableViewController: DeviceCollectionCellDelegate {
-    func didSelectDeviceButtonPressed(cell: DeviceCollectionViewCell) {
+    
+    func didDeviceButtonPressed(cell: DeviceCollectionViewCell) {
         if let indexPath = collectionView.indexPath(for: cell) {
-            deviceSelected[indexPath.row].isLiked = deviceSelected[indexPath.row].isLiked ? false : true
-            //cell.isLiked = trips[indexPath.row].isLiked
+            deviceSelected[indexPath.row].isSelected = deviceSelected[indexPath.row].isSelected ? false : true
+            cell.isSelected = deviceSelected[indexPath.row].isSelected
             
             // Update the trip on Parse
 //            trips[indexPath.row].toPFObject().saveInBackground(block: { (success, error) -> Void in
@@ -273,7 +288,7 @@ extension RecipesTableViewController: DeviceCollectionCellDelegate {
     }
 }
 
-extension TripViewController: UIGestureRecognizerDelegate {
+extension RecipesTableViewController: UIGestureRecognizerDelegate {
     
     func handleSwipe(gesture: UISwipeGestureRecognizer) {
         let point = gesture.location(in: self.collectionView)
@@ -281,7 +296,7 @@ extension TripViewController: UIGestureRecognizerDelegate {
         if (gesture.state == UIGestureRecognizerState.ended) {
             if let indexPath = collectionView.indexPathForItem(at: point) {
                 // Remove trip from Parse, array and collection view
-                trips[indexPath.row].toPFObject().deleteInBackground(block: { (success, error) -> Void in
+                deviceSelected[indexPath.row].toPFObject().deleteInBackground(block: { (success, error) -> Void in
                     if (success) {
                         print("Successfully removed the trip")
                     } else {
@@ -289,7 +304,7 @@ extension TripViewController: UIGestureRecognizerDelegate {
                         return
                     }
                     
-                    self.trips.remove(at: indexPath.row)
+                    self.deviceSelected.remove(at: indexPath.row)
                     self.collectionView.deleteItems(at: [indexPath])
                 })
             }

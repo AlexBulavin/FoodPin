@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DeviceCollectionCellDelegate {
-    func didSelectDeviceButtonPressed(cell: DeviceCollectionViewCell)
+    func didDeviceButtonPressed(cell: DeviceCollectionViewCell)
 }
 class DeviceCollectionViewCell: UICollectionViewCell {
     
@@ -19,6 +19,13 @@ class DeviceCollectionViewCell: UICollectionViewCell {
             DeviceImageView.layer.cornerRadius = 8.0
             DeviceImageView.clipsToBounds = true
         }
+    }
+    var delegate: DeviceCollectionCellDelegate?
+    
+    @IBOutlet var deviceClickButton: UIButton!
+    
+    @IBAction func deviceButtonTapped(sender: AnyObject) {
+        delegate?.didDeviceButtonPressed(cell: self)
     }
     
     @IBOutlet var DeviceType: UILabel!
@@ -33,5 +40,15 @@ class DeviceCollectionViewCell: UICollectionViewCell {
 //
 //        // Configure the view for the selected state
 //    }
+    var isTaped:Bool = false  {
+        didSet {
+            if isTaped {
+                deviceClickButton.setImage(UIImage(named: "selectionContur"), for: .normal) //Если выбран прибор, то на кнопке под ним отображаем контурную иконку выбора.
+                //Иконки selectionContur на 11.10.2020 нет
+            } else {
+                deviceClickButton.setImage(UIImage(named: ""), for: .normal) //Если прибор не выбран, то на кнопке под ним ничего не отображаем
+            }
+        }
+    }
     
 }

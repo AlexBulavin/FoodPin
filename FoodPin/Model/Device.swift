@@ -12,6 +12,6 @@ import UIKit
 struct Device {
     var deviceType = ""
     var deviceUserName = ""
-    var deviceImage: UIImage?
+    var deviceImage = ""
     var isSelected = false
 }
