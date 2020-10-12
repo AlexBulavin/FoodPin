@@ -91,7 +91,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deviceCell" rowHeight="151" id="JHu-De-kWA" userLabel="datacell1" customClass="DeviceCollectionViewCell" customModule="FoodPin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deviceCell" rowHeight="151" id="JHu-De-kWA" customClass="DeviceCollectionViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JHu-De-kWA" id="PNg-Nq-bMM">
@@ -161,22 +161,6 @@
                                                         <outlet property="deviceClickButton" destination="HHZ-OX-TER" id="Pdv-WT-7vV"/>
                                                     </connections>
                                                 </collectionViewCell>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B4X-te-cID">
-                                                    <rect key="frame" x="167" y="-13" width="157" height="155"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJR-yU-4D3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </collectionViewCellContentView>
-                                                </collectionViewCell>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aZf-Wh-SzV">
-                                                    <rect key="frame" x="334" y="-13" width="157" height="155"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hJ9-Ml-GUD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </collectionViewCellContentView>
-                                                </collectionViewCell>
                                             </cells>
                                             <connections>
                                                 <outlet property="dataSource" destination="6Pa-qi-2Kd" id="bBj-1i-I0C"/>
@@ -192,10 +176,6 @@
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="top" secondItem="PNg-Nq-bMM" secondAttribute="top" constant="11" id="u4T-Vs-leY"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="DeviceImageView" destination="lnr-Ob-JH3" id="jGv-Xe-f9S"/>
-                                    <outlet property="DeviceType" destination="Zan-pj-5Tk" id="sh7-iG-CBc"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="324" id="V9g-UT-y6Y" customClass="RecipeTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="179" width="414" height="324"/>

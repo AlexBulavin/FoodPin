@@ -10,6 +10,8 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     
+    @IBOutlet var collectionView: UICollectionView!
+    
     var recipes:[Recipes] = [
         Recipes(name: "Сырники из творога", image: "cafedeadend", description: "Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой — сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут. \n 1. Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков. Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.", recipeAuthorLocations: "64/28 пр.Металлистов, Санкт-Петербург, 196175", recipeType: "Чешская", ingredients: "Творог 500 г,\n Куриное яйцо 2 штуки,\n Пшеничная мука 6 столовых ложек,\n Сахар 2 столовые ложки,\n Подсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
         
@@ -88,12 +90,12 @@ class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
-            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-            cell.DeviceType?.text = recipes[indexPath.row].recipeType
-          //  cell.selectionStyle = .none
-            return cell
+ //       case 0:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
+//            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+//            cell.DeviceType?.text = recipes[indexPath.row].recipeType
+//          //  cell.selectionStyle = .none
+//            return //cell
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
@@ -163,7 +165,7 @@ class RecipesTableViewController: UITableViewController {
         
         navigationController?.hidesBarsOnSwipe = true
         
-        collectionView.backgroundColor = UIColor.clear
+        //collectionView.backgroundColor = UIColor.clear
         
     }
     
@@ -288,29 +290,29 @@ extension RecipesTableViewController: DeviceCollectionCellDelegate {
     }
 }
 
-extension RecipesTableViewController: UIGestureRecognizerDelegate {
-    
-    func handleSwipe(gesture: UISwipeGestureRecognizer) {
-        let point = gesture.location(in: self.collectionView)
-        
-        if (gesture.state == UIGestureRecognizerState.ended) {
-            if let indexPath = collectionView.indexPathForItem(at: point) {
-                // Remove trip from Parse, array and collection view
-                deviceSelected[indexPath.row].toPFObject().deleteInBackground(block: { (success, error) -> Void in
-                    if (success) {
-                        print("Successfully removed the trip")
-                    } else {
-                        print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                        return
-                    }
-                    
-                    self.deviceSelected.remove(at: indexPath.row)
-                    self.collectionView.deleteItems(at: [indexPath])
-                })
-            }
-        }
-    }
-    
-}
+//extension RecipesTableViewController: UIGestureRecognizerDelegate {
+//
+//    func handleSwipe(gesture: UISwipeGestureRecognizer) {
+//        let point = gesture.location(in: self.collectionView)
+//
+//        if (gesture.state == UIGestureRecognizerState.ended) {
+//            if let indexPath = collectionView.indexPathForItem(at: point) {
+//                // Remove trip from Parse, array and collection view
+//                deviceSelected[indexPath.row].toPFObject().deleteInBackground(block: { (success, error) -> Void in
+//                    if (success) {
+//                        print("Successfully removed the trip")
+//                    } else {
+//                        print("Error: \(error?.localizedDescription ?? "Unknown error")")
+//                        return
+//                    }
+//
+//                    self.deviceSelected.remove(at: indexPath.row)
+//                    self.collectionView.deleteItems(at: [indexPath])
+//                })
+//            }
+//        }
+//    }
+//
+//}
 
 
