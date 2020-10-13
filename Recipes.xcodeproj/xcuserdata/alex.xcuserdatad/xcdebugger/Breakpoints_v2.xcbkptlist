@@ -50,6 +50,114 @@
             endingLineNumber = "29"
             landmarkName = "DeviceCollectionViewCell"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - f98b744559cd2d80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.collectionView.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - 13ef750ec5275d9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.collectionView.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - 29f0fdb5c81dd32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.collectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - c61be7db93651fee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.collectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - 100d8ec2ee81d9f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; FoodPin.DeviceCollectionViewCell"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "2643">
+               </Location>
+               <Location
+                  uuid = "65CCDA98-1D53-463B-8B87-F4B5ECC760F5 - a5a7c0aa606f08bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodPin.DeviceCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FoodPin.DeviceCollectionViewCell&gt;"
+                  moduleName = "FoodPin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Documents/SkyUniversity/Swift/FoodPin/FoodPin/View/DeviceCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "2575">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CCEDFC3-00A4-40E2-8BFA-A1DAD925AB48"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPin/View/DeviceCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
