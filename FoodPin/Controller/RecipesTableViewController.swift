@@ -10,7 +10,7 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     
-    @IBOutlet var collectionView: UICollectionView!
+   // @IBOutlet var collectionView: UICollectionView!
     
     var recipes:[Recipes] = [
         Recipes(name: "Сырники из творога", image: "cafedeadend", description: "Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой — сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут. \n 1. Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков. Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.", recipeAuthorLocations: "64/28 пр.Металлистов, Санкт-Петербург, 196175", recipeType: "Чешская", ingredients: "Творог 500 г,\n Куриное яйцо 2 штуки,\n Пшеничная мука 6 столовых ложек,\n Сахар 2 столовые ложки,\n Подсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
@@ -92,10 +92,10 @@ class RecipesTableViewController: UITableViewController {
         
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceCollectionViewCell.self), for: indexPath) as! DeviceCollectionViewCell
-//            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//            cell.DeviceType?.text = recipes[indexPath.row].recipeType
-//          //  cell.selectionStyle = .none
-            cell.collectoinView.reloadData()
+            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+            cell.DeviceType?.text = recipes[indexPath.row].recipeType
+            cell.selectionStyle = .none
+            //cell.collectoinView.reloadData()
             return cell
             
         case 1...:
@@ -248,48 +248,48 @@ class RecipesTableViewController: UITableViewController {
     }
 }
 
-extension RecipesTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
-        
-        // Configure the cell
-       
-        cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
-        cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
-        cell.isTaped = deviceSelected[indexPath.row].isSelected
-        cell.delegate = self
-        
-        return cell
-    }
-}
-
-extension RecipesTableViewController: DeviceCollectionCellDelegate {
-    
-    func didDeviceButtonPressed(cell: DeviceCollectionViewCell) {
-        if let indexPath = collectionView.indexPath(for: cell) {
-            deviceSelected[indexPath.row].isSelected = deviceSelected[indexPath.row].isSelected ? false : true
-            cell.isSelected = deviceSelected[indexPath.row].isSelected
-            
-            // Update the trip on Parse
-//            trips[indexPath.row].toPFObject().saveInBackground(block: { (success, error) -> Void in
-//                if (success) {
-//                    print("Successfully updated the trip")
-//                } else {
-//                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
-//                }
-//            })
-        }
-    }
-}
+//extension RecipesTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return deviceSelected.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
+//        
+//        // Configure the cell
+//       
+//        cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
+//        cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
+//        cell.isTaped = deviceSelected[indexPath.row].isSelected
+//        cell.delegate = self
+//        
+//        return cell
+//    }
+//}
+//
+//extension RecipesTableViewController: DeviceCollectionCellDelegate {
+//    
+//    func didDeviceButtonPressed(cell: DeviceCollectionViewCell) {
+//        if let indexPath = collectionView.indexPath(for: cell) {
+//            deviceSelected[indexPath.row].isSelected = deviceSelected[indexPath.row].isSelected ? false : true
+//            cell.isSelected = deviceSelected[indexPath.row].isSelected
+//            
+//            // Update the trip on Parse
+////            trips[indexPath.row].toPFObject().saveInBackground(block: { (success, error) -> Void in
+////                if (success) {
+////                    print("Successfully updated the trip")
+////                } else {
+////                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
+////                }
+////            })
+//        }
+//    }
+//}
 
 //extension RecipesTableViewController: UIGestureRecognizerDelegate {
 //

@@ -125,7 +125,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="19l-fz-wx3">
                                                                 <rect key="frame" x="19" y="10" width="110" height="126"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lnr-Ob-JH3" userLabel="DeviceImage View">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="DeviceImageView" translatesAutoresizingMaskIntoConstraints="NO" id="lnr-Ob-JH3" userLabel="DeviceImage View">
                                                                         <rect key="frame" x="5" y="0.0" width="100" height="100"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="100" id="mHL-s0-VX1"/>
@@ -133,11 +133,11 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="10"/>
+                                                                                <integer key="value" value="8"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="DeviceType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-pj-5Tk" userLabel="DeviceType">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" restorationIdentifier="DeviceType" text="DeviceType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-pj-5Tk" userLabel="DeviceType">
                                                                         <rect key="frame" x="15.5" y="108" width="79" height="18"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,6 +158,8 @@
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="157" height="155"/>
                                                     <connections>
+                                                        <outlet property="DeviceImageView" destination="lnr-Ob-JH3" id="yLS-S9-iL5"/>
+                                                        <outlet property="DeviceType" destination="Zan-pj-5Tk" id="E7q-Ut-LOO"/>
                                                         <outlet property="deviceClickButton" destination="HHZ-OX-TER" id="Pdv-WT-7vV"/>
                                                     </connections>
                                                 </collectionViewCell>
@@ -176,6 +178,9 @@
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="top" secondItem="PNg-Nq-bMM" secondAttribute="top" constant="11" id="u4T-Vs-leY"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="lFq-HO-fa7" id="d2n-4l-CnO"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="324" id="V9g-UT-y6Y" customClass="RecipeTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="179" width="414" height="324"/>
