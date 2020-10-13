@@ -85,19 +85,20 @@ class RecipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count + 1 }
+        return recipes.count + 1}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         
- //       case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceCollectionViewCell.self), for: indexPath) as! DeviceCollectionViewCell
 //            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
 //            cell.DeviceType?.text = recipes[indexPath.row].recipeType
 //          //  cell.selectionStyle = .none
-//            return //cell
+            cell.collectoinView.reloadData()
+            return cell
             
-        case 1:
+        case 1...:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
             cell.nameLabel?.text = recipes[indexPath.row].recipeNames
