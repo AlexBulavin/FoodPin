@@ -11,7 +11,7 @@ import UIKit
 class RecipesTableViewController: UITableViewController {
     
    // @IBOutlet var collectionView: UICollectionView!
-    
+    var indexPathLocal = 0
     var recipes:[Recipes] = [
         Recipes(name: "Сырники из творога", image: "cafedeadend", description: "Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой — сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут. \n 1. Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков. Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.", recipeAuthorLocations: "64/28 пр.Металлистов, Санкт-Петербург, 196175", recipeType: "Чешская", ingredients: "Творог 500 г,\n Куриное яйцо 2 штуки,\n Пшеничная мука 6 столовых ложек,\n Сахар 2 столовые ложки,\n Подсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
         
@@ -85,9 +85,12 @@ class RecipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count + 1}
+        return recipes.count }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        indexPathLocal = indexPath.row //Ловим номер ячейки
+        
         switch indexPath.row {
         
         case 0:
@@ -167,6 +170,7 @@ class RecipesTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
         
         //collectionView.backgroundColor = UIColor.clear
+
         
     }
     
@@ -185,8 +189,10 @@ class RecipesTableViewController: UITableViewController {
     
     
     // MARK: - Navigation
-    
+    /*
+//    if indexPathLocal > 0 {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete")//.destructive style, indicating that the button should be in red.
         { (action, sourceView, completionHandler) in
             // Delete the row from the data source
@@ -223,9 +229,13 @@ class RecipesTableViewController: UITableViewController {
         shareAction.image = UIImage(systemName: "square.and.arrow.up")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
         return swipeConfiguration
-    }
-    
+        
+    //}
+}
+    */
+    /*
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let checkAction = UIContextualAction(style: .normal, title: "Выбрать")
@@ -246,6 +256,7 @@ class RecipesTableViewController: UITableViewController {
         return swipeConfiguration
         
     }
+    */
 }
 
 //extension RecipesTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {

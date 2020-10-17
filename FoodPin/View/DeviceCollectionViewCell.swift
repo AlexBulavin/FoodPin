@@ -60,7 +60,7 @@ class DeviceCollectionViewCell: UITableViewCell{ //UICollectionViewCell { //}
     var isTaped:Bool = false  {
         didSet {
             if isTaped {
-                deviceClickButton.setImage(UIImage(named: "selectionContur"), for: .normal) //Если выбран прибор, то на кнопке под ним отображаем контурную иконку выбора.
+                deviceClickButton.setImage(UIImage(named: "heart-tick"), for: .normal) //Если выбран прибор, то на кнопке под ним отображаем контурную иконку выбора.
                 //Иконки selectionContur на 11.10.2020 нет
             } else {
                 deviceClickButton.setImage(UIImage(named: ""), for: .normal) //Если прибор не выбран, то на кнопке под ним ничего не отображаем
@@ -79,14 +79,15 @@ extension DeviceCollectionViewCell: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "deviceCell", for: indexPath)
 
         // Configure the cell
-//        cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
-//        cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
+        
+        //cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
+        //cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
         //cell.isTaped = deviceSelected[indexPath.row].isSelected
         //cell.delegate = self
-
+        //cell.collectoinView.reloadData()
         return cell
     }
 

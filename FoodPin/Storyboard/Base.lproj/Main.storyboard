@@ -160,6 +160,7 @@
                                                     <connections>
                                                         <outlet property="DeviceImageView" destination="lnr-Ob-JH3" id="yLS-S9-iL5"/>
                                                         <outlet property="DeviceType" destination="Zan-pj-5Tk" id="E7q-Ut-LOO"/>
+                                                        <outlet property="collectionView" destination="lFq-HO-fa7" id="TYs-YV-EXf"/>
                                                         <outlet property="deviceClickButton" destination="HHZ-OX-TER" id="Pdv-WT-7vV"/>
                                                     </connections>
                                                 </collectionViewCell>
