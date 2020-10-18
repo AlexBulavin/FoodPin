@@ -56,9 +56,6 @@ class RecipesTableViewController: UITableViewController {
         Recipes(name: "CASK Pub and Kitchen", image: "caskpubkitchen", description: "Рецепт 20 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.", recipeAuthorLocations: "Екатеринбург, Россия", recipeType: "Греческая", ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★★★⭐︎⭐︎"),
     ]
     
-        
-
-
     // MARK: - Готовим segue и перебрасываем в него данные
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipeDetail" {
@@ -191,15 +188,16 @@ extension RecipesTableViewController: UITableViewDelegate, UITableViewDataSource
         
         indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
         let recipeLocal = recipes[indexPathLocal]//Локальный элемент массива эквивалентный базовому. Для скоращения кода.
+        
         switch indexPath.row {
         
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as! DeviceTableViewCell
-
+            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as? DeviceTableViewCell else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
+            
             return cell
             
         case 1...:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
+            let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
             cell.nameLabel?.text = recipeLocal.recipeNames
             cell.thumbnailImageView?.image = UIImage(named: recipeLocal.recipeImages)
