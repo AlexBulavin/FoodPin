@@ -9,9 +9,21 @@
 import Foundation
 import UIKit
 
-struct Device {
+class Device {
     var deviceType = ""
     var deviceUserName = ""
     var deviceImage = ""
     var isSelected = false
+    
+    init (deviceType: String, deviceUserName: String, deviceImage: String, isSelected: Bool) {
+        self.deviceType = deviceType
+        self.deviceUserName = deviceUserName
+        self.deviceImage = deviceImage
+        self.isSelected = isSelected
+        
+    }
+    
+    convenience init() {
+        self.init(deviceType: "", deviceUserName: "", deviceImage: "", isSelected: false)
+    }
 }

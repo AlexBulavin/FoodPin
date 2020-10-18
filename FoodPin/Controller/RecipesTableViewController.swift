@@ -94,10 +94,10 @@ class RecipesTableViewController: UITableViewController {
         switch indexPath.row {
         
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceCollectionViewCell.self), for: indexPath) as! DeviceCollectionViewCell
-            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-            cell.DeviceType?.text = recipes[indexPath.row].recipeType
-            cell.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceTableViewCell.self), for: indexPath) as! DeviceTableViewCell
+//            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+//            cell.DeviceType?.text = recipes[indexPath.row].recipeType
+//            cell.selectionStyle = .none
             //cell.collectoinView.reloadData()
             return cell
             
@@ -148,6 +148,7 @@ class RecipesTableViewController: UITableViewController {
 
     
 
+    @IBOutlet var mainScreenTableView: UITableView!
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
@@ -270,7 +271,7 @@ class RecipesTableViewController: UITableViewController {
 //    }
 //    
 //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceTableViewCell
 //        
 //        // Configure the cell
 //       
