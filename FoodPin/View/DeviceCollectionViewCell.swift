@@ -1,8 +1,8 @@
 //
 //  DeviceCollectionViewCell.swift
-//  Готовим с REDMOND
+//  Recipes
 //
-//  Created by Alex on 17.10.2020.
+//  Created by Alex on 18.10.2020.
 //
 
 import UIKit
@@ -10,8 +10,8 @@ import UIKit
 class DeviceCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var DeviceType: UILabel!
-
-    @IBOutlet  var DeviceImageView: UIImageView! {        didSet {
+    @IBOutlet  var DeviceImageView: UIImageView! {
+        didSet {
         DeviceImageView.layer.cornerRadius = 8.0
         DeviceImageView.clipsToBounds = true
         }
@@ -33,7 +33,5 @@ class DeviceCollectionViewCell: UICollectionViewCell {
         }
 
     }
-    
-
     
 }
