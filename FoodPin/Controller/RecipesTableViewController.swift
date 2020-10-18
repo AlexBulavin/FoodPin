@@ -103,8 +103,7 @@ class RecipesTableViewController: UITableViewController {
 //            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
 //        }
  //   }
-    
-    
+       
     // MARK: - Table view data source
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //
@@ -114,8 +113,7 @@ class RecipesTableViewController: UITableViewController {
 ////        cell1.nameLabel?.text = recipes[indexPath.row].recipeNames
 //        cell1.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
 //        cell1.DeviceType?.text = recipes[indexPath.row].recipeType
-//
-//
+
 //        return cell1 }
         
 //        let cellIdentifier = "datacell"
@@ -125,16 +123,12 @@ class RecipesTableViewController: UITableViewController {
 //        cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
 //        cell.locationLabel?.text = recipes[indexPath.row].recipeRating
 //        cell.typeLabel?.text = recipes[indexPath.row].recipeType
-//
-//
+
 //        cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
 //
 //        return cell }
     
 
-    
-
-  
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
@@ -279,31 +273,6 @@ extension RecipesTableViewController: UITableViewDelegate, UITableViewDataSource
     }
     */
 
-
-//extension RecipesTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return deviceSelected.count
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceTableViewCell
-//        
-//        // Configure the cell
-//       
-//        cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
-//        cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
-//        cell.isTaped = deviceSelected[indexPath.row].isSelected
-//        cell.delegate = self
-//        
-//        return cell
-//    }
-//}
-//
 
 
 //extension RecipesTableViewController: UIGestureRecognizerDelegate {
