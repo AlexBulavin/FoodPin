@@ -151,21 +151,16 @@ class RecipesTableViewController: UITableViewController {
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 90.0 / 255.0, green: 45.0 / 255.0, blue: 128.0 / 255.0, alpha: 1.0), NSAttributedString.Key.font: customFont ]
-            
         }
         
         navigationController?.hidesBarsOnSwipe = true
-        
         //collectionView.backgroundColor = UIColor.clear
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = true
-        
         UIApplication.shared.statusBarStyle = .darkContent
     }
     
@@ -192,7 +187,7 @@ extension RecipesTableViewController: UITableViewDelegate, UITableViewDataSource
         switch indexPath.row {
         
         case 0:
-            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as? DeviceTableViewCell else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
+            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
             
             return cell
             
