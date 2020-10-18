@@ -10,8 +10,10 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController {
     
-   // @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var mainScreenTableView: UITableView!
+
     var indexPathLocal = 0
+    
     var recipes:[Recipes] = [
         Recipes(name: "Сырники из творога", image: "cafedeadend", description: "Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой — сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут. \n 1. Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков. Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.", recipeAuthorLocations: "64/28 пр.Металлистов, Санкт-Петербург, 196175", recipeType: "Чешская", ingredients: "Творог 500 г,\n Куриное яйцо 2 штуки,\n Пшеничная мука 6 столовых ложек,\n Сахар 2 столовые ложки,\n Подсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
         
@@ -54,19 +56,9 @@ class RecipesTableViewController: UITableViewController {
         Recipes(name: "CASK Pub and Kitchen", image: "caskpubkitchen", description: "Рецепт 20 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.", recipeAuthorLocations: "Екатеринбург, Россия", recipeType: "Греческая", ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек", isLiked: false, recipeRating: "★★★⭐︎⭐︎"),
     ]
     
-    private var deviceSelected: [Device] = [
-        Device(deviceType: "deviceType1", deviceUserName: "deviceUserName1", deviceImage: "deviceImage1", isSelected: false),
-        Device(deviceType: "deviceType2", deviceUserName: "deviceUserName2", deviceImage: "deviceImage2", isSelected: false),
-        Device(deviceType: "deviceType3", deviceUserName: "deviceUserName3", deviceImage: "deviceImage3", isSelected: false),
-        Device(deviceType: "deviceType4", deviceUserName: "deviceUserName4", deviceImage: "deviceImage4", isSelected: false),
-        Device(deviceType: "deviceType5", deviceUserName: "deviceUserName5", deviceImage: "deviceImage5", isSelected: false),
-        Device(deviceType: "deviceType6", deviceUserName: "deviceUserName6", deviceImage: "deviceImage6", isSelected: false),
-        Device(deviceType: "deviceType7", deviceUserName: "deviceUserName7", deviceImage: "deviceImage7", isSelected: false),
-        Device(deviceType: "deviceType8", deviceUserName: "deviceUserName8", deviceImage: "deviceImage8", isSelected: false),
-        Device(deviceType: "deviceType9", deviceUserName: "deviceUserName9", deviceImage: "deviceImage9", isSelected: false),
-    ]
         
-    
+
+
     // MARK: - Готовим segue и перебрасываем в него данные
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRecipeDetail" {
@@ -80,43 +72,40 @@ class RecipesTableViewController: UITableViewController {
     
     // MARK: - UITableViewDataSource methods
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        indexPathLocal = indexPath.row //Ловим номер ячейки
-        
-        switch indexPath.row {
-        
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DeviceTableViewCell.self), for: indexPath) as! DeviceTableViewCell
-//            cell.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//            cell.DeviceType?.text = recipes[indexPath.row].recipeType
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return recipes.count }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        indexPathLocal = indexPath.row //Ловим номер ячейки
+//
+//        switch indexPath.row {
+//
+//        case 0:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as! DeviceTableViewCell
+//
+//            return cell
+//
+//        case 1...:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
+//            // Configure the cell...
+//            cell.nameLabel?.text = recipes[indexPath.row].recipeNames
+//            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
+//            cell.locationLabel?.text = recipes[indexPath.row].recipeRating
+//            cell.typeLabel?.text = recipes[indexPath.row].recipeType
+//            cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
+//
 //            cell.selectionStyle = .none
-            //cell.collectoinView.reloadData()
-            return cell
-            
-        case 1...:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
-            // Configure the cell...
-            cell.nameLabel?.text = recipes[indexPath.row].recipeNames
-            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-            cell.locationLabel?.text = recipes[indexPath.row].recipeRating
-            cell.typeLabel?.text = recipes[indexPath.row].recipeType
-            cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
-            
-            cell.selectionStyle = .none
-            return cell
-            
-        default:
-            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
-        }
-    }
+//            return cell
+//
+//        default:
+//            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
+//        }
+ //   }
     
     
     // MARK: - Table view data source
@@ -148,7 +137,7 @@ class RecipesTableViewController: UITableViewController {
 
     
 
-    @IBOutlet var mainScreenTableView: UITableView!
+  
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
@@ -187,7 +176,45 @@ class RecipesTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension RecipesTableViewController: UITableViewDelegate, UITableViewDataSource {
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipes.count + 1}
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
+        let recipeLocal = recipes[indexPathLocal]//Локальный элемент массива эквивалентный базовому. Для скоращения кода.
+        switch indexPath.row {
+        
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as! DeviceTableViewCell
+
+            return cell
+            
+        case 1...:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
+            // Configure the cell...
+            cell.nameLabel?.text = recipeLocal.recipeNames
+            cell.thumbnailImageView?.image = UIImage(named: recipeLocal.recipeImages)
+            cell.locationLabel?.text = recipeLocal.recipeRating
+            cell.typeLabel?.text = recipeLocal.recipeType
+            cell.heartImageView.isHidden = !self.recipes[indexPathLocal].recipeIsLiked
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        default:
+            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
+        }
+    }
+}
     
     // MARK: - Navigation
     /*
@@ -258,7 +285,7 @@ class RecipesTableViewController: UITableViewController {
         
     }
     */
-}
+
 
 //extension RecipesTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 //    
@@ -284,24 +311,7 @@ class RecipesTableViewController: UITableViewController {
 //    }
 //}
 //
-//extension RecipesTableViewController: DeviceCollectionCellDelegate {
-//    
-//    func didDeviceButtonPressed(cell: DeviceCollectionViewCell) {
-//        if let indexPath = collectionView.indexPath(for: cell) {
-//            deviceSelected[indexPath.row].isSelected = deviceSelected[indexPath.row].isSelected ? false : true
-//            cell.isSelected = deviceSelected[indexPath.row].isSelected
-//            
-//            // Update the trip on Parse
-////            trips[indexPath.row].toPFObject().saveInBackground(block: { (success, error) -> Void in
-////                if (success) {
-////                    print("Successfully updated the trip")
-////                } else {
-////                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
-////                }
-////            })
-//        }
-//    }
-//}
+
 
 //extension RecipesTableViewController: UIGestureRecognizerDelegate {
 //
