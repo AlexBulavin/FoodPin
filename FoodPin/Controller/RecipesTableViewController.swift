@@ -149,6 +149,7 @@ class RecipesTableViewController: UITableViewController {
         
         navigationController?.hidesBarsOnSwipe = true
         //collectionView.backgroundColor = UIColor.clear
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,36 +165,35 @@ class RecipesTableViewController: UITableViewController {
     }
 }
 
-extension RecipesTableViewController: UITableViewDelegate, UITableViewDataSource {
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+extension RecipesTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("RecipesTableViewController строка 171 инициируем tableView")
         return recipes.count + 1}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
-        let recipeLocal = recipes[indexPathLocal]//Локальный элемент массива эквивалентный базовому. Для скоращения кода.
+        print("RecipesTableViewController строка 177 ловим размер массива")
         
         switch indexPath.row {
         
         case 0:
-            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
+            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell
+            
+            else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
             
             return cell
             
         case 1...:
-            let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
+            let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
-            cell.nameLabel?.text = recipeLocal.recipeNames
-            cell.thumbnailImageView?.image = UIImage(named: recipeLocal.recipeImages)
-            cell.locationLabel?.text = recipeLocal.recipeRating
-            cell.typeLabel?.text = recipeLocal.recipeType
+            cell.nameLabel?.text = recipes[indexPathLocal].recipeNames
+            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPathLocal].recipeImages)
+            cell.locationLabel?.text = recipes[indexPathLocal].recipeRating
+            cell.typeLabel?.text = recipes[indexPathLocal].recipeType
             cell.heartImageView.isHidden = !self.recipes[indexPathLocal].recipeIsLiked
-            
+
             cell.selectionStyle = .none
             return cell
             
