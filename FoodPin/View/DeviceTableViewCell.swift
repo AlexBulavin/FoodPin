@@ -22,33 +22,34 @@ class DeviceTableViewCell: UITableViewCell {
         Device(deviceType: "deviceType8", deviceUserName: "deviceUserName8", deviceImage: "haighschocolate", isSelected: false),
         Device(deviceType: "deviceType9", deviceUserName: "deviceUserName9", deviceImage: "palominoespresso", isSelected: false),
     ]
-    
+
     
     @IBOutlet weak var deviceCollectionView: UICollectionView!
     
-    override func awakeFromNib() { print("DeviceTableViewCell строка 29")
+    override func awakeFromNib() {
            super.awakeFromNib()
            // Initialization code
            deviceCollectionView.delegate = self
            deviceCollectionView.dataSource = self
+        let pr = print("DeviceTableViewCell  deviceCollectionView.delegate", deviceCollectionView.delegate, "deviceCollectionView.dataSource", deviceCollectionView.dataSource)
        }
     
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//         //Configure the view for the selected state
-//    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+         //Configure the view for the selected state
+    }
     
     
 }
 
 extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { print("DeviceTableViewCell строка 47")
+    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("DeviceTableViewCell строка 51")
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { //print("DeviceTableViewCell строка 51")
         return deviceSelected.count
     }
 

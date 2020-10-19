@@ -61,7 +61,7 @@ class RecipesTableViewController: UITableViewController {
         if segue.identifier == "showRecipeDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RecipeDetailViewController
-                destinationController.recipe = recipes[indexPath.row]
+                destinationController.recipe = recipes[indexPath.row-1]
                 
             }
         }
@@ -168,24 +168,31 @@ class RecipesTableViewController: UITableViewController {
 extension RecipesTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("RecipesTableViewController строка 171 инициируем tableView")
+        //print("RecipesTableViewController строка 171 инициируем tableView")
         return recipes.count + 1}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
-        print("RecipesTableViewController строка 177 ловим размер массива")
+        print("RecipesTableViewController строка 177 ловим номер элемента массива ")
+        print(indexPathLocal)
         
         switch indexPath.row {
         
         case 0:
+            var pr = print("RecipesTableViewController строка 182 вошли в case = 0 создание коллекции")
             guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell
             
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
             
+            pr = print("deviceCell")
+            pr = print(cell)
+            
             return cell
             
         case 1...:
+            var pr = print("RecipesTableViewController строка 190 вошли в case ")
+            pr = print(indexPathLocal)
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
             cell.nameLabel?.text = recipes[indexPathLocal].recipeNames
