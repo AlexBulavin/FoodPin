@@ -67,68 +67,6 @@ class RecipesTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - UITableViewDataSource methods
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return recipes.count }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        indexPathLocal = indexPath.row //Ловим номер ячейки
-//
-//        switch indexPath.row {
-//
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath) as! DeviceTableViewCell
-//
-//            return cell
-//
-//        case 1...:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableViewCell.self), for: indexPath) as! RecipeTableViewCell
-//            // Configure the cell...
-//            cell.nameLabel?.text = recipes[indexPath.row].recipeNames
-//            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//            cell.locationLabel?.text = recipes[indexPath.row].recipeRating
-//            cell.typeLabel?.text = recipes[indexPath.row].recipeType
-//            cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
-//
-//            cell.selectionStyle = .none
-//            return cell
-//
-//        default:
-//            fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
-//        }
- //   }
-       
-    // MARK: - Table view data source
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cellIdentifier1 = "datacell1"
-//        let cell1 = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1, for: indexPath) as! DeviceTableViewCell
-//        // Configure the cell...
-////        cell1.nameLabel?.text = recipes[indexPath.row].recipeNames
-//        cell1.DeviceImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//        cell1.DeviceType?.text = recipes[indexPath.row].recipeType
-
-//        return cell1 }
-        
-//        let cellIdentifier = "datacell"
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeTableViewCell
-//        // Configure the cell...
-//        cell.nameLabel?.text = recipes[indexPath.row].recipeNames
-//        cell.thumbnailImageView?.image = UIImage(named: recipes[indexPath.row].recipeImages)
-//        cell.locationLabel?.text = recipes[indexPath.row].recipeRating
-//        cell.typeLabel?.text = recipes[indexPath.row].recipeType
-
-//        cell.heartImageView.isHidden = !self.recipes[indexPath.row].recipeIsLiked
-//
-//        return cell }
-    
-
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
@@ -208,55 +146,55 @@ extension RecipesTableViewController {
             fatalError("Failed to instantiate the table view cell for detail view controller. Если появляется эта ошибка, нужно проверить количество ячеек, которые мы хотим создать в файле RecipesTableViewController    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { сейчас там return recipes.count + 1 } То есть имеем первую ячейку для карусели девайсов, остальные для отображения рецептов.")
         }
     }
-}
+
     
     // MARK: - Navigation
-    /*
+    
 //    if indexPathLocal > 0 {
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete")//.destructive style, indicating that the button should be in red.
-        { (action, sourceView, completionHandler) in
-            // Delete the row from the data source
-            self.recipes.remove(at: indexPath.row)
-            
-            self.tableView.deleteRows(at: [indexPath], with: .fade)//Удаление конкретной строки с анимацией .fade
-            //Также возможны .right , .left , and .top
-            // Call completion handler to dismiss the action button
-            completionHandler(true)
-        }
-        let shareAction = UIContextualAction(style: .normal, title: "Поделиться") { (action, sourceView, completionHandler) in
-            let defaultText = "Рекомендую попробовать:" + "\n" + self.recipes[indexPath.row].recipeNames + "\n" + "Кухня: " + self.recipes[indexPath.row].recipeType + "\n" + "Автор рецепта: " + self.recipes[indexPath.row].recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipes[indexPath.row].recipeDescription + "\n\n" + "Состав блюда:" + "\n" + self.recipes[indexPath.row].recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
-            
-            let activityController: UIActivityViewController
-            
-            if let defaultPicture = UIImage(named: self.recipes[indexPath.row].recipeImages)
-            { activityController = UIActivityViewController(activityItems: [ defaultText, defaultPicture], applicationActivities: nil) }
-            else
-            { activityController = UIActivityViewController(activityItems: [ defaultText], applicationActivities: nil) }
-            
-            if let popoverController = activityController.popoverPresentationController{
-                if let cell = tableView.cellForRow(at: indexPath) { popoverController.sourceView = cell
-                    popoverController.sourceRect = cell.bounds
-                } }
-            
-            self.present(activityController, animated: true, completion: nil)
-            completionHandler(true)
-        }
-        
-        deleteAction.backgroundColor = UIColor(red: 48.0 / 255.0, green: 48.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
-        deleteAction.image = UIImage(systemName: "trash")
-        deleteAction.title = "Удалить"
-        shareAction.backgroundColor = UIColor(red: 90.0 / 255.0, green: 45.0 / 255.0, blue: 128.0 / 255.0, alpha: 1.0)
-        shareAction.image = UIImage(systemName: "square.and.arrow.up")
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
-        
-        return swipeConfiguration
-        
-    //}
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete").destructive style, indicating that the button should be in red.
+//        { (action, sourceView, completionHandler) in
+//             Delete the row from the data source
+//            self.recipes.remove(at: indexPath.row)
+//            
+//            self.tableView.deleteRows(at: [indexPath], with: .fade)Удаление конкретной строки с анимацией .fade
+//            Также возможны .right , .left , and .top
+//             Call completion handler to dismiss the action button
+//            completionHandler(true)
+//        }
+//        let shareAction = UIContextualAction(style: .normal, title: "Поделиться") { (action, sourceView, completionHandler) in
+//            let defaultText = "Рекомендую попробовать:" + "\n" + self.recipes[indexPath.row].recipeNames + "\n" + "Кухня: " + self.recipes[indexPath.row].recipeType + "\n" + "Автор рецепта: " + self.recipes[indexPath.row].recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipes[indexPath.row].recipeDescription + "\n\n" + "Состав блюда:" + "\n" + self.recipes[indexPath.row].recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https:apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
+//            
+//            let activityController: UIActivityViewController
+//            
+//            if let defaultPicture = UIImage(named: self.recipes[indexPath.row].recipeImages)
+//            { activityController = UIActivityViewController(activityItems: [ defaultText, defaultPicture], applicationActivities: nil) }
+//            else
+//            { activityController = UIActivityViewController(activityItems: [ defaultText], applicationActivities: nil) }
+//            
+//            if let popoverController = activityController.popoverPresentationController{
+//                if let cell = tableView.cellForRow(at: indexPath) { popoverController.sourceView = cell
+//                    popoverController.sourceRect = cell.bounds
+//                } }
+//            
+//            self.present(activityController, animated: true, completion: nil)
+//            completionHandler(true)
+//        }
+//        
+//        deleteAction.backgroundColor = UIColor(red: 48.0 / 255.0, green: 48.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
+//        deleteAction.image = UIImage(systemName: "trash")
+//        deleteAction.title = "Удалить"
+//        shareAction.backgroundColor = UIColor(red: 90.0 / 255.0, green: 45.0 / 255.0, blue: 128.0 / 255.0, alpha: 1.0)
+//        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+//        
+//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+//        
+//        return swipeConfiguration
+//        
+//    }
+//}
 }
-    */
     /*
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
