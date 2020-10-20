@@ -11,7 +11,7 @@ import UIKit
 class RateViewController: UIViewController {
 
     @IBOutlet var backgroundImageView: UIImageView!
-    @IBOutlet var reteButtons: [UIButton]!
+    @IBOutlet var rateButtons: [UIButton]!
     
     var recipe = Recipes ()
     
@@ -24,17 +24,22 @@ class RateViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        
+        let moveRightTransform = CGAffineTransform.init(translationX: 600, y: 0)
+        
+        for rateButton in rateButtons{ //делаем кнопки рейтинга невидимыми
+            rateButton.transform = moveRightTransform
+            rateButton.alpha = 0
+        }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 2.0, animations: {
+            for rateButton in self.rateButtons{
+                rateButton.alpha = 1.0; rateButton.transform = .identity
+            }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }, completion: nil)
     }
-    */
 
 }

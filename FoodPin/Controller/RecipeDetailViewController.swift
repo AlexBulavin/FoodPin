@@ -17,6 +17,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet var rateIt2: UIButton!
+    
     var recipe = Recipes()
     
     // MARK: - Detail View controller life cycle
@@ -56,7 +58,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
+        rateIt2.setTitle(recipe.recipeRating, for: .normal)
     }
     
     
@@ -201,8 +203,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 backItem.title = "Recipe book"
                 navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
             
-            
-        } else if segue.identifier == "rateIt" {
+        } else if segue.identifier == "rateIt" || segue.identifier == "rateIt2" {
             let destinationController = segue.destination as! RateViewController
             destinationController.recipe = recipe
         }

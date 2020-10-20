@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ctq-4V-tXe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ctq-4V-tXe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -306,6 +306,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-mY-HX9" userLabel="rateIt2">
+                                            <rect key="frame" x="325" y="299" width="81" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="BOm-By-nCz" kind="presentation" identifier="rateIt2" id="757-cU-SzJ"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="recipeName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uar-Em-9I9">
                                             <rect key="frame" x="8" y="314" width="398" height="46"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -524,6 +534,7 @@
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="headerView" destination="Gk0-3p-1dj" id="f6r-tF-Zzu"/>
+                        <outlet property="rateIt2" destination="aaL-mY-HX9" id="YvV-HR-btu"/>
                         <outlet property="tableView" destination="65e-bU-1ug" id="fkq-ea-h8i"/>
                     </connections>
                 </viewController>
@@ -573,7 +584,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBA-PG-09s" userLabel="BackButton">
-                                <rect key="frame" x="326" y="0.0" width="42" height="193"/>
+                                <rect key="frame" x="15" y="0.0" width="73" height="93"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" image="back"/>
                                 <connections>
@@ -630,25 +641,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tBA-PG-09s" firstAttribute="top" secondItem="XWE-Fv-PIv" secondAttribute="top" id="1Od-Ny-vxj"/>
-                            <constraint firstItem="XWE-Fv-PIv" firstAttribute="bottom" secondItem="tBA-PG-09s" secondAttribute="bottom" constant="615" id="2e6-ag-EnC"/>
+                            <constraint firstItem="tBA-PG-09s" firstAttribute="bottom" secondItem="XWE-Fv-PIv" secondAttribute="bottom" constant="-715" id="2e6-ag-EnC"/>
                             <constraint firstItem="ay2-L4-8hm" firstAttribute="bottom" secondItem="XWE-Fv-PIv" secondAttribute="bottom" id="5Ao-Ph-FGB"/>
                             <constraint firstItem="ay2-L4-8hm" firstAttribute="top" secondItem="XWE-Fv-PIv" secondAttribute="top" id="5dx-97-LLl"/>
                             <constraint firstItem="KhU-8A-6t3" firstAttribute="centerY" secondItem="0m0-55-ChZ" secondAttribute="centerY" id="HCl-0D-mQe"/>
-                            <constraint firstItem="XWE-Fv-PIv" firstAttribute="trailing" secondItem="tBA-PG-09s" secondAttribute="trailing" constant="46" id="I9b-kB-tnB"/>
+                            <constraint firstItem="tBA-PG-09s" firstAttribute="trailing" secondItem="XWE-Fv-PIv" secondAttribute="trailing" constant="-326" id="I9b-kB-tnB"/>
                             <constraint firstItem="ay2-L4-8hm" firstAttribute="trailing" secondItem="XWE-Fv-PIv" secondAttribute="trailing" id="J5Y-af-c5c"/>
                             <constraint firstItem="KhU-8A-6t3" firstAttribute="centerX" secondItem="0m0-55-ChZ" secondAttribute="centerX" id="JXV-aR-3eb"/>
                             <constraint firstItem="ay2-L4-8hm" firstAttribute="leading" secondItem="XWE-Fv-PIv" secondAttribute="leading" id="xOi-VH-sTD"/>
-                            <constraint firstItem="tBA-PG-09s" firstAttribute="leading" secondItem="XWE-Fv-PIv" secondAttribute="leading" constant="326" id="yY2-Wq-kQM"/>
+                            <constraint firstItem="tBA-PG-09s" firstAttribute="leading" secondItem="XWE-Fv-PIv" secondAttribute="leading" constant="15" id="yY2-Wq-kQM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="ay2-L4-8hm" id="bux-Xk-Io8"/>
-                        <outletCollection property="reteButtons" destination="mWO-9J-TR6" collectionClass="NSMutableArray" id="lNd-Zg-xf0"/>
-                        <outletCollection property="reteButtons" destination="KhW-gd-QOu" collectionClass="NSMutableArray" id="ruq-za-jzw"/>
-                        <outletCollection property="reteButtons" destination="6fu-7X-3pw" collectionClass="NSMutableArray" id="n8j-Lf-Vuf"/>
-                        <outletCollection property="reteButtons" destination="9H9-i0-req" collectionClass="NSMutableArray" id="P72-zt-9Nu"/>
-                        <outletCollection property="reteButtons" destination="5FD-T8-kvr" collectionClass="NSMutableArray" id="PRY-qd-Crg"/>
-                        <outletCollection property="reteButtons" destination="KcU-zL-7V1" collectionClass="NSMutableArray" id="buP-M3-0m4"/>
+                        <outletCollection property="rateButtons" destination="mWO-9J-TR6" collectionClass="NSMutableArray" id="lNd-Zg-xf0"/>
+                        <outletCollection property="rateButtons" destination="KhW-gd-QOu" collectionClass="NSMutableArray" id="ruq-za-jzw"/>
+                        <outletCollection property="rateButtons" destination="6fu-7X-3pw" collectionClass="NSMutableArray" id="n8j-Lf-Vuf"/>
+                        <outletCollection property="rateButtons" destination="9H9-i0-req" collectionClass="NSMutableArray" id="P72-zt-9Nu"/>
+                        <outletCollection property="rateButtons" destination="5FD-T8-kvr" collectionClass="NSMutableArray" id="PRY-qd-Crg"/>
+                        <outletCollection property="rateButtons" destination="KcU-zL-7V1" collectionClass="NSMutableArray" id="buP-M3-0m4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AiH-DV-Zx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -675,6 +686,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="219.64285714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="757-cU-SzJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="29" height="17"/>
         <image name="caskpubkitchen" width="480" height="480"/>
