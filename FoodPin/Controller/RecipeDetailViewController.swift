@@ -13,6 +13,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RecipeDetailHeaderView!
+    @IBAction func close(segue:UIStoryboardSegue){
+        dismiss(animated: true, completion: nil)
+    }
     
     var recipe = Recipes()
     
@@ -199,6 +202,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
             
             
+        } else if segue.identifier == "rateIt" {
+            let destinationController = segue.destination as! RateViewController
+            destinationController.recipe = recipe
         }
     }
 }

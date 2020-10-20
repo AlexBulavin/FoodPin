@@ -46,6 +46,7 @@
 		FABAF291251C5A9F00F35579 /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */; };
 		FABAF293251C66D800F35579 /* RecipeDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */; };
 		FABAF295251C687800F35579 /* RecipeIngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF294251C687800F35579 /* RecipeIngredientsCell.swift */; };
+		FAC8F762253F6BE90097221E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8F761253F6BE90097221E /* RateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailDescriptionCell.swift; sourceTree = "<group>"; };
 		FABAF294251C687800F35579 /* RecipeIngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsCell.swift; sourceTree = "<group>"; };
+		FAC8F761253F6BE90097221E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				FA617E1E24232DDB00198145 /* RecipesTableViewController.swift */,
 				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
 				FA5CF8E12529DB23009CFE2F /* MapViewController.swift */,
+				FAC8F761253F6BE90097221E /* RateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC8F762253F6BE90097221E /* RateViewController.swift in Sources */,
 				FA95FE892528CC8700E693AF /* UINavigationController+Ext.swift in Sources */,
 				FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */,
 				FABAF2872517A64600F35579 /* Recipes.swift in Sources */,
