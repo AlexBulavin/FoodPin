@@ -175,7 +175,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="deviceCollectionView" destination="lFq-HO-fa7" id="I39-Ox-6c5"/>
+                                    <outlet property="deviceCollectionView" destination="lFq-HO-fa7" id="nTv-g6-79y"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="324" id="V9g-UT-y6Y" customClass="RecipeTableViewCell" customModule="FoodPin" customModuleProvider="target">
@@ -342,39 +342,36 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailDescriptionCell" rowHeight="81" id="uXO-IF-bO7" customClass="RecipeDetailDescriptionCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="396" width="414" height="81"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailDescriptionCell" rowHeight="104" id="uXO-IF-bO7" customClass="RecipeDetailDescriptionCell" customModule="FoodPin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="396" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uXO-IF-bO7" id="r1R-4O-I9s">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-1f-o9z">
-                                                    <rect key="frame" x="22" y="10" width="369" height="58"/>
+                                                    <rect key="frame" x="22" y="10" width="369" height="81"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Способ приготовления." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Yn-Bez">
-                                                            <rect key="frame" x="0.0" y="0.0" width="193.5" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Способ приготовления." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Yn-Bez">
+                                                            <rect key="frame" x="0.0" y="0.0" width="193.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="recipeDescription" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
-                                                            <rect key="frame" x="0.0" y="58" width="134.5" height="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeDescription" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-6d-95a">
+                                                            <rect key="frame" x="0.0" y="60.5" width="134.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="0pZ-6d-95a" firstAttribute="top" secondItem="05l-Yn-Bez" secondAttribute="bottom" constant="3" id="LJc-gQ-Y9x"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="CgH-1f-o9z" secondAttribute="bottom" constant="2" id="4RM-zJ-uiY"/>
+                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="bottom" secondItem="r1R-4O-I9s" secondAttribute="bottomMargin" constant="-2" id="4RM-zJ-uiY"/>
                                                 <constraint firstItem="CgH-1f-o9z" firstAttribute="leading" secondItem="r1R-4O-I9s" secondAttribute="leadingMargin" constant="2" id="aT4-D0-nwc"/>
                                                 <constraint firstItem="CgH-1f-o9z" firstAttribute="top" secondItem="r1R-4O-I9s" secondAttribute="top" constant="10" id="od3-cr-Fxh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CgH-1f-o9z" secondAttribute="trailingMargin" constant="3" id="qt4-BS-pnu" userLabel="trailingMargin = Stack View.trailingMargin"/>
+                                                <constraint firstItem="CgH-1f-o9z" firstAttribute="trailingMargin" secondItem="r1R-4O-I9s" secondAttribute="trailingMargin" constant="-3" id="qt4-BS-pnu" userLabel="trailingMargin = Stack View.trailingMargin"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -382,7 +379,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeIngredientsCell" rowHeight="75" id="FwY-70-xzH" customClass="RecipeIngredientsCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="477" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="500" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FwY-70-xzH" id="uQC-be-PXv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -404,14 +401,11 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="g8h-6f-6Wp" firstAttribute="top" secondItem="344-75-r82" secondAttribute="bottom" constant="3" id="MbX-Rb-9Rp"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="jBf-hE-xNU" secondAttribute="trailingMargin" id="1vL-M3-nXm"/>
-                                                <constraint firstAttribute="bottom" secondItem="jBf-hE-xNU" secondAttribute="bottom" constant="2" id="IoC-QC-NlU"/>
+                                                <constraint firstItem="jBf-hE-xNU" firstAttribute="trailingMargin" secondItem="uQC-be-PXv" secondAttribute="trailingMargin" id="1vL-M3-nXm"/>
+                                                <constraint firstItem="jBf-hE-xNU" firstAttribute="bottom" secondItem="uQC-be-PXv" secondAttribute="bottom" constant="-2" id="IoC-QC-NlU"/>
                                                 <constraint firstItem="jBf-hE-xNU" firstAttribute="leading" secondItem="uQC-be-PXv" secondAttribute="leadingMargin" constant="2" id="JNK-c1-HAz"/>
                                                 <constraint firstItem="jBf-hE-xNU" firstAttribute="top" secondItem="uQC-be-PXv" secondAttribute="top" id="V1Y-Ms-qLN"/>
                                             </constraints>
@@ -421,7 +415,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailSeparatorCell" rowHeight="75" id="z6E-2R-XPN" customClass="RecipeDetailSeparatorCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="552" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="575" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6E-2R-XPN" id="6T5-nQ-Ygo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -458,7 +452,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeDetailMapCell" rowHeight="215" id="OeD-pc-upZ" userLabel="MapCell" customClass="RecipeDetailMapCell" customModule="FoodPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="627" width="414" height="215"/>
+                                        <rect key="frame" x="0.0" y="650" width="414" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OeD-pc-upZ" id="Jld-ri-hf9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
