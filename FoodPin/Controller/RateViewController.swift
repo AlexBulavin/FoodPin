@@ -25,7 +25,7 @@ class RateViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
-        let moveRightTransform = CGAffineTransform.init(translationX: 600, y: 0)
+        let moveRightTransform = CGAffineTransform.init(translationX: 300, y: 0)
         
         for rateButton in rateButtons{ //делаем кнопки рейтинга невидимыми
             rateButton.transform = moveRightTransform
