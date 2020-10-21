@@ -16,13 +16,50 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func close(segue:UIStoryboardSegue){
         dismiss(animated: true, completion: nil)
     }
-    
+    var ratingChanged = "No rating yet"
+    var recipe = Recipes()
+
     @IBOutlet var rateIt2: UIButton!
     @IBAction func rateRecipe(segue: UIStoryboardSegue) {
-        
+        if let rating = segue.identifier {
+            print(rating)
+            switch rating {
+                case "zero":
+                ratingChanged = "⭐︎⭐︎⭐︎⭐︎⭐︎"
+                return
+                    
+                case "one":
+                ratingChanged = "★⭐︎⭐︎⭐︎⭐︎"
+                return
+
+                case "two":
+                ratingChanged = "★★⭐︎⭐︎⭐︎"
+                return
+
+                case "tree":
+                ratingChanged = "★★★⭐︎⭐︎"
+                return
+
+                case "four":
+                ratingChanged = "★★★★⭐︎"
+                return
+
+                case "five":
+                ratingChanged = "★★★★★"
+                return
+
+                default:
+                ratingChanged = "No rating yet"
+                return
+            }
+            
+            recipe.recipeRating = ratingChanged
+            rateIt2.setTitle(ratingChanged, for: .normal)
+        }
+        dismiss(animated: true, completion: nil)
     }
     
-    var recipe = Recipes()
+    
     
     // MARK: - Detail View controller life cycle
     override func viewDidLoad() {
