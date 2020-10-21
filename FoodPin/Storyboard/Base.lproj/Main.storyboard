@@ -598,6 +598,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="★★★★★"/>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="five" unwindAction="rateRecipeWithSegue:" id="e96-xV-5q9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhW-gd-QOu" userLabel="four">
                                         <rect key="frame" x="4" y="63" width="177" height="55"/>
@@ -605,6 +608,9 @@
                                         <state key="normal" title="★★★★⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="four" unwindAction="rateRecipeWithSegue:" id="jvh-Aw-pmd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fu-7X-3pw" userLabel="three">
                                         <rect key="frame" x="8.5" y="126" width="168" height="55"/>
@@ -612,6 +618,9 @@
                                         <state key="normal" title="★★★⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="three" unwindAction="rateRecipeWithSegue:" id="z29-9h-aBv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H9-i0-req" userLabel="two">
                                         <rect key="frame" x="8.5" y="189" width="168" height="55"/>
@@ -619,6 +628,9 @@
                                         <state key="normal" title="★★★⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="two" unwindAction="rateRecipeWithSegue:" id="8ZL-bE-Haa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FD-T8-kvr" userLabel="zero">
                                         <rect key="frame" x="16.5" y="252" width="152" height="55"/>
@@ -626,6 +638,9 @@
                                         <state key="normal" title="★⭐︎⭐︎⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="one" unwindAction="rateRecipeWithSegue:" id="6q6-94-Jdl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcU-zL-7V1" userLabel="one">
                                         <rect key="frame" x="21" y="315" width="143" height="55"/>
@@ -633,6 +648,9 @@
                                         <state key="normal" title="⭐︎⭐︎⭐︎⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="zero" unwindAction="rateRecipeWithSegue:" id="RyB-tc-d6s"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

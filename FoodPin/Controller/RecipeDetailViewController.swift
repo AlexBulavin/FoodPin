@@ -18,6 +18,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBOutlet var rateIt2: UIButton!
+    @IBAction func rateRecipe(segue: UIStoryboardSegue) {
+        
+    }
     
     var recipe = Recipes()
     
