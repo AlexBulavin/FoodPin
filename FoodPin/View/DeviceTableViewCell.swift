@@ -43,7 +43,7 @@ class DeviceTableViewCell: UITableViewCell {
     
 }
 
-extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
         return 1
@@ -81,6 +81,28 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
 //                }
 //            }
 //        }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            }
+            
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+                let bounds = collectionView.bounds
+
+            return CGSize(width: bounds.width/9, height: 80)
+            }
+
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //
+    //        return CGSize(width: 80, height: 80)
+    //        }
+            
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 8
+            }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 8
+            }
 
         return cell
     }
