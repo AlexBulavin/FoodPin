@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ctq-4V-tXe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -168,7 +168,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="centerY" secondItem="PNg-Nq-bMM" secondAttribute="centerY" id="4Zr-43-1Ic"/>
-                                        <constraint firstAttribute="trailing" secondItem="lFq-HO-fa7" secondAttribute="trailing" id="76a-Fi-1wr"/>
+                                        <constraint firstItem="lFq-HO-fa7" firstAttribute="trailing" secondItem="PNg-Nq-bMM" secondAttribute="trailing" id="76a-Fi-1wr"/>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="leading" secondItem="PNg-Nq-bMM" secondAttribute="leading" id="IGT-Uq-bIS"/>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="centerX" secondItem="PNg-Nq-bMM" secondAttribute="centerX" id="rSV-S0-WDf"/>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="top" secondItem="PNg-Nq-bMM" secondAttribute="top" constant="11" id="u4T-Vs-leY"/>
@@ -705,7 +705,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="757-cU-SzJ"/>
+        <segue reference="le2-p7-Q2M"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="29" height="17"/>

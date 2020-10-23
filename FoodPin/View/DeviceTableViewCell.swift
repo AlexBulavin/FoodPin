@@ -34,11 +34,11 @@ class DeviceTableViewCell: UITableViewCell {
         let pr = print("DeviceTableViewCell  deviceCollectionView.delegate", deviceCollectionView.delegate, "deviceCollectionView.dataSource", deviceCollectionView.dataSource)
        }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-         //Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//         //Configure the view for the selected state
+//    }
     
     
 }
@@ -61,7 +61,7 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
         print("DeviceTableViewCell строка 61")
         cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
-        print("DeviceTableViewCell строка 63")
+        print("DeviceTableViewCell строка 65 \(cell)")
         //cell.deviceButtonTapped = deviceSelected[indexPath.row].isSelected
 //        var isTaped:Bool = false  {
 //            didSet {
