@@ -114,14 +114,15 @@ extension RecipesTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
-//        print("RecipesTableViewController строка 117 ловим номер элемента массива ")
-//        print(indexPathLocal)
+        print("RecipesTableViewController строка 117 ловим номер элемента массива ")
+        print(indexPathLocal)
         
         switch indexPath.row {
         
         case 0:
             var pr = print("RecipesTableViewController строка 123 вошли в case = 0 создание коллекции")
             guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell
+            
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
             
             pr = print("deviceCell")
@@ -130,8 +131,8 @@ extension RecipesTableViewController {
             return cell
             
         case 1...:
-//            var pr = print("RecipesTableViewController строка 134 вошли в case ")
-//            pr = print(indexPathLocal)
+            var pr = print("RecipesTableViewController строка 134 вошли в case ")
+            //pr = print(indexPathLocal)
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
             cell.nameLabel?.text = recipes[indexPathLocal].recipeNames
@@ -141,7 +142,7 @@ extension RecipesTableViewController {
             cell.heartImageView.isHidden = !self.recipes[indexPathLocal].recipeIsLiked
 
             cell.selectionStyle = .none
-//
+            
 //            pr = print("dataCell")
 //            pr = print(cell)
             
