@@ -114,8 +114,8 @@ extension RecipesTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         indexPathLocal = indexPath.row - 1 //Ловим номер элемента массива
-        print("RecipesTableViewController строка 117 ловим номер элемента массива ")
-        print(indexPathLocal)
+//        print("RecipesTableViewController строка 117 ловим номер элемента массива ")
+//        print(indexPathLocal)
         
         switch indexPath.row {
         
@@ -125,13 +125,13 @@ extension RecipesTableViewController {
             
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
             
-            pr = print("deviceCell")
-            pr = print(cell)
+            pr = print("RecipesTableViewController строка 128  deviceCell")
+            pr = print("RecipesTableViewController строка 129 \(cell)")
             
             return cell
             
         case 1...:
-            var pr = print("RecipesTableViewController строка 134 вошли в case ")
+//            var pr = print("RecipesTableViewController строка 134 вошли в case ")
             //pr = print(indexPathLocal)
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...

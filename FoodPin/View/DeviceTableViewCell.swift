@@ -27,11 +27,13 @@ class DeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var deviceCollectionView: UICollectionView!
     
     override func awakeFromNib() {
+        
+        deviceCollectionView.delegate = self
+        deviceCollectionView.dataSource = self
+     let pr = print("DeviceTableViewCell  deviceCollectionView.delegate", deviceCollectionView.delegate, "deviceCollectionView.dataSource", deviceCollectionView.dataSource)
            super.awakeFromNib()
            // Initialization code
-           deviceCollectionView.delegate = self
-           deviceCollectionView.dataSource = self
-        let pr = print("DeviceTableViewCell  deviceCollectionView.delegate", deviceCollectionView.delegate, "deviceCollectionView.dataSource", deviceCollectionView.dataSource)
+
        }
     
 //    override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,23 +47,25 @@ class DeviceTableViewCell: UITableViewCell {
 
 extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
-        return 1
-    }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
+//        return 1
+//    }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { //print("DeviceTableViewCell строка 51")
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("DeviceTableViewCell строка 54 \(deviceSelected.count)")
+        
         return deviceSelected.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { print("DeviceTableViewCell строка 55")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("DeviceTableViewCell строка 60")
         let cell = deviceCollectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
-        print("DeviceTableViewCell строка 57")
+        print("DeviceTableViewCell строка 62 \(cell)")
         // Configure the cell
         
         cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
-        print("DeviceTableViewCell строка 61")
+        print("DeviceTableViewCell строка 66")
         cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
-        print("DeviceTableViewCell строка 65 \(cell)")
+        print("DeviceTableViewCell строка 68 \(cell)")
         //cell.deviceButtonTapped = deviceSelected[indexPath.row].isSelected
 //        var isTaped:Bool = false  {
 //            didSet {

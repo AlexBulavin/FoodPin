@@ -99,8 +99,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-HO-fa7">
-                                            <rect key="frame" x="0.0" y="11" width="414" height="129"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <rect key="frame" x="20" y="11" width="394" height="129"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m8f-HZ-os7">
                                                 <size key="itemSize" width="157" height="155"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -118,6 +118,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHZ-OX-TER" userLabel="DeviceClickButton">
                                                                 <rect key="frame" x="8" y="10" width="141" height="126"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" backgroundImage="barrafina"/>
                                                                 <connections>
                                                                     <action selector="deviceButtonTappedWithSender:" destination="TVL-f6-mGp" eventType="touchUpInside" id="9yW-LA-VWq"/>
                                                                 </connections>
@@ -127,6 +128,7 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="DeviceImageView" translatesAutoresizingMaskIntoConstraints="NO" id="lnr-Ob-JH3" userLabel="DeviceImage View">
                                                                         <rect key="frame" x="5" y="0.0" width="100" height="100"/>
+                                                                        <color key="backgroundColor" red="0.1014360562" green="0.64062303300000001" blue="0.29016968609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="100" id="mHL-s0-VX1"/>
                                                                             <constraint firstAttribute="width" constant="100" id="zhc-3w-5Rs"/>
@@ -139,14 +141,17 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" restorationIdentifier="DeviceType" text="DeviceType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-pj-5Tk" userLabel="DeviceType">
                                                                         <rect key="frame" x="15.5" y="108" width="79" height="18"/>
+                                                                        <color key="backgroundColor" red="0.7324697375" green="0.89057797189999999" blue="0.90390533210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstItem="lnr-Ob-JH3" firstAttribute="top" secondItem="19l-fz-wx3" secondAttribute="top" id="U51-5f-XjX"/>
                                                                     <constraint firstItem="lnr-Ob-JH3" firstAttribute="leading" secondItem="19l-fz-wx3" secondAttribute="leading" constant="5" id="hn8-N2-6Jl"/>
                                                                     <constraint firstItem="lnr-Ob-JH3" firstAttribute="centerX" secondItem="Zan-pj-5Tk" secondAttribute="centerX" id="rXA-pu-Ixt"/>
+                                                                    <constraint firstItem="lnr-Ob-JH3" firstAttribute="trailing" secondItem="19l-fz-wx3" secondAttribute="trailing" constant="-5" id="s9g-SJ-MN2"/>
                                                                     <constraint firstItem="Zan-pj-5Tk" firstAttribute="top" secondItem="lnr-Ob-JH3" secondAttribute="bottom" constant="8" symbolic="YES" id="x85-hK-xaT"/>
                                                                 </constraints>
                                                             </stackView>
@@ -156,6 +161,7 @@
                                                             <constraint firstItem="19l-fz-wx3" firstAttribute="leading" secondItem="w6C-AM-ucu" secondAttribute="leading" constant="19" id="6bc-fj-f3T"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
+                                                    <color key="backgroundColor" red="0.13687363120000001" green="0.6561505218" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <size key="customSize" width="157" height="155"/>
                                                     <connections>
                                                         <outlet property="DeviceImageView" destination="lnr-Ob-JH3" id="7QM-wj-LU6"/>
@@ -169,8 +175,7 @@
                                     <constraints>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="centerY" secondItem="PNg-Nq-bMM" secondAttribute="centerY" id="4Zr-43-1Ic"/>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="trailing" secondItem="PNg-Nq-bMM" secondAttribute="trailing" id="76a-Fi-1wr"/>
-                                        <constraint firstItem="lFq-HO-fa7" firstAttribute="leading" secondItem="PNg-Nq-bMM" secondAttribute="leading" id="IGT-Uq-bIS"/>
-                                        <constraint firstItem="lFq-HO-fa7" firstAttribute="centerX" secondItem="PNg-Nq-bMM" secondAttribute="centerX" id="rSV-S0-WDf"/>
+                                        <constraint firstItem="lFq-HO-fa7" firstAttribute="leading" secondItem="PNg-Nq-bMM" secondAttribute="leading" constant="20" id="IGT-Uq-bIS"/>
                                         <constraint firstItem="lFq-HO-fa7" firstAttribute="top" secondItem="PNg-Nq-bMM" secondAttribute="top" constant="11" id="u4T-Vs-leY"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -709,12 +714,16 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="29" height="17"/>
+        <image name="barrafina" width="480" height="480"/>
         <image name="caskpubkitchen" width="480" height="480"/>
         <image name="donostia" width="480" height="480"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="homei" width="480" height="480"/>
         <image name="upstate" width="480" height="480"/>
         <image name="wafflewolf" width="480" height="480"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
