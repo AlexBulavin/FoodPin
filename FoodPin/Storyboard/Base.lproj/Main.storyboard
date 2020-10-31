@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="1Kh-S9-nba" userLabel="CM View">
-                            <rect key="frame" x="0.0" y="531" width="414" height="297"/>
+                            <rect key="frame" x="0.0" y="532" width="414" height="297"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Предложения от СкайМаркета" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-Cn-LzX">
@@ -91,15 +91,15 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deviceCell" rowHeight="151" id="JHu-De-kWA" customClass="DeviceTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="151"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deviceCell" rowHeight="152" id="JHu-De-kWA" customClass="DeviceTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JHu-De-kWA" id="PNg-Nq-bMM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-HO-fa7">
-                                            <rect key="frame" x="20" y="11" width="394" height="129"/>
+                                            <rect key="frame" x="20" y="11" width="394" height="130"/>
                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m8f-HZ-os7">
                                                 <size key="itemSize" width="157" height="155"/>
@@ -109,7 +109,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DeviceCell" id="TVL-f6-mGp" customClass="DeviceCollectionViewCell" customModule="FoodPin" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="-13" width="157" height="155"/>
+                                                    <rect key="frame" x="0.0" y="-12.5" width="157" height="155"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w6C-AM-ucu">
                                                         <rect key="frame" x="0.0" y="0.0" width="157" height="155"/>
@@ -180,11 +180,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="deviceCollectionView" destination="lFq-HO-fa7" id="nTv-g6-79y"/>
+                                    <outlet property="deviceCollectionView" destination="lFq-HO-fa7" id="6S4-4I-jD8"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="324" id="V9g-UT-y6Y" customClass="RecipeTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="179" width="414" height="324"/>
+                                <rect key="frame" x="0.0" y="180" width="414" height="324"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9g-UT-y6Y" id="L5A-C3-Xl8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
@@ -309,6 +309,15 @@
                                         </imageView>
                                         <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44E-GS-EuO" userLabel="DimView">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="weightLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJY-07-8Gc">
+                                                    <rect key="frame" x="147" y="200" width="121" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" systemColor="systemPurpleColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-mY-HX9" userLabel="rateIt2">
@@ -541,6 +550,7 @@
                         <outlet property="headerView" destination="Gk0-3p-1dj" id="f6r-tF-Zzu"/>
                         <outlet property="rateIt2" destination="aaL-mY-HX9" id="YvV-HR-btu"/>
                         <outlet property="tableView" destination="65e-bU-1ug" id="fkq-ea-h8i"/>
+                        <outlet property="weightLabel" destination="EJY-07-8Gc" id="wzT-b1-51a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrE-SU-e7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -729,6 +739,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

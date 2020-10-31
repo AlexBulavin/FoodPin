@@ -27,12 +27,10 @@ class DeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var deviceCollectionView: UICollectionView!
     
     override func awakeFromNib() {
-        
+        super.awakeFromNib()
         deviceCollectionView.delegate = self
         deviceCollectionView.dataSource = self
-     let pr = print("DeviceTableViewCell  deviceCollectionView.delegate", deviceCollectionView.delegate, "deviceCollectionView.dataSource", deviceCollectionView.dataSource)
-           super.awakeFromNib()
-           // Initialization code
+        let _: () = print("\(#file) Функция \(#function ) строка \(#line) строка \(#line)")
 
        }
     
@@ -51,21 +49,20 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
 //        return 1
 //    }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("DeviceTableViewCell строка 54 \(deviceSelected.count)")
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("\(#file) Функция \(#function ) строка \(#line) количество элементов в коллекции \(deviceSelected.count)")
         return deviceSelected.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("DeviceTableViewCell строка 60")
+        print("\(#file) Функция \(#function ) строка \(#line)")
         let cell = deviceCollectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
-        print("DeviceTableViewCell строка 62 \(cell)")
+        print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
         // Configure the cell
         
         cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
-        print("DeviceTableViewCell строка 66")
+        print("\(#file) Функция \(#function ) строка \(#line)")
         cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
-        print("DeviceTableViewCell строка 68 \(cell)")
+        print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
         //cell.deviceButtonTapped = deviceSelected[indexPath.row].isSelected
 //        var isTaped:Bool = false  {
 //            didSet {

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class RecipesTableViewController: UITableViewController {
+   
     
     @IBOutlet var mainScreenTableView: UITableView!
 
@@ -88,6 +90,7 @@ class RecipesTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
         //collectionView.backgroundColor = UIColor.clear
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,9 +110,10 @@ class RecipesTableViewController: UITableViewController {
 
 extension RecipesTableViewController {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("RecipesTableViewController строка 171 инициируем tableView")
-        return recipes.count + 1}
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print("\(#file) Функция \(#function ) строка \(#line) \n")
+//        print("")
+//        return 10}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -120,19 +124,16 @@ extension RecipesTableViewController {
         switch indexPath.row {
         
         case 0:
-            var pr = print("RecipesTableViewController строка 123 вошли в case = 0 создание коллекции")
+            
             guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell
             
-            else {fatalError("Невозможно создать ячейку DeviceTableViewCell") }
-            
-            pr = print("RecipesTableViewController строка 128  deviceCell")
-            pr = print("RecipesTableViewController строка 129 \(cell)")
+            else {fatalError("Невозможно создать ячейку DeviceTableViewCell \(#line)") }
+            let _: () = print("\(#file) Функция \(#function ) строка \(#line) вошли в case = 0 создание коллекции")
             
             return cell
             
         case 1...:
-//            var pr = print("RecipesTableViewController строка 134 вошли в case ")
-            //pr = print(indexPathLocal)
+
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
             cell.nameLabel?.text = recipes[indexPathLocal].recipeNames
@@ -143,7 +144,7 @@ extension RecipesTableViewController {
 
             cell.selectionStyle = .none
             
-//            pr = print("dataCell")
+//            pr = print("RecipesTableViewController строка \(#line) dataCell \(cell)")
 //            pr = print(cell)
             
             return cell

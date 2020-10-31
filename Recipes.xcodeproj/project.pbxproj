@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1677C8254BDE95003EBDD6 /* BleDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */; };
 		FA2A5565253CD1B6004945E8 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A5564253CD1B6004945E8 /* DeviceCollectionViewCell.swift */; };
 		FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */; };
 		FA51CE642533668000532B82 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51CE632533668000532B82 /* DeviceTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDeviceViewController.swift; sourceTree = "<group>"; };
 		FA2A5564253CD1B6004945E8 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		FA51CE632533668000532B82 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				FA3B097225089B520047FDAB /* RecipeDetailViewController.swift */,
 				FA5CF8E12529DB23009CFE2F /* MapViewController.swift */,
 				FAC8F761253F6BE90097221E /* RateViewController.swift */,
+				FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */,
 				FA526EA725337D25008FE633 /* Device.swift in Sources */,
 				FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */,
+				FA1677C8254BDE95003EBDD6 /* BleDeviceViewController.swift in Sources */,
 				FA617E212423386E00198145 /* RecipeTableViewCell.swift in Sources */,
 				FA5CBEDB252300FA0035E9D1 /* UIColor+Ext.swift in Sources */,
 				FA51CE642533668000532B82 /* DeviceTableViewCell.swift in Sources */,
