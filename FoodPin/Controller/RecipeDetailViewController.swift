@@ -105,6 +105,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func centralManager (_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        //Сканируем наш девайс в эфире.
         print("\nName   : \(peripheral.name ?? "(No name)")")
         print("RSSI   : \(RSSI)")
             for ad in advertisementData {
@@ -156,7 +157,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?)  {
         //Всякий раз при получении новых данных от девайса вызывается этот метод (функция).
         if let data = characteristic.value {
-            let weight: Int = data.withUnsafeBytes { $0.pointee }  >> 8 & 0xFFFFFF //В data приходит сразу много данных для более эффективного использования канала передачи данных. Например, первые 8 бит согласно спецификации - это Flag - выбор типа данных (граммы, унции, фунты и т.д.). Далее идут данные веса в гр в uint24, если Flag = 00. Далее данные веса в LB в uint8, если Flag = 01, далее данные веса в OZ в SFLOAT, если Flag = 10 (наверное) и так далее.
+            let weight = data.withUnsafeBytes { $0.load(as: Int.self) }  >> 8 & 0xFFFFFF //В data приходит сразу много данных для более эффективного использования канала передачи данных. Например, первые 8 бит согласно спецификации - это Flag - выбор типа данных (граммы, унции, фунты и т.д.). Далее идут данные веса в гр в uint24, если Flag = 00. Далее данные веса в LB в uint8, если Flag = 01, далее данные веса в OZ в SFLOAT, если Flag = 10 (наверное) и так далее.
             //Мы можем сделать операцию Shift 8 бит в начале (Flags) и далее, закончив его на 0xFFFFFF (что есть 16ричное представление первых 24 бит). Мы должны поставить маску на ту часть, которая нас интересует. И оставить остальные биты = 0.
             weightLabel.text = String(weight) + " гр."
             print("\(#file) Функция \(#function ) строка \(#line)")
