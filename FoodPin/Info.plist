@@ -92,5 +92,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Разрешить доступ к Bluetooth сканеру?</string>
 </dict>
 </plist>

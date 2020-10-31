@@ -110,10 +110,12 @@ class RecipesTableViewController: UITableViewController {
 
 extension RecipesTableViewController {
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("\(#file) Функция \(#function ) строка \(#line) \n")
-//        print("")
-//        return 10}
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\(#file) Функция \(#function ) строка \(#line) \n")
+        print("")
+        return recipes.count
+        
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -144,8 +146,7 @@ extension RecipesTableViewController {
 
             cell.selectionStyle = .none
             
-//            pr = print("RecipesTableViewController строка \(#line) dataCell \(cell)")
-//            pr = print(cell)
+            let _: () =  print("RecipesTableViewController строка \(#line) dataCell \(cell)")
             
             return cell
             
