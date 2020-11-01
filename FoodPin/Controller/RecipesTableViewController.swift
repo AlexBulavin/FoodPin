@@ -112,7 +112,6 @@ extension RecipesTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("\(#file) Функция \(#function ) строка \(#line) \n")
-        print("")
         return recipes.count
         
     }
