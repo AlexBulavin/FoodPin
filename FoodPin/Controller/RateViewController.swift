@@ -18,7 +18,7 @@ class RateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backgroundImageView.image = UIImage(named: recipe.recipeImages)
+        backgroundImageView.image = UIImage(named: recipe.recipeImage)
         
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

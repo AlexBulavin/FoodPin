@@ -29,12 +29,33 @@ class Recipes {
     var recipeIsLiked: Bool
     var recipeRating: String
     
-    init(name: String, recipeCategory: String, cookingDeviceType: String, cookingDeviceBrand: String, cookingDeviceModel: String, image: String, recipeBrief: String, recipeCookingTime: Int, recipeNumberOfPortions: Int, recipeCalories: Double, recipeProteins: Double, recipeFat: Double, recipeCarbons: Double, recipeGlicemicIndex: Double, recipeAuthorLocations: String, recipeType: String, ingredients: [String], isLiked: Bool, recipeRating: String) {
+    init(
+        name: String,
+        recipeCategory: String,
+        cookingDeviceType: String,
+        cookingDeviceBrand: String,
+        cookingDeviceModel: String,
+        image: String,
+        recipeBrief: String,
+        recipeCookingTime: Int,
+        recipeNumberOfPortions: Int,
+        recipeCalories: Double,
+        recipeProteins: Double,
+        recipeFat: Double,
+        recipeCarbons: Double,
+        recipeGlicemicIndex: Double,
+        recipeAuthorLocations: String,
+        recipeType: String,
+        ingredients: [String],
+        isLiked: Bool,
+        recipeRating: String)
+    {
         self.recipeName = name
         self.recipeCategory = recipeCategory
         self.cookingDeviceType = cookingDeviceType
         self.cookingDeviceBrand = cookingDeviceBrand
         self.cookingDeviceModel = cookingDeviceModel
+        self.recipeImage = image
         self.recipeBrief = recipeBrief
         self.recipeCookingTime = recipeCookingTime
         self.recipeNumberOfPortions = recipeNumberOfPortions
@@ -45,7 +66,6 @@ class Recipes {
         self.recipeGlicemicIndex = recipeGlicemicIndex
         self.recipeType = recipeType
         self.recipeAuthorLocations = recipeAuthorLocations
-        self.recipeImage = image
         self.recipeIngredients = ingredients
         self.recipeIsLiked = isLiked
         self.recipeRating = recipeRating
@@ -68,7 +88,7 @@ class Recipes {
             recipeGlicemicIndex: 00.00,
             recipeAuthorLocations: "",
             recipeType: "",
-            ingredients: [""],
+            ingredients: ["",""],
             isLiked: false,
             recipeRating: "*")
     }

@@ -172,8 +172,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         // Configure header view
-        headerView.recipeName.text = recipe.recipeNames
-        headerView.recipeImageView.image = UIImage(named: recipe.recipeImages)
+        headerView.recipeName.text = recipe.recipeName //recipe.recipeName
+        headerView.recipeImageView.image = UIImage(named: recipe.recipeImage)
         headerView.heartImageView.isHidden = (recipe.recipeIsLiked) ? false : true
         
         // Set the table view's delegate and data source
@@ -233,7 +233,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientsCell.self), for: indexPath) as! RecipeIngredientsCell
-            cell.recipeIngredientsLabel.text = recipe.recipeIngredients
+            cell.recipeIngredientsLabel.text = recipe.recipeIngredients[1]
             cell.selectionStyle = .none
             return cell
             
@@ -312,11 +312,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             let shareRecipeAction = UIAlertAction(title: "Поделиться", style: .default, handler: {
                 (action:UIAlertAction!) -> Void in
                 
-                let defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeNames + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeDescription + "\n\n" + "Состав блюда:" + "\n" + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
+                let defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeBrief + "\n\n" + "Состав блюда:" + "\n" + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
                 
                 let activityController: UIActivityViewController
                 
-                if let defaultPicture = UIImage(named: self.recipe.recipeImages)
+                if let defaultPicture = UIImage(named: self.recipe.recipeImage)
                 { activityController = UIActivityViewController(activityItems: [ defaultText, defaultPicture], applicationActivities: nil) }
                 else
                 { activityController = UIActivityViewController(activityItems: [ defaultText], applicationActivities: nil) }

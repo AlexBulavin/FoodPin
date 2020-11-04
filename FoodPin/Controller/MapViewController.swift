@@ -39,7 +39,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 // Add annotation
                 let annotation = MKPointAnnotation()
-                annotation.title = self.recipe.recipeNames + "\n" + self.recipe.recipeAuthorLocations
+                annotation.title = self.recipe.recipeName + "\n" + self.recipe.recipeAuthorLocations
                 annotation.subtitle = self.recipe.recipeType + "\n" + self.recipe.recipeRating
                 if let location = placemark.location {
                     annotation.coordinate = location.coordinate
