@@ -94,5 +94,9 @@
 	<false/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Разрешить доступ к Bluetooth сканеру?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Разрешить доступ к фотогалерее?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Разрешить приложению доступ к камере?</string>
 </dict>
 </plist>
