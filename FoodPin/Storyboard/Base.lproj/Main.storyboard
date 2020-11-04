@@ -265,7 +265,14 @@
                             <outlet property="delegate" destination="6Pa-qi-2Kd" id="kZj-Un-kgP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipe book" id="dyU-1o-7Cc"/>
+                    <navigationItem key="navigationItem" title="Recipe book" id="dyU-1o-7Cc">
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="DVf-84-jbL">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="qKF-MW-Hf4" kind="presentation" identifier="addNewRecipe" id="UAf-Ew-SMq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainScreenTableView" destination="eJP-48-EE4" id="GLR-NF-nM8"/>
                     </connections>
@@ -585,83 +592,275 @@
             </objects>
             <point key="canvasLocation" x="2813.04347826087" y="253.79464285714283"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Новый рецепт-->
         <scene sceneID="bcq-Gi-luu">
             <objects>
                 <tableViewController id="QHH-TZ-evS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YvF-XC-J8E">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Общая информация" id="g77-pg-edO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeName" id="6bw-wr-rK2">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bw-wr-rK2" id="q45-go-Fci">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCategory" id="VYM-Ih-qrB">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VYM-Ih-qrB" id="oiQ-us-Zea">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceSelector" id="rJk-iU-gHr">
-                                        <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJk-iU-gHr" id="slI-Nl-bwo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceType" id="xLp-Ap-0Xb">
-                                        <rect key="frame" x="0.0" y="158.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xLp-Ap-0Xb" id="UB9-kN-O7j">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceBrand" id="7Up-ec-z9U">
-                                        <rect key="frame" x="0.0" y="202" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Up-ec-z9U" id="Aqt-2T-p02">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceModel" id="01m-gG-dsh">
-                                        <rect key="frame" x="0.0" y="245.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="01m-gG-dsh" id="N6k-OO-ZfV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeMainPhoto" id="pgr-Qy-eBZ">
-                                        <rect key="frame" x="0.0" y="289" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="recipeMainImage" rowHeight="200" id="pgr-Qy-eBZ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pgr-Qy-eBZ" id="OOd-dt-VDe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="2On-RC-ZMd">
+                                                    <rect key="frame" x="195" y="91" width="24" height="18"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2On-RC-ZMd" firstAttribute="centerX" secondItem="OOd-dt-VDe" secondAttribute="centerX" id="lmS-VK-vzW"/>
+                                                <constraint firstItem="2On-RC-ZMd" firstAttribute="centerY" secondItem="OOd-dt-VDe" secondAttribute="centerY" id="nXg-2o-UR5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="recipeName" rowHeight="88" id="6bw-wr-rK2">
+                                        <rect key="frame" x="0.0" y="228" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bw-wr-rK2" id="q45-go-Fci">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-4s-uMI">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наименование рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1q-Ku-yNg" userLabel="recipeNameConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите наименование рецепта" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-wF-OTH" userLabel="recipeNameConstructorTextField">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.059227059830781734" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="o4T-4s-uMI" secondAttribute="trailing" constant="2" id="R8A-0R-2K7"/>
+                                                <constraint firstAttribute="bottom" secondItem="o4T-4s-uMI" secondAttribute="bottom" constant="1" id="VKg-V4-wIT"/>
+                                                <constraint firstItem="o4T-4s-uMI" firstAttribute="top" secondItem="q45-go-Fci" secondAttribute="top" constant="5" id="Yff-bj-Y3S"/>
+                                                <constraint firstItem="o4T-4s-uMI" firstAttribute="leading" secondItem="q45-go-Fci" secondAttribute="leading" constant="2" id="eaa-CH-6Ch"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeBrief" id="7Bv-RB-PTG">
-                                        <rect key="frame" x="0.0" y="332.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCategory" rowHeight="88" id="VYM-Ih-qrB">
+                                        <rect key="frame" x="0.0" y="316" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VYM-Ih-qrB" id="oiQ-us-Zea">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-ww-Ggf">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Каегория рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-GA-Ji3" userLabel="recipeCategoryConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите категорию рецепта" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-C4-YDC" userLabel="recipeCategoryConstructorTextField">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZX0-ww-Ggf" firstAttribute="top" secondItem="oiQ-us-Zea" secondAttribute="top" constant="5" id="4ie-wE-zu9"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZX0-ww-Ggf" secondAttribute="bottom" constant="1" id="X5H-KM-r1j"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZX0-ww-Ggf" secondAttribute="trailing" constant="2" id="fAy-OZ-PBT"/>
+                                                <constraint firstItem="ZX0-ww-Ggf" firstAttribute="leading" secondItem="oiQ-us-Zea" secondAttribute="leading" constant="2" id="juZ-9U-HWn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeKitchenType" rowHeight="88" id="hVC-9d-Rha">
+                                        <rect key="frame" x="0.0" y="404" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hVC-9d-Rha" id="Kx0-oj-EUa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-SX-ny1">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип кухни" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pva-Y1-4MD" userLabel="recipeKitchenTypeConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Укажите тип кухни" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQk-Vd-1oH" userLabel="recipeKitchenTypeConstructorTextField">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2gh-SX-ny1" firstAttribute="leading" secondItem="Kx0-oj-EUa" secondAttribute="leading" constant="2" id="Og1-5D-661"/>
+                                                <constraint firstAttribute="trailing" secondItem="2gh-SX-ny1" secondAttribute="trailing" constant="2" id="ZMU-r3-WwW"/>
+                                                <constraint firstItem="2gh-SX-ny1" firstAttribute="top" secondItem="Kx0-oj-EUa" secondAttribute="top" constant="5" id="jqc-Qq-laQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="2gh-SX-ny1" secondAttribute="bottom" constant="1" id="qwL-sh-qXB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceSelector" rowHeight="88" id="rJk-iU-gHr" userLabel="cookingDeviceType">
+                                        <rect key="frame" x="0.0" y="492" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJk-iU-gHr" id="slI-Nl-bwo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tqd-ns-nwe">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип кухонной техники" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gai-6K-rxI" userLabel="cookingDeviceTypeLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Выберите тип техники" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYT-8w-voa">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Tqd-ns-nwe" secondAttribute="bottom" constant="1" id="3se-P3-bZa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tqd-ns-nwe" secondAttribute="trailing" constant="2" id="Q04-8n-DJa"/>
+                                                <constraint firstItem="Tqd-ns-nwe" firstAttribute="leading" secondItem="slI-Nl-bwo" secondAttribute="leading" constant="2" id="gYQ-FW-PoY"/>
+                                                <constraint firstItem="Tqd-ns-nwe" firstAttribute="top" secondItem="slI-Nl-bwo" secondAttribute="top" constant="5" id="iQf-85-fam"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceBrand" rowHeight="88" id="7Up-ec-z9U">
+                                        <rect key="frame" x="0.0" y="580" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Up-ec-z9U" id="Aqt-2T-p02">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5zb-G4-HxZ">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите бренд" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82i-Q8-zKQ" userLabel="cookingDeviceBrandConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Укажите бренд кухонной техники" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKO-vz-rZn" userLabel="cookingDeviceBrandConstructorTextField">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5zb-G4-HxZ" firstAttribute="leading" secondItem="Aqt-2T-p02" secondAttribute="leading" constant="2" id="Kl0-Yi-yiE"/>
+                                                <constraint firstAttribute="trailing" secondItem="5zb-G4-HxZ" secondAttribute="trailing" constant="2" id="euB-JY-pQ9"/>
+                                                <constraint firstAttribute="bottom" secondItem="5zb-G4-HxZ" secondAttribute="bottom" constant="1" id="fec-wQ-wUu"/>
+                                                <constraint firstItem="5zb-G4-HxZ" firstAttribute="top" secondItem="Aqt-2T-p02" secondAttribute="top" constant="5" id="wuJ-ZS-afs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingDeviceModel" rowHeight="88" id="01m-gG-dsh">
+                                        <rect key="frame" x="0.0" y="668" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="01m-gG-dsh" id="N6k-OO-ZfV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GAh-45-n3b">
+                                                    <rect key="frame" x="2" y="5" width="410" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите модель техники" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWb-NH-GAl" userLabel="cookingDeviceModelConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите модель кухонной техники" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ITn-JO-0Uy" userLabel="cookingDeviceModelConstructorTextField">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="56.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GAh-45-n3b" firstAttribute="top" secondItem="N6k-OO-ZfV" secondAttribute="top" constant="5" id="13d-gV-wdV"/>
+                                                <constraint firstAttribute="trailing" secondItem="GAh-45-n3b" secondAttribute="trailing" constant="2" id="CHI-Pb-5VG"/>
+                                                <constraint firstItem="GAh-45-n3b" firstAttribute="leading" secondItem="N6k-OO-ZfV" secondAttribute="leading" constant="2" id="K7S-gH-tcy"/>
+                                                <constraint firstAttribute="bottom" secondItem="GAh-45-n3b" secondAttribute="bottom" constant="1" id="OlL-2x-gbm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeBrief" rowHeight="125" id="7Bv-RB-PTG">
+                                        <rect key="frame" x="0.0" y="756" width="414" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Bv-RB-PTG" id="eYN-ut-aY8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-xN-9fY">
+                                                    <rect key="frame" x="2" y="5" width="410" height="119"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Краткое описание рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPg-L3-xET" userLabel="recipeBriefConstructorLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Введите краткое описание рецепта здесь. Максимум 200 символов." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X5K-0v-VHi" userLabel="recipeBriefConstructorLabelTextView">
+                                                            <rect key="frame" x="0.0" y="25.5" width="410" height="93.5"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rKj-xN-9fY" secondAttribute="bottom" constant="1" id="0Uo-5c-TFs"/>
+                                                <constraint firstItem="rKj-xN-9fY" firstAttribute="leading" secondItem="eYN-ut-aY8" secondAttribute="leading" constant="2" id="141-64-YN0"/>
+                                                <constraint firstItem="rKj-xN-9fY" firstAttribute="top" secondItem="eYN-ut-aY8" secondAttribute="top" constant="5" id="C74-1f-3QP"/>
+                                                <constraint firstAttribute="trailing" secondItem="rKj-xN-9fY" secondAttribute="trailing" constant="2" id="zne-HS-G6c"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingTime" id="ZRC-fz-ALp">
-                                        <rect key="frame" x="0.0" y="376" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="881" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZRC-fz-ALp" id="dpb-jU-5Fm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -669,7 +868,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="numberOfPortions" id="Y9w-3b-TKl">
-                                        <rect key="frame" x="0.0" y="419.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="924.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y9w-3b-TKl" id="t7o-Yg-h3s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -677,7 +876,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCalories" id="bgb-GZ-n9p">
-                                        <rect key="frame" x="0.0" y="463" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="968" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgb-GZ-n9p" id="2HB-8K-iaU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -685,7 +884,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeProteins" id="gZG-cL-5gd">
-                                        <rect key="frame" x="0.0" y="506.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1011.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gZG-cL-5gd" id="lA4-cX-jbR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -693,7 +892,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeFat" id="mID-zZ-8Rt">
-                                        <rect key="frame" x="0.0" y="550" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1055" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mID-zZ-8Rt" id="BDU-e5-ozg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -701,7 +900,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCarbons" id="dH0-C1-5nY">
-                                        <rect key="frame" x="0.0" y="593.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1098.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dH0-C1-5nY" id="DX2-5C-5My">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -709,7 +908,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeGlicemicIndex" id="t6Z-Xb-v2v">
-                                        <rect key="frame" x="0.0" y="637" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1142" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6Z-Xb-v2v" id="Bjp-2e-JuJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -721,7 +920,7 @@
                             <tableViewSection headerTitle="Ингредиенты" id="YBy-g6-dDf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientName" id="toR-Bc-Stf">
-                                        <rect key="frame" x="0.0" y="736.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1241.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="toR-Bc-Stf" id="FXX-mH-T97">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -729,7 +928,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientProteins" id="TdV-fF-C6C">
-                                        <rect key="frame" x="0.0" y="780" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1285" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TdV-fF-C6C" id="p89-ty-N15">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -737,7 +936,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientFat" id="iRF-yY-v6e">
-                                        <rect key="frame" x="0.0" y="823.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1328.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iRF-yY-v6e" id="uGw-Lz-flN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -745,7 +944,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCarbons" id="NTo-m6-5Kj">
-                                        <rect key="frame" x="0.0" y="867" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1372" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NTo-m6-5Kj" id="tjZ-eI-Uu6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -753,7 +952,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientGlicemicIndex" id="XVb-Ha-GFe">
-                                        <rect key="frame" x="0.0" y="910.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1415.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XVb-Ha-GFe" id="QJ7-tM-3ZP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -761,7 +960,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientQuantity" id="l4z-Yg-UVq">
-                                        <rect key="frame" x="0.0" y="954" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1459" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l4z-Yg-UVq" id="Dts-Tq-unm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -769,7 +968,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteIngredient" id="mov-5P-1do">
-                                        <rect key="frame" x="0.0" y="997.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1502.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mov-5P-1do" id="8rV-dU-5Zq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -777,7 +976,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addIngredient" id="kUI-0e-9tB">
-                                        <rect key="frame" x="0.0" y="1041" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1546" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kUI-0e-9tB" id="9nc-OX-Ym8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -789,7 +988,7 @@
                             <tableViewSection headerTitle="Процесс приготовления" id="oJA-9O-vl8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCookingStepDescription" id="zDS-dz-wK3">
-                                        <rect key="frame" x="0.0" y="1140.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1645.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zDS-dz-wK3" id="lKh-6Q-Qwn">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -797,7 +996,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingProgramm" id="vMp-xk-TGG">
-                                        <rect key="frame" x="0.0" y="1184" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1689" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vMp-xk-TGG" id="Lz8-jk-YV1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -805,7 +1004,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="11" reuseIdentifier="cookingProduct" id="9Eo-us-xgf">
-                                        <rect key="frame" x="0.0" y="1227.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1732.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Eo-us-xgf" id="yBT-Ig-jY9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -813,15 +1012,15 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingTime" id="LRt-SA-xQU">
-                                        <rect key="frame" x="0.0" y="1271" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1776" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LRt-SA-xQU" id="F1o-jh-Rrg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingStepPhoto" id="uX8-i0-FeI">
-                                        <rect key="frame" x="0.0" y="1314.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cookingStepImage" id="uX8-i0-FeI">
+                                        <rect key="frame" x="0.0" y="1819.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX8-i0-FeI" id="kbT-h2-y92">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -829,7 +1028,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addRecipeCookingStep" id="ECv-Kk-8w5">
-                                        <rect key="frame" x="0.0" y="1358" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1863" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ECv-Kk-8w5" id="OPc-EQ-PMi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -837,7 +1036,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeTags" id="LQS-14-FCu">
-                                        <rect key="frame" x="0.0" y="1401.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="1906.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LQS-14-FCu" id="G6R-bm-J6f">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -852,10 +1051,21 @@
                             <outlet property="delegate" destination="QHH-TZ-evS" id="krj-mc-Des"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Новый рецепт" id="jUr-Vh-SSm">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="jyb-lw-p89">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="w51-Zn-eXY" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="Nw9-I3-47r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="1000"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAJ-kw-dy6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="w51-Zn-eXY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="-501"/>
+            <point key="canvasLocation" x="2876.811594202899" y="-699.77678571428567"/>
         </scene>
         <!--Rate View Controller-->
         <scene sceneID="4Q9-jT-9X7">
@@ -968,7 +1178,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AiH-DV-Zx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xWo-OW-NLx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2813" y="-501"/>
+            <point key="canvasLocation" x="3721.739130434783" y="-501.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Akf-KE-lED">
@@ -988,6 +1198,24 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="219.64285714285714"/>
         </scene>
+        <!--Новый рецепт-->
+        <scene sceneID="kWr-za-lri">
+            <objects>
+                <navigationController title="Новый рецепт" automaticallyAdjustsScrollViewInsets="NO" id="qKF-MW-Hf4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sEo-aV-OwF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QHH-TZ-evS" kind="relationship" relationship="rootViewController" id="8e2-DH-QnP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZZ-eI-UfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966.6666666666667" y="-700.44642857142856"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="le2-p7-Q2M"/>
@@ -996,9 +1224,12 @@
         <image name="back" width="29" height="17"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="caskpubkitchen" width="480" height="480"/>
+        <image name="close" width="16" height="16"/>
         <image name="donostia" width="480" height="480"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="homei" width="480" height="480"/>
+        <image name="photo" width="24" height="18"/>
+        <image name="plus" width="16" height="16"/>
         <image name="upstate" width="480" height="480"/>
         <image name="wafflewolf" width="480" height="480"/>
         <systemColor name="opaqueSeparatorColor">

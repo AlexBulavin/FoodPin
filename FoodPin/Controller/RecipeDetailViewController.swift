@@ -312,7 +312,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             let shareRecipeAction = UIAlertAction(title: "Поделиться", style: .default, handler: {
                 (action:UIAlertAction!) -> Void in
                 
-                let defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeBrief + "\n\n" + "Состав блюда:" + "\n" + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
+                var defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeBrief + "\n\n" + "Состав блюда:" + "\n"
+//                    defaultText = defaultText + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
                 
                 let activityController: UIActivityViewController
                 
