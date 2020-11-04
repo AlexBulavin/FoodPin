@@ -19,7 +19,7 @@ class Ingredient {
     var ingredientImage = ""
     var isSelected = false
     
-    init (ingredientName: String, ingredientProteins: Float, ingredientFat: Float, ingredientCarbons: Float, ingredientGlicemicIndex: Float,  ingredientUserName: String, ingredientImage: String, isSelected: Bool) {
+    init (ingredientName: String, ingredientProteins: Double, ingredientFat: Double, ingredientCarbons: Double, ingredientGlicemicIndex: Double,  ingredientUserName: String, ingredientImage: String, isSelected: Bool) {
         self.ingredientName = ingredientName
         self.ingredientUserName = ingredientUserName
         self.ingredientImage = ingredientImage

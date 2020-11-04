@@ -10,17 +10,17 @@ import UIKit
 
 
 class DeviceTableViewCell: UITableViewCell {
-   
+   //(deviceType: "", deviceUserName: "", deviceBrand: "", deviceModel: "", deviceImage: "", isSelected: false)
     var deviceSelected: [Device] = [
-        Device(deviceType: "deviceType1", deviceUserName: "deviceUserName1", deviceImage: "cafedeadend", isSelected: false),
-        Device(deviceType: "deviceType2", deviceUserName: "deviceUserName2", deviceImage: "homei", isSelected: false),
-        Device(deviceType: "deviceType3", deviceUserName: "deviceUserName3", deviceImage: "teakha", isSelected: false),
-        Device(deviceType: "deviceType4", deviceUserName: "deviceUserName4", deviceImage: "cafeloisl", isSelected: false),
-        Device(deviceType: "deviceType5", deviceUserName: "deviceUserName5", deviceImage: "petiteoyster", isSelected: false),
-        Device(deviceType: "deviceType6", deviceUserName: "deviceUserName6", deviceImage: "forkeerestaurant", isSelected: false),
-        Device(deviceType: "deviceType7", deviceUserName: "deviceUserName7", deviceImage: "bourkestreetbakery", isSelected: false),
-        Device(deviceType: "deviceType8", deviceUserName: "deviceUserName8", deviceImage: "haighschocolate", isSelected: false),
-        Device(deviceType: "deviceType9", deviceUserName: "deviceUserName9", deviceImage: "palominoespresso", isSelected: false),
+        Device(deviceType: "deviceType1", deviceUserName: "deviceUserName1", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "cafedeadend", isSelected: false),
+        Device(deviceType: "deviceType2", deviceUserName: "deviceUserName2", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "homei", isSelected: false),
+        Device(deviceType: "deviceType3", deviceUserName: "deviceUserName3", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "teakha", isSelected: false),
+        Device(deviceType: "deviceType4", deviceUserName: "deviceUserName4", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "cafeloisl", isSelected: false),
+        Device(deviceType: "deviceType5", deviceUserName: "deviceUserName5", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "petiteoyster", isSelected: false),
+        Device(deviceType: "deviceType6", deviceUserName: "deviceUserName6", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "forkeerestaurant", isSelected: false),
+        Device(deviceType: "deviceType7", deviceUserName: "deviceUserName7", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "bourkestreetbakery", isSelected: false),
+        Device(deviceType: "deviceType8", deviceUserName: "deviceUserName8", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "haighschocolate", isSelected: false),
+        Device(deviceType: "deviceType9", deviceUserName: "deviceUserName9", deviceBrand: "Redmond", deviceModel: "RMC-M800S", deviceImage: "palominoespresso", isSelected: false),
     ]
 
     

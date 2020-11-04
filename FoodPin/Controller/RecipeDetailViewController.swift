@@ -227,7 +227,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeDetailDescriptionCell.self), for: indexPath) as! RecipeDetailDescriptionCell
-            cell.recipeDescriptionLabel.text = recipe.recipeDescription
+            cell.recipeDescriptionLabel.text = recipe.recipeBrief
             cell.selectionStyle = .none
             return cell
             
