@@ -1065,6 +1065,7 @@
                         <outlet property="cookingDeviceBrandConstructorTextField" destination="PKO-vz-rZn" id="PTa-l9-nN3"/>
                         <outlet property="cookingDeviceModelConstructorTextField" destination="ITn-JO-0Uy" id="zMm-l7-21P"/>
                         <outlet property="cookingDeviceTypeConstructorLabel" destination="fYT-8w-voa" id="l8o-k9-tkA"/>
+                        <outlet property="photoImageView" destination="2On-RC-ZMd" id="D2d-ko-HiB"/>
                         <outlet property="recipeBriefConstructorLabelTextView" destination="X5K-0v-VHi" id="fpZ-aF-iuO"/>
                         <outlet property="recipeCategoryConstructorTextField" destination="bNo-C4-YDC" id="iRE-rO-dSs"/>
                         <outlet property="recipeKitchenTypeConstructorTextField" destination="KQk-Vd-1oH" id="AYl-R6-sYX"/>
