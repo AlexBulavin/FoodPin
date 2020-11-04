@@ -45,9 +45,9 @@ class DeviceTableViewCell: UITableViewCell {
 
 extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
-//        return 1
-//    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
+        return 1
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("\(#file) Функция \(#function ) строка \(#line) количество элементов в коллекции \(deviceSelected.count)")
         return deviceSelected.count
@@ -63,6 +63,7 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         print("\(#file) Функция \(#function ) строка \(#line)")
         cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
         print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
+        collectionView.reloadData() //в соответствии с рекомендациями: перезагрузил данные https://coderoad.ru/48672335/Как-сделать-видимой-пользовательскую-ячейку-collectionview
         //cell.deviceButtonTapped = deviceSelected[indexPath.row].isSelected
 //        var isTaped:Bool = false  {
 //            didSet {

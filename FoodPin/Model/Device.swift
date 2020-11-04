@@ -6,8 +6,8 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-import Foundation
-import UIKit
+//import Foundation
+//import UIKit
 
 class Device {
     var deviceType = ""

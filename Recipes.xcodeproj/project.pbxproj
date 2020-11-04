@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0F8FE52552AE4800B46355 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F8FE42552AE4800B46355 /* Ingredient.swift */; };
 		FA1677C8254BDE95003EBDD6 /* BleDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */; };
 		FA167807254EBEAC003EBDD6 /* NORServiceIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167806254EBEAC003EBDD6 /* NORServiceIdentifiers.swift */; };
 		FA2A5565253CD1B6004945E8 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A5564253CD1B6004945E8 /* DeviceCollectionViewCell.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0F8FE42552AE4800B46355 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDeviceViewController.swift; sourceTree = "<group>"; };
 		FA167806254EBEAC003EBDD6 /* NORServiceIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NORServiceIdentifiers.swift; sourceTree = "<group>"; };
 		FA2A5564253CD1B6004945E8 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				FABAF2862517A64600F35579 /* Recipes.swift */,
 				FA526EA625337D25008FE633 /* Device.swift */,
+				FA0F8FE42552AE4800B46355 /* Ingredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				FAC8F762253F6BE90097221E /* RateViewController.swift in Sources */,
 				FA95FE892528CC8700E693AF /* UINavigationController+Ext.swift in Sources */,
+				FA0F8FE52552AE4800B46355 /* Ingredient.swift in Sources */,
 				FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */,
 				FABAF2872517A64600F35579 /* Recipes.swift in Sources */,
 				FA167807254EBEAC003EBDD6 /* NORServiceIdentifiers.swift in Sources */,

@@ -100,6 +100,7 @@ class RecipesTableViewController: UITableViewController {
         UIApplication.shared.statusBarStyle = .darkContent
         
         tableView.reloadData()//Для того, чтобы после возврата из контроллера детализации (при изменении рейтинга) обновить показатели рейтинга на главном экране.
+        
     }
     
     override func didReceiveMemoryWarning() {
