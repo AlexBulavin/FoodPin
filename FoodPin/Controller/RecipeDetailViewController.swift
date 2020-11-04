@@ -49,7 +49,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                     rateIt2.setTitle(ratingChanged, for: .normal)
                 return
 
-                case "tree":
+                case "three":
                 ratingChanged = "★★★⭐︎⭐︎"
                     self.recipe.recipeRating = ratingChanged
                     print(recipe.recipeRating)

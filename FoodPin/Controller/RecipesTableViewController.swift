@@ -355,6 +355,8 @@ class RecipesTableViewController: UITableViewController {
         
         navigationController?.hidesBarsOnSwipe = true
         //collectionView.backgroundColor = UIColor.clear
+        mainScreenTableView.delegate = self
+        mainScreenTableView.dataSource = self
         
         
     }
@@ -380,6 +382,10 @@ class RecipesTableViewController: UITableViewController {
 }
 
 extension RecipesTableViewController {
+   
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("\(#file) Функция \(#function ) строка \(#line) \n")

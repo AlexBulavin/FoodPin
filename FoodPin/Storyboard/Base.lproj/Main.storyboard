@@ -18,7 +18,7 @@
         <scene sceneID="Hf0-1t-Tzx">
             <objects>
                 <tableViewController id="6Pa-qi-2Kd" customClass="RecipesTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJP-48-EE4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="2" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJP-48-EE4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1058,7 +1058,9 @@
                                 <segue destination="w51-Zn-eXY" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="Nw9-I3-47r"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="save" id="yMW-Q7-Rgr"/>
+                        <barButtonItem key="rightBarButtonItem" image="save" id="yMW-Q7-Rgr">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="1000"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1129,33 +1131,33 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H9-i0-req" userLabel="two">
-                                        <rect key="frame" x="8.5" y="189" width="168" height="55"/>
+                                        <rect key="frame" x="12.5" y="189" width="160" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <state key="normal" title="★★★⭐︎⭐︎">
+                                        <state key="normal" title="★★⭐︎⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="xWo-OW-NLx" kind="unwind" identifier="two" unwindAction="rateRecipeWithSegue:" id="8ZL-bE-Haa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FD-T8-kvr" userLabel="zero">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcU-zL-7V1" userLabel="one">
                                         <rect key="frame" x="16.5" y="252" width="152" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="★⭐︎⭐︎⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="one" unwindAction="rateRecipeWithSegue:" id="6q6-94-Jdl"/>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="one" unwindAction="rateRecipeWithSegue:" id="UzB-We-6Ur"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcU-zL-7V1" userLabel="one">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FD-T8-kvr" userLabel="zero">
                                         <rect key="frame" x="21" y="315" width="143" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="⭐︎⭐︎⭐︎⭐︎⭐︎">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="zero" unwindAction="rateRecipeWithSegue:" id="RyB-tc-d6s"/>
+                                            <segue destination="xWo-OW-NLx" kind="unwind" identifier="zero" unwindAction="rateRecipeWithSegue:" id="rad-sz-kUq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1229,7 +1231,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="le2-p7-Q2M"/>
+        <segue reference="757-cU-SzJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="29" height="17"/>
