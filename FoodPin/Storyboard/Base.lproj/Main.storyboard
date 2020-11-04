@@ -1058,6 +1058,7 @@
                                 <segue destination="w51-Zn-eXY" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="Nw9-I3-47r"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save" id="yMW-Q7-Rgr"/>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="1000"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1240,6 +1241,7 @@
         <image name="homei" width="480" height="480"/>
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
+        <image name="save" width="20" height="20"/>
         <image name="upstate" width="480" height="480"/>
         <image name="wafflewolf" width="480" height="480"/>
         <systemColor name="opaqueSeparatorColor">
