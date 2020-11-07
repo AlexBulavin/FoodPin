@@ -28,6 +28,7 @@ class DeviceTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        deviceCollectionView.register(DeviceCollectionViewCell.nib(), forCellWithReuseIdentifier: DeviceCollectionViewCell.identifier)
         deviceCollectionView.delegate = self
         deviceCollectionView.dataSource = self
         let _: () = print("\(#file) Функция \(#function ) строка \(#line) строка \(#line)")
@@ -40,6 +41,17 @@ class DeviceTableViewCell: UITableViewCell {
 //         //Configure the view for the selected state
 //    }
     
+    static let identifier = "DeviceTableViewCell"
+
+    static func nib() -> UINib {
+        return UINib(nibName: "DeviceTableViewCell",
+                     bundle: nil)
+    }
+    
+    func configure(with models: [Device]) {
+        self.deviceSelected = models
+        deviceCollectionView.reloadData()
+    }
     
 }
 

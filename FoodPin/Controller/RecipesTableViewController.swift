@@ -354,6 +354,8 @@ class RecipesTableViewController: UITableViewController {
         }
         
         navigationController?.hidesBarsOnSwipe = true
+        mainScreenTableView.register(DeviceTableViewCell.nib(), forCellReuseIdentifier: DeviceTableViewCell.identifier)
+        
         //collectionView.backgroundColor = UIColor.clear
         mainScreenTableView.delegate = self
         mainScreenTableView.dataSource = self
@@ -403,8 +405,9 @@ extension RecipesTableViewController {
         
         case 0:
             
-            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell
+            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: DeviceCollectionViewCell.identifier, for: indexPath) as? DeviceTableViewCell
             
+            //cell.configure(with: DeviceCollectionViewCell)
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell \(#line)") }
             let _: () = print("\(#file) Функция \(#function ) строка \(#line) вошли в case = 0 создание коллекции")
             

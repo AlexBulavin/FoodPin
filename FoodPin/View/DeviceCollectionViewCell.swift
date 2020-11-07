@@ -9,6 +9,13 @@ import UIKit
 
 class DeviceCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "DeviceCollectionViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "DeviceCollectionViewCell",
+                     bundle: nil)
+    }
+    
     @IBOutlet var DeviceType: UILabel!
     @IBOutlet  var DeviceImageView: UIImageView! {
         didSet {
@@ -33,6 +40,16 @@ class DeviceCollectionViewCell: UICollectionViewCell {
             }
         }
 
+    }
+    
+    func configure(with model: Device) {
+        self.DeviceType.text = "\(model.deviceModel)"
+        self.DeviceImageView.contentMode = .scaleAspectFit
+        self.DeviceImageView.image = UIImage(named: "device_350x600")
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
 }
