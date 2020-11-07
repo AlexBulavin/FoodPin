@@ -85,19 +85,284 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     var centralManager: CBCentralManager!
     var scale: CBPeripheral?
     
-    let serviceUUID = CBUUID(string: "780A") //ID сервиса 780А
-    let kitchenScaleCharacteristicUUID = CBUUID(string: "8AA2")//Unknown characterristic 
-    //UUID: 8AA2
+    // MARK: - Kitchen scale
+    
+    let serviceKitchenUUID = CBUUID(string: "780A") //ID сервиса 780А для кухонных весов
+    let kitchenScaleCharacteristicUUID = CBUUID(string: "8AA2")//UUID: 8AA2
     //Properties: Notify
     //Value 0x0C-0D-00-00-81-10-17-00 где 0D-00 - это вес
     
+    // MARK: - Body scale
+    /*  SCALE
+     App -Search-> Device
+     Device -Broadcast-> App
+        Broadcast Information:
+        [Service UUID] [Local Name]
+     • Service UUID: 0x7892
+     [Local Name]: [Flag]+[Model Name]
+     Flag:
+     ‘0’-Normal Mode
+     ‘1’-Pairing Mode
+        Model Name: 5 characters, e.g. ‘1257B’
+        How to get the device into pairing mode:
+        Press and hold the corresponding button on the device until you can see two ‘o’ jumping up and down on the display.
+     
+     App -Connect-> Device
+     App -Read Device info-> Device
+        Device Information:
+     • [Manufacturer Name]
+     • [Firmware Version]
+     • [Hardware Version]
+     • [Software Version]
+     • [Serial Number]
+     
+     App -Enable Characteristics-> Device
+        Characteristics UUID:
+    • [0x8A81] [Write]: Information transfer from App to Device
+    • [0x8A82][Indicate]: Information transfer from Device to App
+    • [0x8A24][Indicate]: Weight measurement transfer from Device to App
+    • [0x8A22][Indicate]: Body composition transfer from Device to App
+    • [0x8A25][Notify]: Weight measurement transfer from Device to App
+     
+     //Pairing Device
+     Device -Password-> App
+     Password:
+     [Characteristics UUID] [Command] [Password]
+     • [Characteristics UUID]: 0x8A82
+     • [Command]: 0xA0
+     • [Password]: 4 bytes. If the App gets 0xA0 0xA4 0x39 0xCD 0x20, then it’s 0x20CD39A4
+     App -Account ID-> Device
+     Account ID:
+     [Characteristics UUID] [Command] [Account ID]
+     • [Characteritics UUID]: 0x8A81
+     • [Command]: 0x21
+     • [Account ID]: 4 bytes, e.g. 0x78DF094B. The Account ID should be unique for each App account and should be sent as 0x21 0x4B 0x09 0xDF 0x78
+     //Random Number:
+     Device -Random Number-> App
+     [Characteristics UUID] [Command] [Random Number]
+     • [Characteristics UUID]: 0xA82
+     • [Command]: 0xA1
+     • [Random Number]: 4 bytes. If gets 0xA1 0x48 0xFE 0x90 0xAB, then it’s 0xAB90FE48.
+     
+     //Verification Code:
+     App -Verification code-> Device
+     Characteristics UUID] [Command] [Verification Code]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x20
+     • [Verification Code]: 4 bytes, e.g. [Password]=0x20CD39A4 XOR [Random
+     Number]=0xAB90FE48, then [Verification Code]=0x8B5DC7
+     • It should be sent as below 0x20 0xEC 0xC7 0x5D 0x8B
+
+     //Verification
+     Device -Verification code-> App
+     If the verification code is correct, then it can go to the next step, or the Bluetooth connection will disconnect.
+     
+     //User№ & Name
+     Device -User№ & Name-> App
+     [Characteristics UUID] [Command] [User No.&Name]
+     • [Characteristics UUID]: 0x8A82
+     • [Command]: 0x83
+     • [User No.&Name]
+        : User No.[Byte1]:
+     [0x01]...[0x08]: User 1 ... User 8
+     [Other value]: Invalid
+     User Name[Byte2-19]: 18 characters in ASCII
+     
+     //Connect User
+     App -Connect User-> Device
+     [Characteristics UUID] [Command] [Connect User]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x03
+     • [Connect User]:
+     User No.[Byte1]:
+     [0x01]...[0x08]: User 1 ... User 8 [Other value]: Invalid
+     User Name[Byte2-19]: 18 characters in ASCII, utf8s type.
+     • If you need to connect User 1 and name it as John, then it should be sent as below 0x03 0x01 0x4A 0x6F 0x6B 0x6E 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20
+     0x20 0x20 0x20 0x20
+     
+     //User Profile
+     App -User Profile-> Device
+     [Characteristics UUID] [Command] [User Profile]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x51
+     • [User Profile]:
+        Flag[Byte1]: 0x07
+        User №[Byte2]: [0x01]...[0x08]: User 1 ... User 8 [Other value]: Invalid
+     Gender[Byte3]:
+        [0x01]: Male, Normal
+        [0x02]: Female, Normal
+        [0x03]: Male, Athlete
+        [0x04]: Female, Athlete
+        [Other value]: Invalid
+     Age[Byte4]: [unit8], e.g. 30 years old, then it’s 0x1E
+     Height[Byte5-6]: Always in meter[SFLOAT], e.g. 1.853m and 1.853 x 10^3=1853, then byte5=0x3D, byte6=0x07 OR 0xD0=0xD7.
+     D means there are three decimal places
+     • So the profile of User 1 can be set up as below
+     0x51 0x07 0x01 0x01 0x1E 0x 0x3D 0xD7
+     
+    //Time Offset - вычисление времени взвешивания
+    App -Time Offset-> Device
+     [Characteristics UUID] [Command] [Time Offset]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x02
+     • [Time Offset]: 4 bytes, e.g. 0x0AF8D1D0
+     
+     How to calculate the time offset:
+     • The base time is always 0:00:00 1st Jan 2010.
+     • In case the current time is 13:00:00 1st Nov 2015.
+     • The time offset is 365+365+366+365+365+304+13/24 days. • In second the time offset is 184,078,800 = 0x0AF8D1D0
+     • The complete command should be
+     0x02 0xD0 0xD1 0xF8 0x0A
+     
+     App -Enable Disconnection-> Device
+     Enable Disconnection:
+     [Characteristics UUID] [Command]
+     • [Characteristics UUID]: 0x8A81
+     • Command: 0x22
+     
+     App -Bluetooth Disconnected-> Device
+     Bluetooth Disconnected:
+     The pairing is finished after “[ ]” is shown on the display of the device.
+     The App shouls store the Password, Model Name, Serial Number, Mac Address, etc for the next connection. The device will disconnected after getting Enable Disconnection Command.
+     
+     // MARK: - Normal Use
+     App -Search-> Device
+     Broadcast Information:
+     [Service UUID] [Local Name]
+     • Service UUID: 0x7892
+     • [Local Name]: [Flag]+[Model Name]+[Account ID]
+     Flag: ‘0’-Normal Mode ‘1’-Pairing Mode
+     Model Name: 5 characters, e.g. ‘1144B’
+     Account ID: 8 characters. In case the Account ID the device got is 0x78DF094B then it should be ’4’ ‘B’ ‘0’ ‘9’ ‘D’ ‘F’ ‘7’ ‘8’ in the broadcast information.
+     
+     Device -Broadcast-> App
+     How to get the scale into normal mode:
+     • Press the unit button at the back of the scale to turn it on.
+     • Step on the scale to turn it on.
+     
+     App -Connect-> Device
+     Connect:
+     • Please verify the Service UUID before connect
+     • Please verify the Account ID before connect
+     
+     App -Enable Characteristics-> Device
+     Characteristics UUID:
+     • [0x8A81][Write]: Information transfer from App to Device
+     • [0x8A82][Indicate]: Information transfer from Device to App
+     • [0x8A24][Indicate]: Weight measurement transfer from Device to App
+     • [0x8A22][Indicate]: Body composition transfer from Device to App
+     • [0x8A25][Notify]: Weight measurement transfer from Device to App
+     
+     Device -Random Number-> App
+     Random Number:
+     [Characteristics UUID] [Command] [Random Number]
+     • [Characteristics UUID]: 0x8A82
+     • [Command]: 0xA1
+     • [Random Number]: 4 bytes. If gets 0xA1 0x48 0xFE 0x90 0xAB, then it’s 0xAB90FE48
+     
+     App -Verification Code-> Device
+     Verification Code:
+     [Characteristics UUID] [Command] [Verification Code]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x20
+     • [Verification Code]: 4 bytes, e.g. [Password]=0x20CD39A4 XOR [Random
+     Number]=0xAB90FE48, then [Verification Code]=0x8B5DC7EC
+     • It should be sent as below 0x20 0xEC 0xC7 0x5D 0x8B
+     
+     Verification:
+     If the verification code is correct, then it can go to the next step, or the Bluetooth connection will disconnect.
+     
+     App -Time Offset-> Device
+     Time Offset:
+     [Characteristics UUID] [Command] [Time Offset]
+     • [Characteristics UUID]: 0x8A81
+     • [Command]: 0x02
+     • [Time Offset]: 4 bytes, e.g. 0x0AF8D1D0
+     
+     How to calculate the time offset:
+     • The base time is always 0:00:00 1st Jan 2010.
+     • In case the current time is 13:00:00 1st Nov 2015.
+     • The time offset is 365+365+366+365+365+304+13/24 days. • In second the time offset is 184,078,800 = 0x0AF8D1D0
+     • The complete command should be
+     0x02 0xD0 0xD1 0xF8 0x0A
+     
+     Device -User Profile-> App
+     User Profile:
+     [Characteristics UUID] [Command] [User Profile]
+     • [Characteristics UUID]: 0x8A82
+     • [Command]: 0xC0
+     • [Measurement Data]:
+     Flag[Byte1]: x07
+     User No.[Byte2]:
+     [0x01]...[0x08]: User 1 ... User 8
+     [Other value]: Invalid
+     Gender[Byte3]:
+     [0x01]: Male, Normal
+     [0x02]: Female, Normal
+     [0x03]: Male, Athlete
+     [0x04]: Female, Athlete
+     [Other value]: Invalid
+     Age[Byte4]: [unit8], e.g. 30 years old, then it’s 0x1E
+     Height[Byte5-6]: Always in meter[SFLOAT], e.g. byte5=0x3D, byte6=0xD7, then
+     0x073D x 10^-[(~D)+1]=1.853m
+     
+     App <-User Profile-> Device
+     User Profile Update:
+     The App needs to compare the received user profile with the one on itself.
+     • If they are the same, then no update is needed and please go to the next steps.
+     • If they are NOT the same, the App should give the users a chance to decide which one
+     they would like to keep. With Command 0x51, the user profile can be updated from the App.
+     
+     Device -Weight Data-> App
+     Measurement Data:
+     [Characteristics UUID] [Weight Data]
+     • [Characteristics UUID]: 0x8A24
+     • [Weight Data] Flag[Byte1]:
+     Bit6Bit5: [00] kg, [01] LB, [10] St. The current unit on the scale.
+     Others: Reserved
+     Weight[Byte2-5]: Always in kilogram. If byte2=0xC2, byte3=0x1A, byte4=0x00
+     byte5=0xFE, then the weight is 0x001AC2 x 10^[-(~0xFE+1)] = 68.5kg
+     
+     Time Stamp[Byte6-9]: Always in second. If byte6=0xD0, byte7=0xD1, byte8=0xF8,
+     byte9=0x0A, it means 184,078,800 second has passed from the base time 0:00:00 1st Jan 2010.
+     Weight Difference[Byte10-13]: Reserved
+     Impedance2[Byte14-17]: Always in Ohm. If byte14=0x77, byte15=0x15, byte16=0x00, byte17=0xFF, then the impedance is 0x001577 x 10^[-(~0xFF+1) 549.5Ohm.
+     User ID[Byte18]:
+     [0x01]...[0x08]: User 1 ... User 8 [Other value]: Invalid
+     Weight Status[Byte19]:
+     Bit0: [0] Unstable, [1] Stable Bit3-1: [000] Idle
+     [001] Processing
+     [010] Measuring with shoes
+     [011] Measuring with bare feet
+     [100] Measuring Complete
+     [101] Error
+     Others: Reserved
+     
+     Device -Body Composition-> App
+     Body Composition:
+     [Characteristics UUID] [Body Composition]
+     • [Characteristics UUID]: 0x
+     • [Body Composition] Flag[Byte1]: 0x6D
+     Time Stamp[Byte2-5]: Always in second. If byte2=0xD0, byte3=0xD1, byte4=0xF8, byte5=0x0A, it means 184,078,800 second has passed from the base time 0:00:00 1st Jan 2010.
+     User ID[Byte6]:
+     [0x01]...[0x08]: User 1 ... User 8 [Other value]: Invalid
+     Body Fat[Byte7-8]: If byte7=0x69, byte8=0xF0, then the body fat is 0x0069x 10^[- (~0xF+1)] = 10.5%.
+     Body Water[Byte9-10]: If byte9=0xBF, byte10=0xF2, then the body water is 0x02BFx 10^[-(~0xF+1)] = 70.3%.
+     Muscle Mass[Byte11-12]: If byte11=0x95, byte12=0xF1, then the muscle mass is 0x0195x 10^[-(~0xF+1)] = 40.5%.
+     Bone Weight[Byte13-14]: Always in kilogram. If byte13=0x19, byte14=0xF0, then
+     the bone weight is 0x0019x 10^[-(~0xF+1)] = 2.5kg
+    */
+    let serviceBodyUUID = CBUUID(string: "7892") //ID сервиса 780А для напольных весов
+        let bodyScaleCharacteristicUUID = CBUUID(string: "8A82")//UUID: 8AA2
+        //Properties: Notify
+        //Value 0x0C-0D-00-00-81-10-17-00 где 0D-00 - это вес
     @IBOutlet weak var weightLabel: UILabel!
     
    
     // MARK: - Central manager delegate
     func  centralManagerDidUpdateState(_ central: CBCentralManager)  {
         if central.state == .poweredOn { //Проверяем, включен ли Bluetooth на телефоне. Если не выключен, то выводится системное сообщение о необходимостиadvertisementData  его включить.
-            centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
+            centralManager.scanForPeripherals(withServices: [serviceKitchenUUID], options: nil)
             print("Power is ON \n \(#file) Функция \(#function ) строка \(#line)")
             print("centralManager \(String(describing: centralManager)) \n")
             
@@ -129,13 +394,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.delegate = self
-        peripheral.discoverServices([serviceUUID])
+        peripheral.discoverServices([serviceKitchenUUID])
 //        print("\(#file) Функция \(#function ) строка \(#line)")
 //        print("centralManager \(String(describing: peripheral)) \n")
     }
     // MARK: - Peripheral delegate
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices eror: Error?) {
-        if let service = peripheral.services?.first(where: { $0.uuid == serviceUUID
+        if let service = peripheral.services?.first(where: { $0.uuid == serviceKitchenUUID
         }) {
             peripheral.discoverCharacteristics([kitchenScaleCharacteristicUUID], for: service)
 //            print("\(#file) Функция \(#function ) строка \(#line)")

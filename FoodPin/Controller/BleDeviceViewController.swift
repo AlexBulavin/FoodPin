@@ -14,7 +14,7 @@ class BleDeviceViewController: UIViewController, CBCentralManagerDelegate, CBPer
     var centralManager: CBCentralManager!
     var scale: CBPeripheral?
     
-    let serviceUUID = CBUUID(string: "780A") //ID сервиса 780А
+    let serviceKitchenUUID = CBUUID(string: "780A") //ID сервиса 780А
     let kitchenScaleCharacteristicUUID = CBUUID(string: "8AA2")//Unknown characterristic 
     //UUID: 8AA2
     //Properties: Notify
@@ -36,7 +36,7 @@ class BleDeviceViewController: UIViewController, CBCentralManagerDelegate, CBPer
     // MARK: - Central manager delegate
     func  centralManagerDidUpdateState(_ central: CBCentralManager)  {
         if central.state == .poweredOn { //Проверяем, включен ли Bluetooth на телефоне. Если не выключен, то выводится системное сообщение о необходимости его включить.
-            centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
+            centralManager.scanForPeripherals(withServices: [serviceKitchenUUID], options: nil)
             print("Power is ON \n \(#file) Функция \(#function ) строка \(#line)")
             print("centralManager \(String(describing: centralManager)) \n")
             
@@ -67,13 +67,13 @@ class BleDeviceViewController: UIViewController, CBCentralManagerDelegate, CBPer
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.delegate = self
-        peripheral.discoverServices([serviceUUID])
+        peripheral.discoverServices([serviceKitchenUUID])
 //        print("\(#file) Функция \(#function ) строка \(#line)")
 //        print("centralManager \(String(describing: peripheral)) \n")
     }
     // MARK: - Peripheral delegate
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices eror: Error?) {
-        if let service = peripheral.services?.first(where: { $0.uuid == serviceUUID
+        if let service = peripheral.services?.first(where: { $0.uuid == serviceKitchenUUID
         }) {
             peripheral.discoverCharacteristics([kitchenScaleCharacteristicUUID], for: service)
             print("\(#file) Функция \(#function ) строка \(#line)")
