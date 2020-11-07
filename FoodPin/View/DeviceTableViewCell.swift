@@ -67,7 +67,8 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("\(#file) Функция \(#function ) строка \(#line)")
-        let cell = deviceCollectionView.dequeueReusableCell(withReuseIdentifier: "DeviceCell", for: indexPath) as! DeviceCollectionViewCell
+        let cell = deviceCollectionView.dequeueReusableCell(withReuseIdentifier: DeviceCollectionViewCell.identifier, for: indexPath) as! DeviceCollectionViewCell
+        cell.configure(with: deviceSelected[indexPath.row])
         print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
         // Configure the cell
         

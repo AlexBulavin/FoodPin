@@ -405,7 +405,7 @@ extension RecipesTableViewController {
         
         case 0:
             
-            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: DeviceCollectionViewCell.identifier, for: indexPath) as? DeviceTableViewCell
+            guard let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: DeviceTableViewCell.identifier, for: indexPath) as? DeviceTableViewCell
             
             //cell.configure(with: DeviceCollectionViewCell)
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell \(#line)") }
