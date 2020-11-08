@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ctq-4V-tXe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a3I-FQ-BA3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -305,7 +305,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="QEE-SW-YhI"/>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="65e-bU-1ug">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1017"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" clipsSubviews="YES" contentMode="scaleAspectFill" id="Gk0-3p-1dj" userLabel="Header View" customClass="RecipeDetailHeaderView" customModule="FoodPin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
@@ -449,14 +449,17 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-hE-xNU">
                                                     <rect key="frame" x="22" y="0.0" width="372" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состав блюда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="344-75-r82">
                                                             <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-6f-6Wp">
                                                             <rect key="frame" x="0.0" y="54.5" width="85" height="18.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18.5" id="3rR-ix-QiK"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -550,6 +553,7 @@
                             <constraint firstItem="65e-bU-1ug" firstAttribute="trailing" secondItem="bE5-f5-Ifv" secondAttribute="trailing" id="pvT-7r-Mpu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="y7B-Ec-NPO"/>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="headerView" destination="Gk0-3p-1dj" id="f6r-tF-Zzu"/>
@@ -1193,10 +1197,11 @@
             </objects>
             <point key="canvasLocation" x="3721.739130434783" y="-501.5625"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Рецепты-->
         <scene sceneID="Akf-KE-lED">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ctq-4V-tXe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Рецепты" image="book.fill" catalog="system" id="jRe-oh-NIk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ouu-4N-kyY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1210,6 +1215,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQH-Je-5gW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="219.64285714285714"/>
+        </scene>
+        <!--Ещё-->
+        <scene sceneID="G39-HS-ZUx">
+            <objects>
+                <viewController id="ykv-7j-hq9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RLZ-hF-sAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="R8O-hC-ZkC"/>
+                        <color key="backgroundColor" red="0.78801249656287342" green="0.88513778012065136" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ещё" image="ellipsis" catalog="system" id="Fnd-E8-1q3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1B9-ew-OCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1004" y="-1321"/>
+        </scene>
+        <!--Программы-->
+        <scene sceneID="aDk-V6-47B">
+            <objects>
+                <viewController id="XX6-td-mzu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g7B-pb-HN8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="M8P-IA-ced"/>
+                        <color key="backgroundColor" red="1" green="0.79578860234187454" blue="0.63383012723429577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Программы" image="scroll" catalog="system" id="fiK-aN-wSY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-mU-nfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1024" y="-639"/>
+        </scene>
+        <!--СкайМаркет-->
+        <scene sceneID="ku8-6r-Dn3">
+            <objects>
+                <viewController id="WXO-Ln-qwh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjY-kX-wLG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dHE-nT-Cx0"/>
+                        <color key="backgroundColor" red="1" green="0.52462561301748445" blue="0.61679359283036783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="СкайМаркет" image="cart" catalog="system" id="Bxc-sK-T00"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdg-LH-MM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="-640"/>
+        </scene>
+        <!--СкайМани-->
+        <scene sceneID="OIx-ch-488">
+            <objects>
+                <viewController id="MX5-2V-IKn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rv7-HN-PGY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3kR-At-Glz"/>
+                        <color key="backgroundColor" red="0.70174664561808653" green="1" blue="0.72022141949966345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="СкайМани" image="dollarsign.circle" catalog="system" id="fFf-Ub-lNn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xK7-Pp-klg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="-640"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3br-Kv-9hm">
+            <objects>
+                <tabBarController id="a3I-FQ-BA3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gnz-iC-wTP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ctq-4V-tXe" kind="relationship" relationship="viewControllers" id="S4y-ER-e2p"/>
+                        <segue destination="XX6-td-mzu" kind="relationship" relationship="viewControllers" id="89y-9A-Vfz"/>
+                        <segue destination="WXO-Ln-qwh" kind="relationship" relationship="viewControllers" id="WMB-9e-rcJ"/>
+                        <segue destination="MX5-2V-IKn" kind="relationship" relationship="viewControllers" id="Bc6-Uj-xe5"/>
+                        <segue destination="ykv-7j-hq9" kind="relationship" relationship="viewControllers" id="4kM-5N-sxw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0q-qW-C5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1003" y="220"/>
         </scene>
         <!--Новый рецепт-->
         <scene sceneID="kWr-za-lri">
@@ -1236,14 +1326,19 @@
     <resources>
         <image name="back" width="29" height="17"/>
         <image name="barrafina" width="480" height="480"/>
+        <image name="book.fill" catalog="system" width="128" height="102"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="caskpubkitchen" width="480" height="480"/>
         <image name="close" width="16" height="16"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="donostia" width="480" height="480"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="homei" width="480" height="480"/>
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
         <image name="save" width="20" height="20"/>
+        <image name="scroll" catalog="system" width="128" height="116"/>
         <image name="upstate" width="480" height="480"/>
         <image name="wafflewolf" width="480" height="480"/>
         <systemColor name="opaqueSeparatorColor">
