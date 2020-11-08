@@ -1197,11 +1197,11 @@
             </objects>
             <point key="canvasLocation" x="3721.739130434783" y="-501.5625"/>
         </scene>
-        <!--Рецепты-->
+        <!--Главная-->
         <scene sceneID="Akf-KE-lED">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ctq-4V-tXe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Рецепты" image="book.fill" catalog="system" id="jRe-oh-NIk"/>
+                    <tabBarItem key="tabBarItem" title="Главная" image="house.fill" catalog="system" id="jRe-oh-NIk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ouu-4N-kyY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1230,11 +1230,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1B9-ew-OCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1004" y="-1321"/>
+            <point key="canvasLocation" x="-1004" y="1282"/>
         </scene>
-        <!--Программы-->
+        <!--Покупки-->
         <scene sceneID="aDk-V6-47B">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-mU-nfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XX6-td-mzu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7B-pb-HN8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1242,13 +1243,12 @@
                         <viewLayoutGuide key="safeArea" id="M8P-IA-ced"/>
                         <color key="backgroundColor" red="1" green="0.79578860234187454" blue="0.63383012723429577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Программы" image="scroll" catalog="system" id="fiK-aN-wSY"/>
+                    <tabBarItem key="tabBarItem" title="Покупки" image="scroll" catalog="system" id="fiK-aN-wSY"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-mU-nfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1024" y="-639"/>
+            <point key="canvasLocation" x="-1004" y="-1535"/>
         </scene>
-        <!--СкайМаркет-->
+        <!--Магазин-->
         <scene sceneID="ku8-6r-Dn3">
             <objects>
                 <viewController id="WXO-Ln-qwh" sceneMemberID="viewController">
@@ -1258,27 +1258,11 @@
                         <viewLayoutGuide key="safeArea" id="dHE-nT-Cx0"/>
                         <color key="backgroundColor" red="1" green="0.52462561301748445" blue="0.61679359283036783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="СкайМаркет" image="cart" catalog="system" id="Bxc-sK-T00"/>
+                    <tabBarItem key="tabBarItem" title="Магазин" image="cart" catalog="system" id="Bxc-sK-T00"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdg-LH-MM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="-640"/>
-        </scene>
-        <!--СкайМани-->
-        <scene sceneID="OIx-ch-488">
-            <objects>
-                <viewController id="MX5-2V-IKn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rv7-HN-PGY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3kR-At-Glz"/>
-                        <color key="backgroundColor" red="0.70174664561808653" green="1" blue="0.72022141949966345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="СкайМани" image="dollarsign.circle" catalog="system" id="fFf-Ub-lNn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xK7-Pp-klg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="784" y="-640"/>
+            <point key="canvasLocation" x="-1004" y="-2281"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3br-Kv-9hm">
@@ -1288,12 +1272,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ctq-4V-tXe" kind="relationship" relationship="viewControllers" id="S4y-ER-e2p"/>
                         <segue destination="XX6-td-mzu" kind="relationship" relationship="viewControllers" id="89y-9A-Vfz"/>
                         <segue destination="WXO-Ln-qwh" kind="relationship" relationship="viewControllers" id="WMB-9e-rcJ"/>
-                        <segue destination="MX5-2V-IKn" kind="relationship" relationship="viewControllers" id="Bc6-Uj-xe5"/>
                         <segue destination="ykv-7j-hq9" kind="relationship" relationship="viewControllers" id="4kM-5N-sxw"/>
                     </connections>
                 </tabBarController>
@@ -1326,15 +1311,14 @@
     <resources>
         <image name="back" width="29" height="17"/>
         <image name="barrafina" width="480" height="480"/>
-        <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="caskpubkitchen" width="480" height="480"/>
         <image name="close" width="16" height="16"/>
-        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="donostia" width="480" height="480"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="homei" width="480" height="480"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo" width="24" height="18"/>
         <image name="plus" width="16" height="16"/>
         <image name="save" width="20" height="20"/>
