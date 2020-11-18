@@ -43,8 +43,8 @@ class RecipesTableViewController: UITableViewController {
         Ingredient(ingredientName: "Сахар", ingredientProteins: 00.00, ingredientFat: 00.00, ingredientCarbons: 00.00, ingredientGlicemicIndex: 00.00, ingredientUserName: "", ingredientImage: "", isSelected: false),
         Ingredient(ingredientName: "Подсолнечное масло", ingredientProteins: 00.00, ingredientFat: 00.00, ingredientCarbons: 00.00, ingredientGlicemicIndex: 00.00, ingredientUserName: "", ingredientImage: "", isSelected: false)
     ]
-    
-    var recipes:[Recipes] = [
+    var recipes: [RecipeMO] = []
+    /*var recipes:[Recipes] = [
         Recipes(
                 name: "Сырники из творога",
                 recipeCategory: "main course",
@@ -323,6 +323,7 @@ class RecipesTableViewController: UITableViewController {
 //                isLiked: false,
 //                recipeRating: "★★★⭐︎⭐︎"),
     ]
+    */
     
     // MARK: - Готовим segue и перебрасываем в него данные
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -419,11 +420,16 @@ extension RecipesTableViewController {
 
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...
-            cell.nameLabel?.text = recipes[indexPathLocal].recipeName
-            cell.thumbnailImageView?.image = UIImage(named: recipes[indexPathLocal].recipeImage)
+            cell.nameLabel?.text = recipes[indexPathLocal].name
+            
+            //cell.thumbnailImageView?.image = UIImage(named: recipes[indexPathLocal].recipeImage)
+            
+            if let recpeImage = recipes[indexPath.row].image {
+                cell.thumbnailImageView.image = UIImage(data: recpeImage as Data)
+            }
             cell.locationLabel?.text = recipes[indexPathLocal].recipeRating
             cell.typeLabel?.text = recipes[indexPathLocal].recipeType
-            cell.heartImageView.isHidden = !self.recipes[indexPathLocal].recipeIsLiked
+            cell.heartImageView.isHidden = !self.recipes[indexPathLocal].isLiked
 
             cell.selectionStyle = .none
             
