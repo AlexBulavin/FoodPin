@@ -50,33 +50,50 @@ class DeviceTableViewCell: UITableViewCell {
     
     func configure(with models: [Device]) {
         self.deviceSelected = models
+        deviceCollectionView.collectionViewLayout.invalidateLayout()
         deviceCollectionView.reloadData()
+        deviceCollectionView.layoutIfNeeded()
+        //self.viewBuilder.deviceCollectionView.collectionViewLayout.invalidateLayout()
+        print("\(#file) Функция \(#function ) строка \(#line) \(        deviceCollectionView.reloadData())")
     }
     
 }
 
 extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { //print("DeviceTableViewCell строка 47")
+    func intrinsicContentSize() -> CGSize {
+        return self.deviceCollectionView.collectionViewLayout.collectionViewContentSize
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {         print("\(#file) Функция \(#function ) строка \(#line) количество секций в коллекции 1")
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { print("\(#file) Функция \(#function ) строка \(#line) количество элементов в коллекции \(deviceSelected.count)")
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+                deviceCollectionView.collectionViewLayout.invalidateLayout()
+                deviceCollectionView.reloadData()
+                deviceCollectionView.layoutIfNeeded()
+        print("\(#file) Функция \(#function ) строка \(#line) количество элементов в коллекции \(deviceSelected.count)")
         return deviceSelected.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("\(#file) Функция \(#function ) строка \(#line)")
         let cell = deviceCollectionView.dequeueReusableCell(withReuseIdentifier: DeviceCollectionViewCell.identifier, for: indexPath) as! DeviceCollectionViewCell
-        cell.configure(with: deviceSelected[indexPath.row])
-        print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
+
+
         // Configure the cell
-        
+
+        print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
         cell.DeviceImageView?.image = UIImage(named: deviceSelected[indexPath.row].deviceImage)
         print("\(#file) Функция \(#function ) строка \(#line)")
         cell.DeviceType?.text = deviceSelected[indexPath.row].deviceUserName
         print("\(#file) Функция \(#function ) строка \(#line) \(cell)")
-        collectionView.reloadData() //в соответствии с рекомендациями: перезагрузил данные https://coderoad.ru/48672335/Как-сделать-видимой-пользовательскую-ячейку-collectionview
+        cell.configure(with: deviceSelected[indexPath.row])
+        return cell
+    }
+       // deviceCollectionView.reloadData() //в соответствии с рекомендациями: перезагрузил данные https://coderoad.ru/48672335/Как-сделать-видимой-пользовательскую-ячейку-collectionview
+
         //cell.deviceButtonTapped = deviceSelected[indexPath.row].isSelected
 //        var isTaped:Bool = false  {
 //            didSet {
@@ -118,8 +135,4 @@ extension DeviceTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
             return 8
             }
-
-        return cell
-    }
-
 }

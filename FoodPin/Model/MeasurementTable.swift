@@ -6,16 +6,15 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 class MeasurementTable {
-    var measurement: String
-    //"г", "Кг", "мл", "л", "ч.л.", "ст.л.", "десерт.л.", "лист", "шт", "упак", "табл", "зерн", "пачк", "бутылка", "пакет", "горсть", "по вкусу", "щепотка", "лопатка", "долька", "зубчик" ]
+    var measurement = ["г", "Кг", "мл", "л", "ч.л.", "ст.л.", "десерт.л.", "лист", "шт", "упак", "табл", "зерн", "пачк", "бутылка", "пакет", "горсть", "по вкусу", "щепотка", "лопатка", "долька", "зубчик" ]
     
-    init (measurementID: String) {
+    init (measurementID: [String]) {
         self.measurement = measurementID
     }
     
     convenience init() {
-        self.init(measurementID: "")
+        self.init(measurementID: [""])
     }
 }

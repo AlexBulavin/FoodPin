@@ -46,6 +46,7 @@ class DeviceCollectionViewCell: UICollectionViewCell {
         self.DeviceType.text = "\(model.deviceModel)"
         self.DeviceImageView.contentMode = .scaleAspectFit
         self.DeviceImageView.image = UIImage(named: "device_350x600")
+        
     }
     
     override func awakeFromNib() {

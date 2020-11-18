@@ -6,8 +6,6 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-//import Foundation
-
 class Recipes {
     var recipeName: String
     var recipeCategory: String

@@ -370,6 +370,7 @@ class RecipesTableViewController: UITableViewController {
         UIApplication.shared.statusBarStyle = .darkContent
         
         tableView.reloadData()//Для того, чтобы после возврата из контроллера детализации (при изменении рейтинга) обновить показатели рейтинга на главном экране.
+
         
     }
     
@@ -410,10 +411,11 @@ extension RecipesTableViewController {
             //cell.configure(with: DeviceCollectionViewCell)
             else {fatalError("Невозможно создать ячейку DeviceTableViewCell \(#line)") }
             let _: () = print("\(#file) Функция \(#function ) строка \(#line) вошли в case = 0 создание коллекции")
+
             
             return cell
             
-        case 1...:
+        case 1:
 
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RecipeTableViewCell
             // Configure the cell...

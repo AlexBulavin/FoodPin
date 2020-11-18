@@ -6,9 +6,6 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-//import Foundation
-//import UIKit
-
 class Ingredient {
     var ingredientName = ""
     var ingredientProteins = 00.00

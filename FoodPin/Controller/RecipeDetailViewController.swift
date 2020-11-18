@@ -354,8 +354,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     */
     let serviceBodyUUID = CBUUID(string: "7892") //ID сервиса 780А для напольных весов
         let bodyScaleCharacteristicUUID = CBUUID(string: "8A82")//UUID: 8AA2
-        //Properties: Notify
-        //Value 0x0C-0D-00-00-81-10-17-00 где 0D-00 - это вес
+        
     @IBOutlet weak var weightLabel: UILabel!
     
    
