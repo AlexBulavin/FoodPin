@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import CoreData
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
     
@@ -20,8 +21,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         dismiss(animated: true, completion: nil)
     }
     var ratingChanged = "No rating yet"
-    var recipe = RecipeMO()
-
+    var recipe: RecipeMO!
+    
     @IBOutlet var rateIt2: UIButton!
     @IBAction func rateRecipe(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: { [self] in
@@ -437,7 +438,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         // Configure header view
         headerView.recipeName.text = recipe.recipeName //recipe.recipeName
-        headerView.recipeImageView.image = UIImage(named: recipe.recipeImage)
+        headerView.recipeImageView.image = UIImage(data: recpeImage as Data) //UIImage(named: recipe.recipeImage)
         headerView.heartImageView.isHidden = (recipe.recipeIsLiked) ? false : true
         
         // Set the table view's delegate and data source
@@ -577,7 +578,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 (action:UIAlertAction!) -> Void in
                 
                 var defaultText = ""
-                defaultText = defaultText +"Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: "
+                defaultText = defaultText + "Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: "
                 
                 defaultText = defaultText + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n"
                 
@@ -587,7 +588,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 
                 let activityController: UIActivityViewController
                 
-                if let defaultPicture = UIImage(named: self.recipe.recipeImage)
+                if let defaultPicture = UIImage(data: recpeImage as Data) //UIImage(named: self.recipe.recipeImage)
                 { activityController = UIActivityViewController(activityItems: [ defaultText, defaultPicture], applicationActivities: nil) }
                 else
                 { activityController = UIActivityViewController(activityItems: [ defaultText], applicationActivities: nil) }

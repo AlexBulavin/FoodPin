@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import CoreData
 
 class RecipesTableViewController: UITableViewController {
    
