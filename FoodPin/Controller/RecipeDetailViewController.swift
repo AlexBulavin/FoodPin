@@ -20,7 +20,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         dismiss(animated: true, completion: nil)
     }
     var ratingChanged = "No rating yet"
-    var recipe = Recipes()
+    var recipe = RecipeMO()
 
     @IBOutlet var rateIt2: UIButton!
     @IBAction func rateRecipe(segue: UIStoryboardSegue) {
@@ -576,8 +576,14 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             let shareRecipeAction = UIAlertAction(title: "Поделиться", style: .default, handler: {
                 (action:UIAlertAction!) -> Void in
                 
-                var defaultText = "Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: " + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n" + self.recipe.recipeBrief + "\n\n" + "Состав блюда:" + "\n"
-//                    defaultText = defaultText + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
+                var defaultText = ""
+                defaultText = defaultText +"Рекомендую попробовать:" + "\n" + self.recipe.recipeName + "\n" + "Кухня: "
+                
+                defaultText = defaultText + self.recipe.recipeType + "\n" + "Автор рецепта: " + self.recipe.recipeAuthorLocations + "\n" + "Способ приготовления: " + "\n"
+                
+                defaultText = defaultText + self.recipe.recipeBrief + "\n\n" + "Состав блюда:" + "\n"
+                
+                defaultText = defaultText + self.recipe.recipeIngredients + "\n\n" + "Рецепт доступен в мобильном приложении:" + "\n" + "https://apps.apple.com/ru/app/ready-for-sky/id927991375" + "\n\n" + "https://play.google.com/store/apps/details?id=com.readyforsky"
                 
                 let activityController: UIActivityViewController
                 
@@ -585,6 +591,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 { activityController = UIActivityViewController(activityItems: [ defaultText, defaultPicture], applicationActivities: nil) }
                 else
                 { activityController = UIActivityViewController(activityItems: [ defaultText], applicationActivities: nil) }
+                /*if let recipeImage = self.recipe[indexPath.row].image,
+                let imageToShare = UIImage(data: recipeImage as Data) {*/
                 
                 self.present(activityController, animated: true, completion: nil)
                 

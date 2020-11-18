@@ -21,7 +21,7 @@
     <entity name="Measurement" representedClassName="MeasurementMO" syncable="YES" codeGenerationType="class">
         <attribute name="measurement" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Recipe" representedClassName="RecipeMO" syncable="YES" codeGenerationType="class">
+    <entity name="Recipe" representedClassName=".RecipeMO" syncable="YES">
         <attribute name="cookingDeviceBrand" optional="YES" attributeType="String"/>
         <attribute name="cookingDeviceModel" optional="YES" attributeType="String"/>
         <attribute name="cookingDeviceType" optional="YES" attributeType="String"/>
