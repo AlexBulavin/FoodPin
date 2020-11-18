@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Device" representedClassName="Device" syncable="YES" codeGenerationType="class">
+    <entity name="Device" representedClassName="DeviceMO" syncable="YES" codeGenerationType="class">
         <attribute name="deviceBrand" attributeType="String"/>
         <attribute name="deviceImage" optional="YES" attributeType="Binary"/>
         <attribute name="deviceIsSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -8,7 +8,7 @@
         <attribute name="deviceType" attributeType="String"/>
         <attribute name="deviceUserName" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+    <entity name="Ingredient" representedClassName="IngredientMO" syncable="YES" codeGenerationType="class">
         <attribute name="ingredientCarbons" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ingredientFat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ingredientGlicemicIndex" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -18,10 +18,10 @@
         <attribute name="ingredientUserName" attributeType="String"/>
         <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Measurement" representedClassName="Measurement" syncable="YES" codeGenerationType="class">
+    <entity name="Measurement" representedClassName="MeasurementMO" syncable="YES" codeGenerationType="class">
         <attribute name="measurement" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+    <entity name="Recipe" representedClassName="RecipeMO" syncable="YES" codeGenerationType="class">
         <attribute name="cookingDeviceBrand" optional="YES" attributeType="String"/>
         <attribute name="cookingDeviceModel" optional="YES" attributeType="String"/>
         <attribute name="cookingDeviceType" optional="YES" attributeType="String"/>
