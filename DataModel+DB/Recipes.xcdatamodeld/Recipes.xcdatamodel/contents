@@ -3,7 +3,9 @@
     <entity name="Device" representedClassName="DeviceMO" syncable="YES" codeGenerationType="class">
         <attribute name="deviceBrand" attributeType="String"/>
         <attribute name="deviceID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="deviceImage" optional="YES" attributeType="Binary"/>
+        <attribute name="deviceImageLarge" optional="YES" attributeType="Binary"/>
+        <attribute name="deviceImageMiddle" optional="YES" attributeType="Binary"/>
+        <attribute name="deviceImageSmall" optional="YES" attributeType="Binary"/>
         <attribute name="deviceIsSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="deviceModel" attributeType="String"/>
         <attribute name="deviceType" attributeType="String"/>
@@ -14,14 +16,37 @@
         <attribute name="ingredientFat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ingredientGlicemicIndex" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ingredientID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="ingredientImage" optional="YES" attributeType="Binary"/>
+        <attribute name="ingredientImageLarge" optional="YES" attributeType="Binary"/>
+        <attribute name="ingredientImageMiddle" optional="YES" attributeType="Binary"/>
+        <attribute name="ingredientImageSmall" optional="YES" attributeType="Binary"/>
         <attribute name="ingredientName" attributeType="String"/>
         <attribute name="ingredientProteins" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ingredientUserName" attributeType="String"/>
         <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="Measurement" representedClassName="MeasurementMO" syncable="YES" codeGenerationType="class">
-        <attribute name="measurement" optional="YES" attributeType="String"/>
+        <attribute name="measurementBottle" optional="YES" attributeType="String"/>
+        <attribute name="measurementBox" optional="YES" attributeType="String"/>
+        <attribute name="measurementByTaste" optional="YES" attributeType="String"/>
+        <attribute name="measurementCarton" optional="YES" attributeType="String"/>
+        <attribute name="measurementClove" optional="YES" attributeType="String"/>
+        <attribute name="measurementDesertSpoon" optional="YES" attributeType="String"/>
+        <attribute name="measurementG" optional="YES" attributeType="String"/>
+        <attribute name="measurementHandful" optional="YES" attributeType="String"/>
+        <attribute name="measurementItem" optional="YES" attributeType="String"/>
+        <attribute name="measurementKg" optional="YES" attributeType="String"/>
+        <attribute name="measurementL" optional="YES" attributeType="String"/>
+        <attribute name="measurementLeaf" optional="YES" attributeType="String"/>
+        <attribute name="measurementLocal" optional="YES" attributeType="String"/>
+        <attribute name="measurementMl" optional="YES" attributeType="String"/>
+        <attribute name="measurementPack" optional="YES" attributeType="String"/>
+        <attribute name="measurementPinch" optional="YES" attributeType="String"/>
+        <attribute name="measurementSeed" optional="YES" attributeType="String"/>
+        <attribute name="measurementShoulder" optional="YES" attributeType="String"/>
+        <attribute name="measurementSlice" optional="YES" attributeType="String"/>
+        <attribute name="measurementTableSpoon" optional="YES" attributeType="String"/>
+        <attribute name="measurementTablet" optional="YES" attributeType="String"/>
+        <attribute name="measurementTeaSpoon" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Recipe" representedClassName=".RecipeMO" syncable="YES">
         <attribute name="cookingDeviceBrand" optional="YES" attributeType="String"/>
@@ -40,20 +65,32 @@
         <attribute name="recipeFat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="recipeGlicemicIndex" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="recipeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeLocal" optional="YES" attributeType="String"/>
         <attribute name="recipeNumberOfPortions" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="recipeProteins" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="recipeRating" optional="YES" attributeType="String"/>
         <attribute name="recipeType" attributeType="String"/>
     </entity>
     <entity name="RecipeIngredients" representedClassName=".RecipeIngredientsMO" syncable="YES">
-        <attribute name="ingredientID" optional="YES"/>
         <attribute name="recipeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeIngredientID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeIngredientMeasurement" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeIngredientQuantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="recipeLocal" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="RecipeSteps" representedClassName="RecipeSteps" syncable="YES" codeGenerationType="class">
+        <attribute name="recipeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeStepId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recipeStepImage" optional="YES" attributeType="Binary"/>
+        <attribute name="recipeStepLocal" optional="YES" attributeType="String"/>
+        <attribute name="recipeStepName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Recipe" positionX="-45" positionY="0" width="128" height="343"/>
-        <element name="IngredientsDB" positionX="-18" positionY="27" width="128" height="178"/>
-        <element name="Device" positionX="9" positionY="45" width="128" height="148"/>
-        <element name="Measurement" positionX="27" positionY="117" width="128" height="58"/>
-        <element name="RecipeIngredients" positionX="45" positionY="207" width="128" height="73"/>
+        <element name="Device" positionX="9" positionY="45" width="128" height="28"/>
+        <element name="IngredientsDB" positionX="-18" positionY="27" width="128" height="28"/>
+        <element name="Measurement" positionX="27" positionY="117" width="128" height="28"/>
+        <element name="Recipe" positionX="-45" positionY="0" width="128" height="28"/>
+        <element name="RecipeIngredients" positionX="45" positionY="207" width="128" height="28"/>
+        <element name="RecipeSteps" positionX="0" positionY="99" width="128" height="28"/>
     </elements>
 </model>
