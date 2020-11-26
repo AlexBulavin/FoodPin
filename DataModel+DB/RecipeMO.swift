@@ -40,6 +40,7 @@ extension RecipeMO {
     @NSManaged public var ingredients: Int32
     @NSManaged public var isLiked: Bool
     @NSManaged public var recipeRating: String?
+    @NSManaged public var recipeID: Int16
 
 }
 

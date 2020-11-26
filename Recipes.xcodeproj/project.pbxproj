@@ -16,11 +16,9 @@
 		FA1677C8254BDE95003EBDD6 /* BleDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */; };
 		FA167807254EBEAC003EBDD6 /* NORServiceIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA167806254EBEAC003EBDD6 /* NORServiceIdentifiers.swift */; };
 		FA29CAA22564D59E00D85660 /* Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAA02564D59E00D85660 /* Recipes.xcdatamodeld */; };
-		FA29CAA92564E83F00D85660 /* RecipeMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAA72564E83F00D85660 /* RecipeMO.swift */; };
 		FA29CABA2565B33600D85660 /* RecipeIngredientsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB02565B33600D85660 /* RecipeIngredientsMO+CoreDataClass.swift */; };
 		FA29CABB2565B33600D85660 /* RecipeIngredientsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB12565B33600D85660 /* RecipeIngredientsMO+CoreDataProperties.swift */; };
-		FA29CABC2565B33600D85660 /* RecipeMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB22565B33600D85660 /* RecipeMO+CoreDataClass.swift */; };
-		FA29CABD2565B33600D85660 /* RecipeMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB32565B33600D85660 /* RecipeMO+CoreDataProperties.swift */; };
+		FA29CABC2565B33600D85660 /* RecipeMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB22565B33600D85660 /* RecipeMO.swift */; };
 		FA29CABE2565B33600D85660 /* IngredientsDBMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB42565B33600D85660 /* IngredientsDBMO+CoreDataClass.swift */; };
 		FA29CABF2565B33600D85660 /* IngredientsDBMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB52565B33600D85660 /* IngredientsDBMO+CoreDataProperties.swift */; };
 		FA29CAC02565B33600D85660 /* DeviceMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAB62565B33600D85660 /* DeviceMO+CoreDataClass.swift */; };
@@ -79,11 +77,9 @@
 		FA1677C7254BDE95003EBDD6 /* BleDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDeviceViewController.swift; sourceTree = "<group>"; };
 		FA167806254EBEAC003EBDD6 /* NORServiceIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NORServiceIdentifiers.swift; sourceTree = "<group>"; };
 		FA29CAA12564D59E00D85660 /* Recipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipes.xcdatamodel; sourceTree = "<group>"; };
-		FA29CAA72564E83F00D85660 /* RecipeMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMO.swift; sourceTree = "<group>"; };
 		FA29CAB02565B33600D85660 /* RecipeIngredientsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeIngredientsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA29CAB12565B33600D85660 /* RecipeIngredientsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeIngredientsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FA29CAB22565B33600D85660 /* RecipeMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FA29CAB32565B33600D85660 /* RecipeMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA29CAB22565B33600D85660 /* RecipeMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMO.swift; sourceTree = "<group>"; };
 		FA29CAB42565B33600D85660 /* IngredientsDBMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientsDBMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA29CAB52565B33600D85660 /* IngredientsDBMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientsDBMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA29CAB62565B33600D85660 /* DeviceMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -151,8 +147,7 @@
 			children = (
 				FA29CAB02565B33600D85660 /* RecipeIngredientsMO+CoreDataClass.swift */,
 				FA29CAB12565B33600D85660 /* RecipeIngredientsMO+CoreDataProperties.swift */,
-				FA29CAB22565B33600D85660 /* RecipeMO+CoreDataClass.swift */,
-				FA29CAB32565B33600D85660 /* RecipeMO+CoreDataProperties.swift */,
+				FA29CAB22565B33600D85660 /* RecipeMO.swift */,
 				FA29CAB42565B33600D85660 /* IngredientsDBMO+CoreDataClass.swift */,
 				FA29CAB52565B33600D85660 /* IngredientsDBMO+CoreDataProperties.swift */,
 				FA29CAB62565B33600D85660 /* DeviceMO+CoreDataClass.swift */,
@@ -160,7 +155,6 @@
 				FA29CAB82565B33600D85660 /* MeasurementMO+CoreDataClass.swift */,
 				FA29CAB92565B33600D85660 /* MeasurementMO+CoreDataProperties.swift */,
 				FA29CAA02564D59E00D85660 /* Recipes.xcdatamodeld */,
-				FA29CAA72564E83F00D85660 /* RecipeMO.swift */,
 			);
 			path = "DataModel+DB";
 			sourceTree = "<group>";
@@ -412,7 +406,7 @@
 			files = (
 				FAC8F762253F6BE90097221E /* RateViewController.swift in Sources */,
 				FA0F8FE82552CA2C00B46355 /* MeasurementTable.swift in Sources */,
-				FA29CABC2565B33600D85660 /* RecipeMO+CoreDataClass.swift in Sources */,
+				FA29CABC2565B33600D85660 /* RecipeMO.swift in Sources */,
 				FA95FE892528CC8700E693AF /* UINavigationController+Ext.swift in Sources */,
 				FA0F8FE52552AE4800B46355 /* Ingredient.swift in Sources */,
 				FA617E0B24232CB100198145 /* AppDelegate.swift in Sources */,
@@ -421,14 +415,12 @@
 				FA167807254EBEAC003EBDD6 /* NORServiceIdentifiers.swift in Sources */,
 				FABAF291251C5A9F00F35579 /* RecipeDetailHeaderView.swift in Sources */,
 				FA617E1F24232DDB00198145 /* RecipesTableViewController.swift in Sources */,
-				FA29CABD2565B33600D85660 /* RecipeMO+CoreDataProperties.swift in Sources */,
 				FA2A5565253CD1B6004945E8 /* DeviceCollectionViewCell.swift in Sources */,
 				FA29CAC12565B33600D85660 /* DeviceMO+CoreDataProperties.swift in Sources */,
 				FA0F8FEE25530A1F00B46355 /* RecipeConstructorTableViewController.swift in Sources */,
 				FA29CABE2565B33600D85660 /* IngredientsDBMO+CoreDataClass.swift in Sources */,
 				FA0F8FEB2553063200B46355 /* RoundedTextField.swift in Sources */,
 				FA617E0D24232CB100198145 /* SceneDelegate.swift in Sources */,
-				FA29CAA92564E83F00D85660 /* RecipeMO.swift in Sources */,
 				FA5CF8DE2529147A009CFE2F /* RecipeDetailSeparatorCell.swift in Sources */,
 				FA526EA725337D25008FE633 /* Device.swift in Sources */,
 				FA3B097325089B520047FDAB /* RecipeDetailViewController.swift in Sources */,
