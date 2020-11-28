@@ -372,38 +372,30 @@ class RecipesTableViewController: UITableViewController {
             {
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                     addRecipes = RecipeMO(context: appDelegate.persistentContainer.viewContext)
-                    //                    restaurants = [RestaurantMO(context: appDelegate.persistentContainer.viewContext)] //Заготовка для перехода к работе с массивом.
-                    //                    restaurants[index+1].name = restaurantDefault[index].name
-//                  addRecipes.name = recipeDefault[index].name
-//                  addRecipes.recipeCategory = recipeDefault[index].recipeCategory
-//                  addRecipes.cookingDeviceType = recipeDefault[index].cookingDeviceType
-//                  addRecipes.cookingDeviceBrand = recipeDefault[index].cookingDeviceBrand
-//                  addRecipes.cookingDeviceModel = recipeDefault[index].cookingDeviceModel
-//                  addRecipes.image = recipeDefault[index].image
-//                  addRecipes.recipeBrief = recipeDefault[index].recipeBrief
-//                  addRecipes.recipeCookingTime = recipeDefault[index].recipeCookingTime
-//                  addRecipes.recipeNumberOfPortions = recipeDefault[index].recipeNumberOfPortions
-//                  addRecipes.recipeCalories = recipeDefault[index].recipeCalories
-//                  addRecipes.recipeProteins = recipeDefault[index].recipeProteins
-//                  addRecipes.recipeFat = recipeDefault[index].recipeFat
-//                  addRecipes.recipeCarbons = recipeDefault[index].recipeCarbons
-//                  addRecipes.recipeGlicemicIndex = recipeDefault[index].recipeGlicemicIndex
-//                  addRecipes.recipeAuthorLocations = recipeDefault[index].recipeAuthorLocations
-//                  addRecipes.recipeType = recipeDefault[index].recipeType
-//                  addRecipes.ingredients = recipeDefault[index].ingredients
-//                  addRecipes.  recipeDefault[index].isLiked
-//                  addRecipes.recipeRating = recipeDefault[index].recipeRating
-//                  addRecipes.isLiked = recipeDefault[index].isLiked
+                    //                  restaurants = [RestaurantMO(context: appDelegate.persistentContainer.viewContext)] //Заготовка для перехода к работе с массивом.
+                    //                  restaurants[index+1].name = restaurantDefault[index].name
+                    //                  addRecipes.name = recipeDefault[index].name
+                    //                  addRecipes.recipeCategory = recipeDefault[index].recipeCategory
+                    //                  addRecipes.cookingDeviceType = recipeDefault[index].cookingDeviceType
+                    //                  addRecipes.cookingDeviceBrand = recipeDefault[index].cookingDeviceBrand
+                    //                  addRecipes.cookingDeviceModel = recipeDefault[index].cookingDeviceModel
+                    //                  addRecipes.image = UIImage(named: recipeDefault[index].image)?.pngData()//.pngData()
+                    //                  addRecipes.recipeBrief = recipeDefault[index].recipeBrief
+                    //                  addRecipes.recipeCookingTime = recipeDefault[index].recipeCookingTime
+                    //                  addRecipes.recipeNumberOfPortions = recipeDefault[index].recipeNumberOfPortions
+                    //                  addRecipes.recipeCalories = recipeDefault[index].recipeCalories
+                    //                  addRecipes.recipeProteins = recipeDefault[index].recipeProteins
+                    //                  addRecipes.recipeFat = recipeDefault[index].recipeFat
+                    //                  addRecipes.recipeCarbons = recipeDefault[index].recipeCarbons
+                    //                  addRecipes.recipeGlicemicIndex = recipeDefault[index].recipeGlicemicIndex
+                    //                  addRecipes.recipeAuthorLocations = recipeDefault[index].recipeAuthorLocations
+                    //                  addRecipes.recipeType = recipeDefault[index].recipeType
+                    //                  addRecipes.ingredients = recipeDefault[index].ingredients
+                    //                  addRecipes.isLiked = recipeDefault[index].isLiked
+                    //                  addRecipes.recipeRating = recipeDefault[index].recipeRating
+                    //                     recipeID: Int16
+                    
 
-//                     recipeID: Int16
-                    addRecipes.type = recipeDefault[index].type
-                    addRecipes.name = recipeDefault[index].name
-                    addRecipes.type = recipeDefault[index].type
-                    addRecipes.location = recipeDefault[index].location
-                    addRecipes.phone = recipeDefault[index].phone
-                    addRecipes.summary = recipeDefault[index].description
-                    addRecipes.isVisited = recipeDefault[index].isVisited
-                    addRecipes.image = UIImage(named: recipeDefault[index].image)?.pngData()//.pngData()
                     print("Saving data from restaurantDefault to context for \(String(describing: addRecipes.name))")
                     appDelegate.saveContext()
                 }
