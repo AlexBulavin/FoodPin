@@ -60,6 +60,7 @@
 		FAA7C35C2528C3900029A432 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA7C34A2528C3900029A432 /* Rubik-BoldItalic.ttf */; };
 		FAA7C35D2528C3900029A432 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAA7C34B2528C3900029A432 /* OFL.txt */; };
 		FAA7C35E2528C3900029A432 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAA7C34C2528C3900029A432 /* README.txt */; };
+		FAADBCED2572C8740065726A /* RecipeCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADBCEC2572C8740065726A /* RecipeCategories.swift */; };
 		FABAF2872517A64600F35579 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF2862517A64600F35579 /* Recipes.swift */; };
 		FABAF291251C5A9F00F35579 /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */; };
 		FABAF293251C66D800F35579 /* RecipeDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */; };
@@ -123,6 +124,7 @@
 		FAA7C34A2528C3900029A432 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		FAA7C34B2528C3900029A432 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		FAA7C34C2528C3900029A432 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		FAADBCEC2572C8740065726A /* RecipeCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategories.swift; sourceTree = "<group>"; };
 		FABAF2862517A64600F35579 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		FABAF290251C5A9F00F35579 /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		FABAF292251C66D800F35579 /* RecipeDetailDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailDescriptionCell.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				FABAF2862517A64600F35579 /* Recipes.swift */,
 				FA526EA625337D25008FE633 /* Device.swift */,
 				FA0F8FE42552AE4800B46355 /* Ingredient.swift */,
+				FAADBCEC2572C8740065726A /* RecipeCategories.swift */,
 				FA0F8FE72552CA2C00B46355 /* MeasurementTable.swift */,
 			);
 			path = Model;
@@ -435,6 +438,7 @@
 				FABAF295251C687800F35579 /* RecipeIngredientsCell.swift in Sources */,
 				FA29CABF2565B33600D85660 /* IngredientsDBMO+CoreDataProperties.swift in Sources */,
 				FABAF293251C66D800F35579 /* RecipeDetailDescriptionCell.swift in Sources */,
+				FAADBCED2572C8740065726A /* RecipeCategories.swift in Sources */,
 				FA29CABB2565B33600D85660 /* RecipeIngredientsMO+CoreDataProperties.swift in Sources */,
 				FA29CAC22565B33600D85660 /* MeasurementMO+CoreDataClass.swift in Sources */,
 				FA5CF8E22529DB23009CFE2F /* MapViewController.swift in Sources */,

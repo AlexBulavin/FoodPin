@@ -49,7 +49,7 @@ class RecipesTableViewController: UITableViewController {
     var recipeDefault:[Recipes] = [
         Recipes(
                 name: "Сырники из творога",
-                recipeCategory: "main course",
+                recipeCategory: "semi-product",
                 cookingDeviceType: "multicooker",
                 cookingDeviceBrand: "REDMOND",
                 cookingDeviceModel: "RMC-M800S",
@@ -429,10 +429,10 @@ class RecipesTableViewController: UITableViewController {
 
         Recipes(
                 name: "Royal Oak",
-                recipeCategory: "lunch",
-                cookingDeviceType: "multicooker",
+                recipeCategory: "dinner",
+                cookingDeviceType: "airgrill",
                 cookingDeviceBrand: "REDMOND",
-                cookingDeviceModel: "RMC-M807S",
+                cookingDeviceModel: "RAG-2410",
                 image: "royaloak",
                 recipeBrief: "Рецепт 19 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
                 recipeCookingTime: 2600000,
@@ -450,10 +450,10 @@ class RecipesTableViewController: UITableViewController {
 
         Recipes(
                 name: "CASK Pub and Kitchen",
-                recipeCategory: "lunch",
-                cookingDeviceType: "multicooker",
+                recipeCategory: "brekfast",
+                cookingDeviceType: "multibaker",
                 cookingDeviceBrand: "REDMOND",
-                cookingDeviceModel: "RMC-M807S",
+                cookingDeviceModel: "RMB-M603",
                 image: "caskpubkitchen",
                 recipeBrief: "Рецепт 20 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
                 recipeCookingTime: 2600000,
