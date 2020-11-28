@@ -179,7 +179,6 @@
 		FA617DFE24232CB100198145 = {
 			isa = PBXGroup;
 			children = (
-				FA29CAAD2564E96A00D85660 /* DataModel+DB */,
 				FA617E0924232CB100198145 /* Recipes */,
 				FA617E0824232CB100198145 /* Products */,
 				FA5CF8DA25290BC4009CFE2F /* Frameworks */,
@@ -197,6 +196,7 @@
 		FA617E0924232CB100198145 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				FA29CAAD2564E96A00D85660 /* DataModel+DB */,
 				FA5CBED9252300B80035E9D1 /* Extensions */,
 				FABAF28B2517C81200F35579 /* Storyboard */,
 				FABAF28A2517C79D00F35579 /* Model */,
