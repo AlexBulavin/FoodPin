@@ -217,108 +217,252 @@ class RecipesTableViewController: UITableViewController {
                 isLiked: false,
                 recipeRating: "★★★★⭐︎"),
         
-        Recipes(name: "Haigh's Chocolate",
+        Recipes(
+                name: "Haigh's Chocolate",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "haighschocolate",
                 recipeBrief: "Рецепт 9 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Берлин Германия",
                 recipeType: "Русская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★⭐︎⭐︎⭐︎"),
 
-        Recipes(name: "Palomino Espresso",
+        Recipes(
+                name: "Palomino Espresso",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "palominoespresso",
                 recipeBrief: "Рецепт 10 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Париж, Франция",
                 recipeType: "Французская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★⭐︎⭐︎"),
 
-        Recipes(name: "Upstate",
+        Recipes(
+                name: "Upstate",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "upstate",
                 recipeBrief: "Рецепт 11 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Лиссобон, Португалия",
                 recipeType: "Украинская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★★⭐︎"),
 
-        Recipes(name: "Graham Avenue Meats",
+        Recipes(
+                name: "Graham Avenue Meats",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "traif",
                 recipeBrief: "Рецепт 12 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Мадрид, Испания",
                 recipeType: "Китайская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
 
-        Recipes(name: "Waffle & Wolf",
+        Recipes(
+                name: "Waffle & Wolf",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "grahamavenuemeats",
                 recipeBrief: "Рецепт 13 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Дели, Индия",
                 recipeType: "Японская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★★⭐︎"),
 
-        Recipes(name: "Five Leaves",
+        Recipes(
+                name: "Five Leaves",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "wafflewolf",
                 recipeBrief: "Рецепт 14 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Сидней, Автсралия",
                 recipeType: "Еврейская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★⭐︎⭐︎⭐︎"),
 
-        Recipes(name: "Cafe Lore",
+        Recipes(
+                name: "Cafe Lore",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "fiveleaves",
                 recipeBrief: "Рецепт 15 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Вашингтон, США",
                 recipeType: "Европейская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★★⭐︎"),
 
-        Recipes(name: "Confessional",
+        Recipes(
+                name: "Confessional",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "cafelore",
                 recipeBrief: "Рецепт 16 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Гавана, Куба",
                 recipeType: "Немецкая",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★★⭐︎"),
 
-        Recipes(name: "Barrafina",
+        Recipes(
+                name: "Barrafina",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "confessional",
                 recipeBrief: "Рецепт 17 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Улан-Батор, Монголия",
                 recipeType: "Грузинская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★★⭐︎⭐︎"),
 
-        Recipes(name: "Donostia",
+        Recipes(
+                name: "Donostia",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "barrafina",
                 recipeBrief: "Рецепт 18 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Токио, Япония",
                 recipeType: "Ингдийская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★⭐︎⭐︎⭐︎⭐︎"),
 
-        Recipes(name: "Royal Oak",
+        Recipes(
+                name: "Royal Oak",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "royaloak",
                 recipeBrief: "Рецепт 19 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Краснодар, Россия",
                 recipeType: "Корейская",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
                 isLiked: false,
                 recipeRating: "★★⭐︎⭐︎⭐︎"),
 
-        Recipes(name: "CASK Pub and Kitchen",
+        Recipes(
+                name: "CASK Pub and Kitchen",
+                recipeCategory: "lunch",
+                cookingDeviceType: "multicooker",
+                cookingDeviceBrand: "REDMOND",
+                cookingDeviceModel: "RMC-M807S",
                 image: "caskpubkitchen",
                 recipeBrief: "Рецепт 20 \n1. В кастрюлю на 3 литра положить мясо и налить воды. Как только бульон начнет кипеть, добавить 1 чайную ложку соли, пару горошков душистого перца и черного, 2–3 листика лаврового листа. Варить от момента закипания 20 минут. Затем мясо вынуть. \n2. Картофель почистить и нарезать кубиками. Лук нарезать кубиками. Морковь натереть на терке. Мясо порезать небольшими кусочками. Плавленый сыр (если в виде брусочка) натереть на терке или порезать кубиками.",
+                recipeCookingTime: 2600000,
+                recipeNumberOfPortions: 3,
+                recipeCalories: 300.00,//кКал/100гр.
+                recipeProteins: 25.00,//гр./100гр.
+                recipeFat: 15.00,//гр./100гр.
+                recipeCarbons: 80.00,//гр./100гр.
+                recipeGlicemicIndex: 3.00,//гр./100гр.
                 recipeAuthorLocations: "Екатеринбург, Россия",
                 recipeType: "Греческая",
                 ingredients: "Творог 500 г, \nКуриное яйцо 2 штуки, \nПшеничная мука 6 столовых ложек, \nСахар 2 столовые ложки, \nПодсолнечное масло 5 столовых ложек",
@@ -395,7 +539,7 @@ class RecipesTableViewController: UITableViewController {
                     //                  addRecipes.recipeRating = recipeDefault[index].recipeRating
                     //                     recipeID: Int16
                     
-
+                    
                     print("Saving data from restaurantDefault to context for \(String(describing: addRecipes.name))")
                     appDelegate.saveContext()
                 }
