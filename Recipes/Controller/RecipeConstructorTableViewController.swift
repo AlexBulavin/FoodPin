@@ -152,7 +152,7 @@ class RecipeConstructorTableViewController: UITableViewController, UITextFieldDe
         dismiss(animated: true, completion: nil)
     }
     
-                
+    var recipeCategory: [RecipeCategories] = []
     // MARK: - Table view data source
 //
 //    override func numberOfSections(in tableView: UITableView) -> Int {

@@ -45,7 +45,8 @@ class RecipesTableViewController: UITableViewController {
         Ingredient(ingredientName: "Подсолнечное масло", ingredientProteins: 00.00, ingredientFat: 00.00, ingredientCarbons: 00.00, ingredientGlicemicIndex: 00.00, ingredientUserName: "", ingredientImage: "", isSelected: false)
     ]
     var recipes: [RecipeMO] = []
-    var addRecipes:RecipeMO!
+    var addRecipes: RecipeMO!
+    var recipeCategory: [RecipeCategories] = []
     var recipeDefault:[Recipes] = [
         Recipes(
                 name: "Сырники из творога",

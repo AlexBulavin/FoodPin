@@ -434,7 +434,6 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         navigationItem.largeTitleDisplayMode = .never // Для того, чтобы navigation bar title был всегда маленький и не перегружал внимание пользователя
         // Configure header view
         headerView.recipeName.text = recipe.recipeName //recipe.recipeName
